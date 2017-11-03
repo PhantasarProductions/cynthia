@@ -25,7 +25,11 @@ Version: 17.11.03
 
 -- *import phantasar
 -- *import users
--- *import lunamorica
+-- *import background
+-- *import chain_lunamorica
+-- *import chain_sections
+flow = chain_sections
+
 
 
 mkl.version("Cynthia Johnson - IloveYOU.lua","17.11.03")
@@ -43,6 +47,8 @@ end
 
 
 function load_all_my_crap()
+local ichain
+if not user then ichain="NEWUSER" else ichain="MAINMENU" end
 local junk =            {
                            image = { cynthia = "GFX/GENERAL/CYNTHIA.PNG",
                                      logo    = "GFX/GENERAL/LOGO.PNG",
@@ -51,9 +57,9 @@ local junk =            {
                         }
 print("Loading all assets");
 phantasar.after(function()
-    backquad = love.graphics.newQuad(assets.back.images[1],0,0,800,600,64,64)
+    backquad = love.graphics.newQuad(0,0,800,600,64,64)
 end)
-assets = phantasar.init(junk,"Title")                        
+assets = phantasar.init(junk,ichain)                        
 end 
          
 load_all_my_crap()
