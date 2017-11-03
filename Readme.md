@@ -1,4 +1,4 @@
-![Cynthia Johnson](https://github.com/PhantasarProductions/cynthia/blob/master/GFX/General/Logo.png?raw=true]
+![Cynthia Johnson](https://github.com/PhantasarProductions/cynthia/blob/master/GFX/General/Logo.png?raw=true)
 
 
 Hang on!
