@@ -1,7 +1,7 @@
 local nu = {}
 
 function nu.draw()
-    background()
+    --background()
 end    
 
 return nu

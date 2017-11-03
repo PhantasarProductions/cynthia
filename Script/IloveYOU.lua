@@ -25,7 +25,7 @@ Version: 17.11.03
 
 -- *import phantasar
 -- *import users
--- *import background
+--  import background
 -- *import chain_lunamorica
 -- *import chain_sections
 flow = chain_sections
@@ -57,7 +57,7 @@ local junk =            {
                         }
 print("Loading all assets");
 phantasar.after(function()
-    backquad = love.graphics.newQuad(0,0,800,600,64,64)
+    -- backquad = love.graphics.newQuad(0,0,800,600,64,64)
 end)
 assets = phantasar.init(junk,ichain)                        
 end 
