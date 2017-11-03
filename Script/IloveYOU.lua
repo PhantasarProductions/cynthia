@@ -45,10 +45,14 @@ end
 function load_all_my_crap()
 local junk =            {
                            image = { cynthia = "GFX/GENERAL/CYNTHIA.PNG",
-                                     logo    = "GFX/GENERAL/LOGO.PNG"
+                                     logo    = "GFX/GENERAL/LOGO.PNG",
+                                     back    = "GFX/TILES/EGYPT/FLOOR_SAND.PNG"
                                    }
                         }
 print("Loading all assets");
+phantasar.after(function()
+    backquad = love.graphics.newQuad(assets.back.images[1],0,0,800,600,64,64)
+end)
 assets = phantasar.init(junk,"Title")                        
 end 
          
