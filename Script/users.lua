@@ -22,6 +22,11 @@
 	to the project the exceptions are needed for.
 Version: 17.11.03
 ]]
+
+mkl.version("Cynthia Johnson - users.lua","17.11.03")
+mkl.lic    ("Cynthia Johnson - users.lua","GNU General Public License 3")
+
+
 function login(uname)
     local ufile = "users/"..uname..".lua"
     assert(love.filesystem.isFile(ufile),"User "..ufile.." does not exist")
