@@ -36,11 +36,15 @@ function login(uname)
     love.filesystem.write("config/autologin.lua","return '"..uname.."'")
     -- Login: Anna
     -- Login: Game Jolt
+    user.username=uname
 end
 
-function saveuser(uname)    
+function saveuser()
+    local uname = user.username    
     local ufile = "users/"..uname..".lua"
+    user.username=nil
     local success, message = love.filesystem.write( ufile, serialize("ret",data).."\n\nreturn ret\n\n"  )
+    user.username=uname
     if not success then
        love.window.showMessageBox( "Cynthia Johnson", "I couldn't save the user file!\n\nData has therefore not been saved", "error", true )
     end
