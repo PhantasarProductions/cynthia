@@ -72,6 +72,6 @@ function love.quit()
      love.window.showMessageBox( "Cynthia Johnson", "You can not quit while in-game.\nIn order to quit, please go back to the main menu and use the quit feature there.", "error", true )     
      return true
   end
-  saveuser()
+  if user then saveuser() end
   return love.window.showMessageBox( "Cynthia Johnson", "What? You really want to get out of this game?", {"Of course! This game stinks!","Oops! My mistake, sorry!", escapebutton=2} )==2
 end  
