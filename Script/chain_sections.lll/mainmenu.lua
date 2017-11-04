@@ -47,6 +47,19 @@ mm.gui = {
                        x=400,
                        y=-600
                   },
+                  version = {
+                       kind="label",
+                       caption="",
+                       x=700,
+                       y=5,
+                       alpha=50
+                  },
+                  copy = {
+                       kind="label",
+                       caption="",
+                       x=200,
+                       y=575
+                       },
                   debuglogoy = {x=0,y=100,kind='label',caption="fuck it!", visible=false} -- Should always be false. This was only used to debug the actual position of the logo.
              }
           }        
@@ -66,6 +79,8 @@ function mm.update()
     end
     g.ay = g.y
     mm.gui.kids.debuglogoy.caption = "g.y = "..g.y.."; ".." y = "..y.."; fix="..sval(g.fixatednow).."; time="..time
+    mm.gui.kids.version.caption = mkl.newestversion()
+    mm.gui.kids.copy.caption="(c) Jeroen P. Broks, 2017-20"..left(mm.gui.kids.version.caption,2)..", GPL 3 licensed"
 end
 
 return mm
