@@ -20,10 +20,10 @@
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 17.11.03
+Version: 17.11.04
 ]]
 
-mkl.version("Cynthia Johnson - users.lua","17.11.03")
+mkl.version("Cynthia Johnson - users.lua","17.11.04")
 mkl.lic    ("Cynthia Johnson - users.lua","GNU General Public License 3")
 
 
