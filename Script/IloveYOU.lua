@@ -67,3 +67,10 @@ end
 load_all_my_crap()
 load_all_my_crap = nil              
  
+function love.quit()
+  if chain.currentname=="GAME" then
+     love.window.showMessageBox( "Cynthia Johnson", "You can not quit while in-game.\nIn order to quit, please go back to the main menu and use the quit feature there.", "error", true )     
+     return true
+  end
+  return love.window.showMessageBox( "Cynthia Johnson", "What? You really want to get out of this game?", {"Of course! This game stinks!","Oops! My mistake, sorry!", escapebutton=2} )==2
+end  
