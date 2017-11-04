@@ -28,6 +28,14 @@ function mm.arrive()
    music.play('MUSIC/GENERAL/CALL TO ADVENTURE.MP3')
 end
 
+mm.actions = {
+
+    discord = function() if not love.system.openURL( 'https://discord.gg/RU3V6YU' ) then love.window.showMessageBox( "Cynthia Johnson", "I could connect with Discord", "error", true ) end end,
+    github = function() if not love.system.openURL( 'https://github.com/PhantasarProductions/cynthia' ) then love.window.showMessageBox( "Cynthia Johnson", "Sorry, I was unable to go to github", "error", true ) end end,
+    website = function() if not love.system.openURL( 'https://tricky.gamejolt.io/cynthia' ) then love.window.showMessageBox( "Cynthia Johnson", "Sorry, I was unable to go to Game Jolt, where the site is located", "error", true ) end end,
+    quit = love.event.quit
+}
+
 mm.gui = {
              kind='picture',
              image='GFX/GENERAL/BACKGROUND.PNG',
@@ -63,6 +71,11 @@ mm.gui = {
                   debuglogoy = {x=0,y=100,kind='label',caption="fuck it!", visible=false} -- Should always be false. This was only used to debug the actual position of the logo.
              }
           }        
+mm.buttons = {  }
+for i,d in ipairs({ {'Play the game','play'}, {'Change Player','change'}, {"Website","website"}, {"Come to the Discord Channel",'discord'},{"Repository / Bug Tracker",'github'} ,{"Quit","quit"} }) do
+    mm.buttons[i] = { kind='button', FR=255, FG=180,FB=0,BR=127,BG=90,BB=0,x=800+i*24,y=150+(i*30),caption=d[1],action=mm.actions[d[2]],w=600}
+    mm.gui.kids['button'..i]=mm.buttons[i]
+end           
 
 lunar.MAINMENU = mm.gui
 luna.update(mm.gui)
@@ -81,6 +94,9 @@ function mm.update()
     mm.gui.kids.debuglogoy.caption = "g.y = "..g.y.."; ".." y = "..y.."; fix="..sval(g.fixatednow).."; time="..time
     mm.gui.kids.version.caption = mkl.newestversion()
     mm.gui.kids.copy.caption="(c) Jeroen P. Broks, 2017-20"..left(mm.gui.kids.version.caption,2)..", GPL 3 licensed"
+    for g in each(mm.buttons) do 
+        if g.x>100 then g.x=g.x-2 g.ax=g.x end
+    end
 end
 
 return mm
