@@ -42,7 +42,7 @@ love.filesystem.createDirectory("users")
 love.filesystem.createDirectory("config")
 
 if love.filesystem.isFile("config/autologin.lua") then 
-   local getuser = j_love_import("config/autologin")
+   local getuser = j_love_import("config/autologin.lua")
    if love.filesystem.isFile("users/"..getuser..".lua") then login(getuser) end
 end 
 
