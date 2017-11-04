@@ -28,15 +28,20 @@ mkl.lic    ("Cynthia Johnson - users.lua","GNU General Public License 3")
 
 
 function login(uname)
+    -- Load user
     local ufile = "users/"..uname..".lua"
     assert(love.filesystem.isFile(ufile),"User "..ufile.." does not exist")
     user  = j_love_import(ufile)
+    -- Set to startup default
+    love.filesystem.write("config/autologin.lua","return '"..uname.."'")
+    -- Login: Anna
+    -- Login: Game Jolt
 end
 
 function saveuser(uname)    
     local ufile = "users/"..uname..".lua"
-    local success, message = love.filesystem.write( uname, serialize("ret",data).."\n\nreturn ret\\n"  )
+    local success, message = love.filesystem.write( ufile, serialize("ret",data).."\n\nreturn ret\n\n"  )
     if not success then
-       love.window.showMessageBox( "Cynthia Johnosn", "I couldn't save the user file!\n\nData has therefore not been saved", "error", true )
+       love.window.showMessageBox( "Cynthia Johnson", "I couldn't save the user file!\n\nData has therefore not been saved", "error", true )
     end
 end       

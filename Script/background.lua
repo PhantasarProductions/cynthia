@@ -28,7 +28,7 @@ mkl.lic    ("Cynthia Johnson - background.lua","GNU General Public License 3")
 
 
 local function background()
-     love.graphics.draw(assets.back.images[1],backquad,0,0)
+     -- love.graphics.draw(assets.back.images[1],backquad,0,0)
 end     
 
 return background
