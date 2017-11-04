@@ -20,7 +20,7 @@
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 17.11.04
+Version: 17.11.05
 ]]
 
 -- *import phantasar
@@ -34,7 +34,7 @@ flow = chain_sections
 
 
 
-mkl.version("Cynthia Johnson - IloveYOU.lua","17.11.04")
+mkl.version("Cynthia Johnson - IloveYOU.lua","17.11.05")
 mkl.lic    ("Cynthia Johnson - IloveYOU.lua","GNU General Public License 3")
 
 
