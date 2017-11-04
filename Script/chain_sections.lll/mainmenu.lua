@@ -73,7 +73,7 @@ mm.gui = {
           }        
 mm.buttons = {  }
 for i,d in ipairs({ {'Play the game','play'}, {'Change Player','change'}, {"Website","website"}, {"Come to the Discord Channel",'discord'},{"Repository / Bug Tracker",'github'} ,{"Quit","quit"} }) do
-    mm.buttons[i] = { kind='button', FR=255, FG=180,FB=0,BR=127,BG=90,BB=0,x=800+i*24,y=150+(i*30),caption=d[1],action=mm.actions[d[2]],w=600}
+    mm.buttons[i] = { kind='button', FR=255, FG=180,FB=0,BR=127,BG=90,BB=0,x=800+i*24,y=150+(i*30),caption=d[1],action=mm.actions[d[2]],w=600, font='FONTS/BODONIXT.TTF'}
     mm.gui.kids['button'..i]=mm.buttons[i]
 end           
 
