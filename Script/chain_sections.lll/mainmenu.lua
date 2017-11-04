@@ -24,7 +24,48 @@ Version: 17.11.04
 ]]
 local mm = {}
 
+function mm.arrive()
+   music.play('MUSIC/GENERAL/CALL TO ADVENTURE.MP3')
+end
+
+mm.gui = {
+             kind='picture',
+             image='GFX/GENERAL/BACKGROUND.PNG',
+             x=0,
+             y=0,
+             kids = {
+                  cynthia = {
+                       kind='picture',
+                       image='GFX/GENERAL/CYNTHIA.PNG',
+                       x=800-255,
+                       y=600-175
+                  },
+                  logo = {
+                       kind='picture',
+                       image='GFX/GENERAL/LOGO.PNG',
+                       hot='c',
+                       x=400,
+                       y=-600
+                  },
+                  debuglogoy = {x=0,y=100,kind='label',caption="fuck it!", visible=false} -- Should always be false. This was only used to debug the actual position of the logo.
+             }
+          }        
+
+lunar.MAINMENU = mm.gui
+luna.update(mm.gui)
 
 function mm.draw() end
+
+function mm.update()
+    local time = love.timer.getTime( )
+    local y = math.floor(100 + (math.sin(time)*25))
+    local g = mm.gui.kids.logo
+    if g.fixatednow then g.y=y
+    elseif g.y<y then g.y=g.y+1
+    else g.fixatednow = true
+    end
+    g.ay = g.y
+    mm.gui.kids.debuglogoy.caption = "g.y = "..g.y.."; ".." y = "..y.."; fix="..sval(g.fixatednow).."; time="..time
+end
 
 return mm
