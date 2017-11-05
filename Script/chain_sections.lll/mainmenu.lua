@@ -33,7 +33,8 @@ mm.actions = {
     discord = function() if not love.system.openURL( 'https://discord.gg/RU3V6YU' ) then love.window.showMessageBox( "Cynthia Johnson", "I could connect with Discord", "error", true ) end end,
     github = function() if not love.system.openURL( 'https://github.com/PhantasarProductions/cynthia' ) then love.window.showMessageBox( "Cynthia Johnson", "Sorry, I was unable to go to github", "error", true ) end end,
     website = function() if not love.system.openURL( 'https://tricky.gamejolt.io/cynthia' ) then love.window.showMessageBox( "Cynthia Johnson", "Sorry, I was unable to go to Game Jolt, where the site is located", "error", true ) end end,
-    quit = love.event.quit
+    quit = love.event.quit,
+    play = function() CHOOSEREALM_backchainer = "MAINMENU" chain.go('CHOOSEREALM') end
 }
 
 mm.gui = {
