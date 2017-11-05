@@ -7,4 +7,4 @@ local function loadpuzzle(f)
       if love.filesystem.isFile(sf) then ret.script = j_love_import(sf) end      
 end
 
-return loadpuzzle()
+return loadpuzzle
