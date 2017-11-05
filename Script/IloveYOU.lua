@@ -30,6 +30,7 @@ Version: 17.11.05
 -- *import chain_sections
 -- *import annaandgamejolt
 -- *import music
+-- *import loadpuzzle
 flow = chain_sections
 
 
