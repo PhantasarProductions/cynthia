@@ -1,4 +1,4 @@
--- Generated on: Sun 05 November 2017; 11:18:35
+-- Generated on: Mon 06 November 2017; 02:32:19
 -- Author:       Jeroen P. Broks
 -- License:      GPL 3
 
@@ -88,6 +88,11 @@ ret.datamap['Title'] = "The desert at the Nile"
 			{ {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}},
 			{ {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}}}
 
+		ret.objects[10][14] = {
+			objtype = "Start",
+			data = {
+				['TeddyID'] = "E-A-1",
+				['Wind'] = "N"}
 
 
 
