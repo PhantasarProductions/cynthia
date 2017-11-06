@@ -1,4 +1,4 @@
--- Generated on: Mon 06 November 2017; 17:26:55
+-- Generated on: Mon 06 November 2017; 17:58:22
 -- Author:       Jeroen P. Broks
 -- License:      GPL 3
 
@@ -88,15 +88,21 @@ ret.datamap['Title'] = "The desert at the Nile"
 			{ {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}},
 			{ {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}}}
 
-		ret.objects[10][14] = {
+	ret.fetchteddyobject = {}		ret.objects[10][14] = {
 			objtype = "Start",
+			coords = {x=14, y=10},
 			data = {
 				['TeddyID'] = "E-A-1",
 				['Wind'] = "N"}}
+		ret.fetchteddyobject['E-A-1'] = ret.objects[10][14]
+
 		ret.objects[14][24] = {
 			objtype = "Exit",
+			coords = {x=24, y=14},
 			data = {
 				['TeddyID'] = "18-E-1"}}
+		ret.fetchteddyobject['18-E-1'] = ret.objects[14][24]
+
 
 
 

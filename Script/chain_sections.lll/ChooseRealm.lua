@@ -61,7 +61,10 @@ local gui = {
                        x=400,
                        y=75
                   },
-                  kiesmaar = selector
+                  kiesmaar = selector,
+                  ok = {
+                     
+                  }
              } 
 
 }  
