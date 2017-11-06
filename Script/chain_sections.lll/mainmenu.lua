@@ -69,6 +69,13 @@ mm.gui = {
                        x=200,
                        y=575
                        },
+                  gpl = {
+                      kind = 'picture',
+                      image="GFX/GENERAL/GPL3.PNG",
+                      x=0,
+                      y=600,
+                      hot="dl"
+                  },     
                   debuglogoy = {x=0,y=100,kind='label',caption="fuck it!", visible=false} -- Should always be false. This was only used to debug the actual position of the logo.
              }
           }        
