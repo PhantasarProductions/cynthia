@@ -17,6 +17,7 @@
     - Build/Game Jolt/Tumbnail.piko
     - Build/Game Jolt/Tumbnail.png
     - Build/Game Jolt/Tumbnail2.png
+    - Credits.md
     - GFX/CynthiaSpeaks/NewUser/Hello.png
     - GFX/CynthiaSpeaks/NewUser/Intro.png
     - GFX/General/Background.png
@@ -45,7 +46,7 @@
     - Script/users.lua
     - disclaimer.md
 - Kevin McLeod
-  - The music by Kevin McLeod was downloaded from Incompetech.org
+  - The music by Kevin McLeod was downloaded from http://incompetech.org and has been released under a creative commons license. Check out Kevin's details for all the details.
     - Music/General/Call to Adventure.mp3
     - Music/puzzles/Egypt/Return of the Mummy.mp3
     - Music/puzzles/Egypt/Silver Flame.mp3
