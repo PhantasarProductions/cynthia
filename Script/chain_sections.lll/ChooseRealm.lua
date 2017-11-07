@@ -84,7 +84,8 @@ local gui = {
                       caption="Ok",
                       BR = 0,
                       BG = 180,
-                      BB = 255                     
+                      BB = 255,
+                      action = function(g) user.realm=realms[cr.p] chain.go("CHOOSEPUZZLE") end                     
                   },
                   cancel = {
                       kind = "button",
@@ -103,7 +104,7 @@ luna.update(gui); lunar.CHOOSEREALM = gui
 
 function cr.update()
     cr.p = cr.p or 1
-    gui.kids.ok.visible=user.unlocked[realms[cr.p]]
+    gui.kids.ok.visible=user.unlocked.realms[realms[cr.p]]
 end    
 
 

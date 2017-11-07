@@ -36,12 +36,14 @@
     - Readme.md
     - Script/IloveYOU.lua
     - Script/background.lua
+    - Script/chain_sections.lll/ChoosePuzzle.lua
     - Script/chain_sections.lll/ChooseRealm.lua
     - Script/chain_sections.lll/chain_sections.lua
     - Script/chain_sections.lll/mainmenu.lua
     - Script/chain_sections.lll/newuser.lua
     - Script/loadpuzzle.lua
     - Script/puzzles/maps/Egypt_Level1.lua
+    - Script/puzzles/titles.lua
     - Script/users.lua
     - disclaimer.md
 - Kevin McLeod

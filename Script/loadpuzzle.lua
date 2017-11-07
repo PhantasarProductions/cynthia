@@ -23,6 +23,8 @@
 Version: 17.11.06
 ]]
 
+puzzles = j_love_import("SCRIPT/PUZZLES/TITLES.LUA")
+
 local function loadpuzzle(f)
       local ret = j_love_import("SCRIPT/PUZZLES/MAPS/"..upper(f)..".lua")
       assert(ret,"Loading map code for: "..f.." failed!")
