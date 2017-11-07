@@ -21,13 +21,12 @@
     - GFX/CynthiaSpeaks/NewUser/Hello.png
     - GFX/CynthiaSpeaks/NewUser/Intro.png
     - GFX/General/Background.png
-    - GFX/General/Cynthia (Autosaved).piko-png
     - GFX/General/Cynthia.png
     - GFX/General/GPL3.piko
     - GFX/General/GPL3.png
-    - GFX/General/Logo (Autosaved).piko-png
     - GFX/General/Logo.piko
     - GFX/General/Logo.png
+    - GFX/Stuff/Exit.png
     - GFX/Tiles/Egypt/Floor_Sand.png
     - GFX/Tiles/Egypt/Floor_Sand32.png
     - GFX/Tiles/Egypt/Floor_Sand32_Bright.png
