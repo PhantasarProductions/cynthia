@@ -3,6 +3,9 @@
 ## Contributors:
 
 
+- Eric Matyas
+  - Read for full license infor Eric's own website: http://soundimage.org/
+    - Music/Egypt/Hypnotic-Puzzle3.mp3.crdownload
 - Jeroen P. Broks
   - Most of the game's script files (all files suffixed with .lua) are either GNU/GPL licensed or zLib licensed, but check the files themselves to be sure. All asset files I created myself are licensed under a http://creativecommons.org/licenses/by-nc-sa/4.0/ license unless explicitly stated otherwise in files coming along. All 3rd party assets are copyrighted by their respective creators and their original licenses do still apply.
     - Build/Cynthia4Icon.png
@@ -18,6 +21,7 @@
     - Build/Game Jolt/Tumbnail.png
     - Build/Game Jolt/Tumbnail2.png
     - Credits.md
+    - GFX/Cynthia/South.jcr
     - GFX/CynthiaSpeaks/NewUser/Hello.png
     - GFX/CynthiaSpeaks/NewUser/Intro.png
     - GFX/General/Background.png
