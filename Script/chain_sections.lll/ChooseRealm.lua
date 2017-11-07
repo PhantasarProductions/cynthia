@@ -37,7 +37,22 @@ function gadget.draw()
   color(0,0,0,75)
   Rect(25,100,750,400)
   cr.p = cr.p or 1
-  
+  love.graphics.setFont(assets.coolvetica)
+  user.unlocked = user.unlocked or {}
+  user.unlocked.realms = user.unlocked.realms or {}
+  user.unlocked.puzzles = user.unlocked.puzzles or {}
+  user.solved = user.solved or {}
+  user.unlocked.realms.Egypt=true  
+  for i,realm in ipairs(realms) do
+      local y = (i-1)*15
+      local x = 0
+      local s = "???"
+      local r,g,b=100,100,100
+      if i==cr.p then x=15 end
+      if user.unlocked.realms[realm] then s=realm r,g,b=255,255,255 if i==cr.p then r,g,b=255,180,0 end end
+      color(r,g,b,250)
+      love.graphics.print( s, x+25, y+100)
+  end
 end
 
 local selector = { kind="$realmselector",x=0,y=0}
@@ -63,14 +78,33 @@ local gui = {
                   },
                   kiesmaar = selector,
                   ok = {
-                     
+                      kind = "button",
+                      x=500,
+                      y=550,
+                      caption="Ok",
+                      BR = 0,
+                      BG = 180,
+                      BB = 255                     
+                  },
+                  cancel = {
+                      kind = "button",
+                      x = 400,                      
+                      y = 550,
+                      BR = 255,
+                      BG = 0,
+                      BB = 0,
+                      caption = "Cancel",
+                      action = function(g) chain.go(CHOOSEREALM_backchainer or "MAINMENU") end
                   }
              } 
 
 }  
 luna.update(gui); lunar.CHOOSEREALM = gui
 
-
+function cr.update()
+    cr.p = cr.p or 1
+    gui.kids.ok.visible=user.unlocked[realms[cr.p]]
+end    
 
 
 

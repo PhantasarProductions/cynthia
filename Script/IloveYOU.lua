@@ -58,6 +58,8 @@ local junk =            {
                                      back    = "GFX/TILES/EGYPT/FLOOR_SAND.PNG"
                                    }
                         }
+phantasar.adddir(junk,'font','FONTS/')
+phantasar.adddir(junk,"image","GFX/STUFF/")                        
 print("Loading all assets");
 phantasar.after(function()
     -- backquad = love.graphics.newQuad(0,0,800,600,64,64)

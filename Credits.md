@@ -50,9 +50,14 @@
     - Music/General/Call to Adventure.mp3
     - Music/puzzles/Egypt/Return of the Mummy.mp3
     - Music/puzzles/Egypt/Silver Flame.mp3
+  - Released in the Public Domain
+    - music/Puzzles/Space/Future Setting A.mp3
 - Manfred Klein
   - Downloaded from dafont.com -- Set as "100% free"
     - fonts/BodoniXT.ttf
+- Ray Larabie
+  - Free for commercial and personal use - Full license file found on DaFont
+    - Fonts/Coolvetica.ttf
 
 
 
