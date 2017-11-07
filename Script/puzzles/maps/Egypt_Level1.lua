@@ -1,4 +1,4 @@
--- Generated on: Mon 06 November 2017; 17:58:22
+-- Generated on: Tue 07 November 2017; 12:50:14
 -- Author:       Jeroen P. Broks
 -- License:      GPL 3
 
@@ -9,8 +9,8 @@ local ret = {}
 	ret.defs = {}
 		ret.defs.grid={32,32}
 		ret.defs.texresize=false
-		ret.size.size={25,15}
-		ret.size.texture={
+		ret.defs.size={25,15}
+		ret.defs.texture={
 			[  1] = "GFX/Tiles/Egypt/Floor_Sand32.png",
 			[  2] = "GFX/Tiles/Egypt/Obstacle_Pyramid.png"
 		}
@@ -88,7 +88,8 @@ ret.datamap['Title'] = "The desert at the Nile"
 			{ {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}},
 			{ {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}}}
 
-	ret.fetchteddyobject = {}		ret.objects[10][14] = {
+	ret.fetchteddyobject = {}
+		ret.objects[10][14] = {
 			objtype = "Start",
 			coords = {x=14, y=10},
 			data = {
