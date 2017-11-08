@@ -46,6 +46,7 @@
     - Script/chain_sections.lll/ChoosePuzzle.lua
     - Script/chain_sections.lll/ChooseRealm.lua
     - Script/chain_sections.lll/chain_sections.lua
+    - Script/chain_sections.lll/game.lua
     - Script/chain_sections.lll/mainmenu.lua
     - Script/chain_sections.lll/newuser.lua
     - Script/loadpuzzle.lua
