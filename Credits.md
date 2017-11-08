@@ -21,7 +21,10 @@
     - Build/Game Jolt/Tumbnail.png
     - Build/Game Jolt/Tumbnail2.png
     - Credits.md
+    - GFX/Cynthia/East.jcr
+    - GFX/Cynthia/North.jcr
     - GFX/Cynthia/South.jcr
+    - GFX/Cynthia/West.jcr
     - GFX/CynthiaSpeaks/NewUser/Hello.png
     - GFX/CynthiaSpeaks/NewUser/Intro.png
     - GFX/General/Background.png
