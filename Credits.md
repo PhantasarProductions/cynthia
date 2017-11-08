@@ -27,6 +27,12 @@
     - GFX/Cynthia/West.jcr
     - GFX/CynthiaSpeaks/NewUser/Hello.png
     - GFX/CynthiaSpeaks/NewUser/Intro.png
+    - GFX/GameUI/Clockwise.png
+    - GFX/GameUI/CounterClockwise.png
+    - GFX/GameUI/Down.png
+    - GFX/GameUI/Left.png
+    - GFX/GameUI/Right.png
+    - GFX/GameUI/Up.png
     - GFX/General/Background.png
     - GFX/General/Cynthia.png
     - GFX/General/GPL3.piko
@@ -40,6 +46,7 @@
     - GFX/Tiles/Egypt/Floor_Sand_Dark.png
     - GFX/Tiles/Egypt/Obstacle_Cactus.png
     - GFX/Tiles/Egypt/Obstacle_Pyramid.png
+    - License
     - Readme.md
     - Script/IloveYOU.lua
     - Script/background.lua

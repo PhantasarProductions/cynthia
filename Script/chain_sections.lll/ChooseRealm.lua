@@ -27,7 +27,8 @@ local cr= {}
 local realms = {"Egypt"}
 
 
-function cr.draw() end
+function cr.draw()
+end
 
 
 local gadget = {}

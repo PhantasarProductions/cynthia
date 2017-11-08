@@ -89,7 +89,11 @@ cp.gui = {
                       BR = 0,
                       BG = 180,
                       BB = 255,
-                      action = function(g) end                     
+                      action = function(g)
+                         user.pzp = cp.p
+                         user.puzzle = puzzles[user.realm][user.pzp].file
+                         chain.go("GAME") 
+                      end                     
                   },
                   cancel = {
                       kind = "button",

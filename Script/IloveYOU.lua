@@ -20,7 +20,7 @@
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 17.11.07
+Version: 17.11.08
 ]]
 
 -- *import phantasar
@@ -36,7 +36,7 @@ flow = chain_sections
 
 
 
-mkl.version("Cynthia Johnson - IloveYOU.lua","17.11.07")
+mkl.version("Cynthia Johnson - IloveYOU.lua","17.11.08")
 mkl.lic    ("Cynthia Johnson - IloveYOU.lua","GNU General Public License 3")
 
 
@@ -51,28 +51,32 @@ end
 
 
 function load_all_my_crap()
-local ichain
-if not user then ichain="NEWUSER" else ichain="MAINMENU" end
-local junk =            {
+  local ichain
+  if not user then ichain="NEWUSER" else ichain="MAINMENU" end
+  local junk =            {
                            image = { cynthia = "GFX/GENERAL/CYNTHIA.PNG",
                                      logo    = "GFX/GENERAL/LOGO.PNG",
                                      back    = "GFX/TILES/EGYPT/FLOOR_SAND.PNG"
                                    }
-                        }
-phantasar.adddir(junk,'font','FONTS/')
-phantasar.adddir(junk,"image","GFX/STUFF/")                        
-print("Loading all assets");
-phantasar.after(function()
+                          }
+  for w in each({"North","South","East","West"}) do 
+      junk.image['player.'..lower(w)] = "GFX/CYNTHIA/"..upper(w)..".JCR" 
+  end                                                
+  phantasar.adddir(junk,'font','FONTS/')
+  phantasar.adddir(junk,"image","GFX/STUFF/")
+  print("Loading all assets");
+  phantasar.after(function()
     -- backquad = love.graphics.newQuad(0,0,800,600,64,64)
-end)
-assets = phantasar.init(junk,ichain)                        
+  end)
+  assets = phantasar.init(junk,ichain)                        
 end 
          
 load_all_my_crap()
 load_all_my_crap = nil              
  
 function love.quit()
-  if chain.currentname=="GAME" then
+  if chain.currentname=="GAME" --and false 
+    then -- and false must be removed in actual version
      love.window.showMessageBox( "Cynthia Johnson", "You can not quit while in-game.\nIn order to quit, please go back to the main menu and use the quit feature there.", "error", true )     
      return true
   end
