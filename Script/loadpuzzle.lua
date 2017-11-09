@@ -31,6 +31,7 @@ local function loadpuzzle(f)
       ret.script = {}
       local sf = "SCRIPT/PUZZLES/Script/"..upper(f)..".lua"
       if love.filesystem.isFile(sf) then ret.script = j_love_import(sf) end      
+      return ret
 end
 
 return loadpuzzle

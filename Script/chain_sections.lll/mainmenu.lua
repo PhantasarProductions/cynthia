@@ -105,6 +105,7 @@ function mm.update()
     for g in each(mm.buttons) do 
         if g.x>100 then g.x=g.x-2 g.ax=g.x end
     end
+    math.random(1,10) -- No function except for keeping random numbers purely random. Nobody can hit any buttons at the same speed all the time. :-P
 end
 
 return mm

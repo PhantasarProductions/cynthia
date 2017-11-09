@@ -40,9 +40,13 @@
     - GFX/General/Logo.piko
     - GFX/General/Logo.png
     - GFX/Stuff/Exit.png
+    - GFX/Tiles/All/Water.piko
+    - GFX/Tiles/All/Water.png
     - GFX/Tiles/Egypt/Floor_Sand.png
     - GFX/Tiles/Egypt/Floor_Sand32.png
     - GFX/Tiles/Egypt/Floor_Sand32_Bright.png
+    - GFX/Tiles/Egypt/Floor_Sand32_East_Bank.png
+    - GFX/Tiles/Egypt/Floor_Sand32_West_Bank.png
     - GFX/Tiles/Egypt/Floor_Sand_Dark.png
     - GFX/Tiles/Egypt/Obstacle_Cactus.png
     - GFX/Tiles/Egypt/Obstacle_Pyramid.png

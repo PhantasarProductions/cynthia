@@ -105,6 +105,8 @@ luna.update(gui); lunar.CHOOSEREALM = gui
 
 function cr.update()
     cr.p = cr.p or 1
+    user.unlocked = user.unlocked or {}
+    user.unlocked.realms = user.unlocked.realms or {}
     gui.kids.ok.visible=user.unlocked.realms[realms[cr.p]]
 end    
 

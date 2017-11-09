@@ -67,6 +67,7 @@ function load_all_my_crap()
   print("Loading all assets");
   phantasar.after(function()
     -- backquad = love.graphics.newQuad(0,0,800,600,64,64)
+    for w in each({"north","south","east","west"}) do QHot(assets['player.'..w],'cb') end
   end)
   assets = phantasar.init(junk,ichain)                        
 end 
