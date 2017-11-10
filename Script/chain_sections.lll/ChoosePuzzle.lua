@@ -40,7 +40,7 @@ local pzsg = {
              x = 25
              r,g,b=255,180,0          
           end   
-          if cp.p==1 then user.unlocked.puzzles[pz.file]=true end
+          if i==1 then user.unlocked.puzzles[pz.file]=true end
           if user.unlocked.puzzles[pz.file] then
              if user.solved[pz.file] then
                 color(255,180,0)
@@ -93,6 +93,10 @@ cp.gui = {
                       action = function(g)
                          user.pzp = cp.p
                          user.puzzle = puzzles[user.realm][user.pzp].file
+                         if not user.unlocked.puzzles[user.puzzle] then
+                            love.window.showMessageBox( "Cynthia Johnson", "That puzzle is currently locked.\nYou may need to solve another puzzle first or to obtain a certain bonus in order to unlock this puzzle", "error", true )
+                            return
+                         end
                          chain.go("GAME") 
                       end                     
                   },
