@@ -7,7 +7,7 @@ local ret = {}
 			title="The desert at the Nile"
 		}	ret.Egypt[2] = {
 			file='Egypt_Level2',
-			title="Snakes?! Why did it have to be sakes!?"
+			title="Snakes?! Why did it have to be snakes!?"
 		}
 
 return ret
