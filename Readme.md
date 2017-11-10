@@ -7,3 +7,11 @@ There will not be much of a story. Cynthia is just the mascotte to put the game 
 
 
 ![](https://github.com/PhantasarProductions/cynthia/blob/master/GFX/General/Cynthia.png?raw=true)
+
+
+Sites:
+
+- Official Site: https://tricky.gamejolt.io/cynthia
+- GitHub: https://github.com/PhantasarProductions/cynthia
+- Game Jolt: https://gamejolt.com/games/cynthia/294717
+
