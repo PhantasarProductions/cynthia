@@ -173,10 +173,11 @@ function game.update()
      if player.keepwalking then game.walk(player.keepwalking,true) end
      if player.gx~=0 or player.gy~=0 or love.keyboard.isDown('up') or love.keyboard.isDown('down') or love.keyboard.isDown('left') or love.keyboard.isDown('right') or love.keyboard.isDown('w') or love.keyboard.isDown('a') or love.keyboard.isDown('s') or love.keyboard.isDown('d') then
         player.frametime = player.frametime or nt
-        if math.abs(nt-game.timer)>.5 then 
+        if math.abs(nt-player.frametime)>.1 then 
            player.f = player.f + 1
            if player.gx>0 then player.gx = player.gx - 4 elseif player.gx<0 then player.gx = player.gx + 4 end 
-           if player.gy>0 then player.gy = player.gy - 4 elseif player.gy<0 then player.gy = player.gy + 4 end 
+           if player.gy>0 then player.gy = player.gy - 4 elseif player.gy<0 then player.gy = player.gy + 4 end
+           player.frametime=nt 
         end
         if player.f>4 then player.f=1 end
      else
