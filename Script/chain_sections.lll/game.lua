@@ -70,6 +70,11 @@ function game.drawobjects(ox,oy)
                 if o.objtype=="Exit" then
                    color(math.random(0,255),math.random(0,255),math.random(0,255))
                    DrawImage(assets.exit,ox+((x-1)*32),oy+((y-1)*32))
+                   if x==player.x and y==player.y then
+                      screenshot = love.graphics.newScreenshot( )
+                      screenshotalpha=255
+                      chain.go('ENDLEVEL')
+                   end   
                 end
             end
         end
