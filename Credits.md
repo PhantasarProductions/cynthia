@@ -62,9 +62,15 @@
     - Script/chain_sections.lll/newuser.lua
     - Script/loadpuzzle.lua
     - Script/puzzles/maps/Egypt_Level1.lua
+    - Script/puzzles/maps/Egypt_Level2.lua
     - Script/puzzles/titles.lua
     - Script/users.lua
     - disclaimer.md
+- Johnny Automatic
+  - Released in the Public Domain
+    - GFX/Tiles/Egypt/Sphinx.piko
+    - GFX/Tiles/Egypt/Sphinx.png
+    - GFX/Tiles/Egypt/Sphinx_6d.piko
 - Kevin McLeod
   - The music by Kevin McLeod was downloaded from http://incompetech.org and has been released under a creative commons license. Check out Kevin's details for all the details.
     - Music/General/Call to Adventure.mp3
