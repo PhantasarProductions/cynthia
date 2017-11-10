@@ -24,6 +24,7 @@ Version: 17.11.07
 ]]
 local cp = {}
 
+local afstand=20
 
 local pzsg = {
 
@@ -33,7 +34,7 @@ local pzsg = {
        cp.p = cp.p or 1
        love.graphics.setFont(assets.coolvetica)       
        for i,pz in ipairs(puzzles[user.realm]) do
-          local x,y = 0,i*25
+          local x,y = 0,i*afstand
           local r,g,b = 255,255,255
           if cp.p==i then
              x = 25
@@ -110,5 +111,27 @@ cp.gui = {
 
 function cp.draw() end
 function cp.arrive() cp.p = user.pzp or 1; user.pzp = cp.p  cp.realmlabel.caption=user.realm end
+
+function cp.keypressed(key)
+  local pzl = puzzles[user.realm]
+  print("keypressed: "..key)
+  if key=="down" and cp.p < #pzl then cp.p = cp.p + 1 end
+  if key=="up"   and cp.p > 1    then cp.p = cp.p - 1 end
+  user.pzp = cp.p
+end
+
+function cp.mousepressed(x,y,but)
+  print("mouse pressed ("..x..","..y.."); button: "..but)
+  local pzl = puzzles[user.realm]
+  if x<25 or x>775 then return end
+  local wp = math.floor((y-120)/afstand)
+  print("requested position: "..wp.."; from: "..cp.p)
+  if wp<1     then return end
+  if wp>#pzl  then return end
+  if wp==cp.p then cp.gui.kids.ok:action() end
+  cp.p = wp  
+  user.pzp = cp.p
+end
+
 
 return cp
