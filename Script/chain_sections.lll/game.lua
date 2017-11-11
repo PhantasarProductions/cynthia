@@ -23,8 +23,10 @@
 Version: 17.11.08
 ]]
 
-local allowinstantwin = true -- Must be false in full release
+local allowinstantwin = false -- Must be false in full release
+local debugcoords = false 
 
+local debugcoordsgadget = { visible = debugcoords, kind='label', caption="", x=600,y=5 }
 
 local game = {}
 local pz
@@ -80,11 +82,27 @@ game.objs = {
   Start = { draw = function() end},
   Snake = { draw = function(o,x,y,ox,oy)
                        QHot(assets.snake,"bc")
-                       DrawImage(assets.exit,ox+((x-1)*32),oy+((y-1)*32))
-                       if pz.layers.Walls[y][x]==0 then pz.layers.Walls[y][x] = 256 end -- Make sure the player won't walk through the snake
+                       local s,sp=1,1; if o.data.Wind=='W' or o.data.Wind=="w" then s=-1 sp=0 end
+                       DrawImage(assets.snake,ox+((x-sp)*32),oy+((y-1)*32),1,0,s,1)
+                       if pz.layers.Walls[y][x]==0 then 
+                          pz.layers.Walls[y][x] = 256
+                          print('Blockade $ff on ('..x..","..y..')') 
+                       end -- Make sure the player won't walk through the snake
                        if not player then return end
-                       local d = { W=player.x<o.x,E=player.x>o.x}
-                       assert ( d ~= nil , "Unkown direction for snake "..o.datamap.TeddyID)
+                       local d = { W=player.x<x,E=player.x>x}
+                       assert ( d[o.data.Wind] ~= nil , "Unkown direction for snake "..o.data.TeddyID)
+                       if d[o.data.Wind] and player.y==y and (not o.spit) then
+                          o.spit = {}
+                          o.spit.x = x
+                          o.spit.y = y
+                          o.spit.d = s
+                       end
+                       if o.spit then
+                          DrawImage(assets.spit,ox+((o.spit.x-1)*32),(oy+((o.spit.y-1)*32))+8,1,0,1,1)
+                          o.spit.x = o.spit.x + s
+                          if pz.layers.Walls[o.spit.y][o.spit.x]>0 then o.spit=nil end
+                       end   
+                       
                    end
   }
 
@@ -161,6 +179,8 @@ function game.walk(d,keepwalking)
    player.gy=wd.gy
    player.w =wd.w
    if keepwalking then player.keepwalking=d end
+   debugcoordsgadget.caption='('..player.x..","..player.y..")"
+   if debugcoords then print("Player moving to: ("..player.x..","..player.y..")") end
 end
 
 local function gmove(g)
@@ -182,7 +202,8 @@ game.gui = {
                   { kind = 'button', image='GFX/GAMEUI/DOWN.PNG', caption="", BR=0,BG=0,BB=20, action=gmove, x=730,y=535, gtid='d', w=30,imgx=7},
                   { kind = 'button', image='GFX/GAMEUI/LEFT.PNG', caption="", BR=0,BG=0,BB=20, action=gmove, x=700,y=535, gtid='l', w=30,imgx=7},
                   { kind = 'button', image='GFX/GAMEUI/RIGHT.PNG', caption="", BR=0,BG=0,BB=20, action=gmove, x=760,y=535, gtid='r', w=30,imgx=7},
-                  { kind = 'button', caption="INSTANT WIN", BR=255,BG=0,BB=0,FR=255,FG=180,FB=180, visible=allowinstantwin, action=function() game.pend=true user.endstatus='success' end,y=550}                                    
+                  { kind = 'button', caption="INSTANT WIN", BR=255,BG=0,BB=0,FR=255,FG=180,FB=180, visible=allowinstantwin, action=function() game.pend=true user.endstatus='success' end,y=550}  ,
+                  debugcoordsgadget                                 
              }
 }
 lunar.GAME = game.gui
@@ -252,6 +273,7 @@ function game.arrive()
      player.time=0
      player.moved=0
      player.imove = imove
+     debugcoordsgadget.caption='('..player.x..","..player.y..")"
 end
 
 function game.keypressed(key)

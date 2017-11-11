@@ -44,6 +44,7 @@
     - GFX/General/Logo.png
     - GFX/Stuff/Exit.png
     - GFX/Stuff/Snake.png
+    - GFX/Stuff/Spit.png
     - GFX/Tiles/All/Water.piko
     - GFX/Tiles/All/Water.png
     - GFX/Tiles/Egypt/Floor_Sand.png
