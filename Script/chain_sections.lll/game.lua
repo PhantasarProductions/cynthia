@@ -40,7 +40,7 @@ game.layp = {
     Walls = {x=-16,y=0,hot='cb', player=true}
 }
 
-game.w = {N='north',W='west',E='east',S='south'}
+game.w = {N='north',W='west',E='east',S='south',DEAD='dead'}
 
 function game.drawlayer(l,ofx,ofy)
     local vx,vy,c,tag,layp,tex,teximg,playtag
@@ -51,6 +51,7 @@ function game.drawlayer(l,ofx,ofy)
            c = pz.layers[l][y][x]
            if layp.player and x==player.x and y==player.y then
               playtag = 'player.'..game.w[player.w]
+              if player.w=='DEAD' then player.f=1 end
               DrawImage(assets[playtag],ofx + (x*32) + layp.x + player.gx, ofy + (y*32) + layp.y + player.gy,player.f)
            end
            if c>0 and c<256 then -- Values above 255 can be used to cause the system to block you anyway.
@@ -100,6 +101,7 @@ game.objs = {
                        if o.spit then
                           DrawImage(assets.spit,ox+((o.spit.x-1)*32),(oy+((o.spit.y-1)*32))+8,1,0,1,1)
                           o.spit.x = o.spit.x + s
+                          if o.spit.x == player.x and o.spit.y==player.y then player.w="DEAD" end
                           if pz.layers.Walls[o.spit.y][o.spit.x]>0 then o.spit=nil end
                        end   
                        
@@ -122,6 +124,7 @@ end
 
 local canvasgadget = {
       draw = function(g)
+              if player.w=="DEAD" then game.pend=true user.endstatus='failed' music.play('MUSIC/ENDPUZZLE/MUSIC FOR FUNERAL HOME - PART 1.MP3') end
               color(0,0,0,254)
               DrawRect(g.x,g.y,g.w,g.h) 
               game.drawlayer('Floor',g.x,g.y); game.drawobjects(g.x,g.y)
@@ -144,6 +147,7 @@ game.puzzletime   = {kind = 'label',x=50,y=510,font='FONTS/COOLVETICA.TTF',fonts
 game.puzzlemove   = {kind = 'label',x=50,y=530,font='FONTS/COOLVETICA.TTF',fontsize=15,FR=0,FG=0,FB=0}
 
 local function gturn(g)
+     if player.w=='DEAD' then return end
      if g.gtid=="cw" then
         if     player.w=="N" then player.w="E"
         elseif player.w=="E" then player.w="S"
@@ -164,6 +168,7 @@ game.walkdata = { u = {px= 0, py=-1,gx=  0,gy= 32,w='N'},
                   r = {px= 1, py= 0,gx=-32,gy=  0,w='E'}
                 }
 function game.walk(d,keepwalking)
+   if player.w=='DEAD'         then return end
    if player.gx~= 0            then return end
    if player.gy~= 0            then return end
    if player.x == 1 and d=='l' then return end
@@ -219,6 +224,7 @@ function game.update()
         user.time = player.time
      end
      if player.keepwalking then game.walk(player.keepwalking,true) end
+     if player.w=='DEAD' then player.gx=0 player.gy=0 player.keepwalking=false player.f=0 player.frametime=nil end
      if player.gx~=0 or player.gy~=0 or love.keyboard.isDown('up') or love.keyboard.isDown('down') or love.keyboard.isDown('left') or love.keyboard.isDown('right') or love.keyboard.isDown('w') or love.keyboard.isDown('a') or love.keyboard.isDown('s') or love.keyboard.isDown('d') then
         player.frametime = player.frametime or nt
         if math.abs(nt-player.frametime)>.05 then 
