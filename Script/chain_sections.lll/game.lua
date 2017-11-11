@@ -82,6 +82,7 @@ game.objs = {
                        QHot(assets.snake,"bc")
                        DrawImage(assets.exit,ox+((x-1)*32),oy+((y-1)*32))
                        if pz.layers.Walls[y][x]==0 then pz.layers.Walls[y][x] = 256 end -- Make sure the player won't walk through the snake
+                       if not player then return end
                        local d = { W=player.x<o.x,E=player.x>o.x}
                        assert ( d ~= nil , "Unkown direction for snake "..o.datamap.TeddyID)
                    end

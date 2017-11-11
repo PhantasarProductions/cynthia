@@ -5,7 +5,32 @@ local leaderdata
 
 ep.ot = 0
 
-ep.gui = { kind='pivot', x =0, y = 0, kids = { { kind='button',BR=127,BG=90,BB=0, caption='>>',x=700,y=500}}}
+
+local function unlocknext()
+   if user.pzp<#puzzles[user.realm] then
+      user.pzp = user.pzp + 1
+      user.unlocked.puzzles[puzzles[user.realm][user.pzp].file] = true
+      saveuser()
+   end
+   chain.go("CHOOSEPUZZLE")
+end
+
+local function whatnext()
+    if user.endstatus=='success' then
+       user.donebefore = user.donebefore or {}
+       if not user.donebefore[user.puzzle] then
+         local fnext="SCRIPT/PUZZLE/SCRIPT/NEXT/"..user.puzzle..".LUA"
+         local donext = unlocknext
+         if love.filesystem.isFile(fnext) then donext=j_love_import(fnext) end
+         donext()
+         user.donebefore[user.puzzle] = true
+         return  
+       end
+     end
+     chain.go('CHOOSEPUZZLE')    
+end
+
+ep.gui = { kind='pivot', x =0, y = 0, kids = { { kind='button',BR=127,BG=90,BB=0, caption='>>',x=700,y=500, action=whatnext}}}
 luna.update(ep.gui)
 lunar.ENDPUZZLE = ep.gui
 
