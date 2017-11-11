@@ -14,4 +14,4 @@ Sites:
 - Official Site: https://tricky.gamejolt.io/cynthia
 - GitHub: https://github.com/PhantasarProductions/cynthia
 - Game Jolt: https://gamejolt.com/games/cynthia/294717
-
+- Leaderboards: http://tinyurl.com/CynthiaLeader
