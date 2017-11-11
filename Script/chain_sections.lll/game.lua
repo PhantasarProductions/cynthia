@@ -23,6 +23,8 @@
 Version: 17.11.08
 ]]
 
+local allowinstantwin = true -- Must be false in full release
+
 
 local game = {}
 local pz
@@ -49,7 +51,7 @@ function game.drawlayer(l,ofx,ofy)
               playtag = 'player.'..game.w[player.w]
               DrawImage(assets[playtag],ofx + (x*32) + layp.x + player.gx, ofy + (y*32) + layp.y + player.gy,player.f)
            end
-           if c>0 then
+           if c>0 and c<256 then -- Values above 255 can be used to cause the system to block you anyway.
               tex = pz.defs.texture[c]; assert(tex,"No texture for value "..c); tex=upper(tex)
               tag = layp.hot.."."..tex
               game.tex[tag] = game.tex[tag] or LoadImage(tex)
@@ -62,20 +64,38 @@ function game.drawlayer(l,ofx,ofy)
     end
 end
 
+game.objs = {
+
+  Exit = { draw = function(o,x,y,ox,oy)
+                    --if o.objtype=="Exit" then
+                    color(math.random(0,255),math.random(0,255),math.random(0,255))
+                    DrawImage(assets.exit,ox+((x-1)*32),oy+((y-1)*32))
+                    if x==player.x and y==player.y then
+                       game.pend = true
+                       user.endstatus="success"
+                    end
+                   end                      
+
+  },
+  Start = { draw = function() end},
+  Snake = { draw = function(o,x,y,ox,oy)
+                       QHot(assets.snake,"bc")
+                       DrawImage(assets.exit,ox+((x-1)*32),oy+((y-1)*32))
+                       if pz.layers.Walls[y][x]==0 then pz.layers.Walls[y][x] = 256 end -- Make sure the player won't walk through the snake
+                       local d = { W=player.x<o.x,E=player.x>o.x}
+                       assert ( d ~= nil , "Unkown direction for snake "..o.datamap.TeddyID)
+                   end
+  }
+
+}
+
 function game.drawobjects(ox,oy)
     for y=1,15 do
         for x=1,25 do
             --if #pz.objects[y][x]>0 then print(serialize(x..","..y,pz.objects[y][x])) end -- debug line MUST BE DEACTIVATED IN ACTUAL PLAY
             for o in each(pz.objects[y][x]) do
-                if o.objtype=="Exit" then
-                   color(math.random(0,255),math.random(0,255),math.random(0,255))
-                   DrawImage(assets.exit,ox+((x-1)*32),oy+((y-1)*32))
-                   if x==player.x and y==player.y then
-                      screenshot = love.graphics.newScreenshot( )
-                      screenshotalpha=255
-                      chain.go('ENDLEVEL')
-                   end   
-                end
+                assert(game.objs[o.objtype],"No object instructions")
+                game.objs[o.objtype].draw(o,x,y,ox,oy)                
             end
         end
     end    
@@ -88,6 +108,12 @@ local canvasgadget = {
               game.drawlayer('Floor',g.x,g.y); game.drawobjects(g.x,g.y)
               game.drawlayer('Walls',g.x,g.y)
               game.drawlayer('Front',g.x,g.y)
+              if game.pend then
+                       screenshotdata = love.graphics.newScreenshot( )
+                       screenshot = love.graphics.newImage(screenshotdata)
+                       screenshotalpha=255
+                       chain.go('ENDPUZZLE')
+              end         
                       
       end
 }
@@ -155,8 +181,7 @@ game.gui = {
                   { kind = 'button', image='GFX/GAMEUI/DOWN.PNG', caption="", BR=0,BG=0,BB=20, action=gmove, x=730,y=535, gtid='d', w=30,imgx=7},
                   { kind = 'button', image='GFX/GAMEUI/LEFT.PNG', caption="", BR=0,BG=0,BB=20, action=gmove, x=700,y=535, gtid='l', w=30,imgx=7},
                   { kind = 'button', image='GFX/GAMEUI/RIGHT.PNG', caption="", BR=0,BG=0,BB=20, action=gmove, x=760,y=535, gtid='r', w=30,imgx=7},
-                  
-                  
+                  { kind = 'button', caption="INSTANT WIN", BR=255,BG=0,BB=0,FR=255,FG=180,FB=180, visible=allowinstantwin, action=function() game.pend=true end,y=550}                                    
              }
 }
 lunar.GAME = game.gui
@@ -169,6 +194,7 @@ function game.update()
         player.time = player.time + 1
         game.timer  = nt
         game.puzzletime.caption = "Time: "..sec2time(player.time)
+        user.time = player.time
      end
      if player.keepwalking then game.walk(player.keepwalking,true) end
      if player.gx~=0 or player.gy~=0 or love.keyboard.isDown('up') or love.keyboard.isDown('down') or love.keyboard.isDown('left') or love.keyboard.isDown('right') or love.keyboard.isDown('w') or love.keyboard.isDown('a') or love.keyboard.isDown('s') or love.keyboard.isDown('d') then
@@ -189,11 +215,13 @@ end
         
 local function imove(pl)
     pl.moved = pl.moved + 1
+    user.moved = pl.moved
     game.puzzlemove.caption = "Actions: "..pl.moved
 end            
      
 
 function game.arrive()
+     game.pend=false
      print("\27[44mLoading puzzle\27[0m")
      pz = loadpuzzle(user.puzzle)
      game.puzzleheader.caption = user.realm.." puzzle #"..user.pzp..": "..pz.datamap.Title

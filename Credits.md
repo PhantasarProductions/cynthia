@@ -40,6 +40,7 @@
     - GFX/General/Logo.piko
     - GFX/General/Logo.png
     - GFX/Stuff/Exit.png
+    - GFX/Stuff/Snake.png
     - GFX/Tiles/All/Water.piko
     - GFX/Tiles/All/Water.png
     - GFX/Tiles/Egypt/Floor_Sand.png
@@ -56,6 +57,7 @@
     - Script/background.lua
     - Script/chain_sections.lll/ChoosePuzzle.lua
     - Script/chain_sections.lll/ChooseRealm.lua
+    - Script/chain_sections.lll/EndPuzzle.lua
     - Script/chain_sections.lll/chain_sections.lua
     - Script/chain_sections.lll/game.lua
     - Script/chain_sections.lll/mainmenu.lua
