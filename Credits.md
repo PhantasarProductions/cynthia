@@ -83,6 +83,7 @@
     - Music/puzzles/Egypt/Silver Flame.mp3
   - Released in the Public Domain
     - music/EndPuzzle/Music for Funeral Home - Part 1.mp3
+    - music/Puzzles/Egypt/East of Tunesia.mp3
     - music/Puzzles/Space/Future Setting A.mp3
 - Manfred Klein
   - Downloaded from dafont.com -- Set as "100% free"
