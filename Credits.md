@@ -27,6 +27,9 @@
     - GFX/Cynthia/West.jcr
     - GFX/CynthiaSpeaks/NewUser/Hello.png
     - GFX/CynthiaSpeaks/NewUser/Intro.png
+    - GFX/EndPuzzle/Failed.png
+    - GFX/EndPuzzle/GiveUp.png
+    - GFX/EndPuzzle/Success.png
     - GFX/GameUI/Clockwise.png
     - GFX/GameUI/CounterClockwise.png
     - GFX/GameUI/Down.png
@@ -79,6 +82,7 @@
     - Music/puzzles/Egypt/Return of the Mummy.mp3
     - Music/puzzles/Egypt/Silver Flame.mp3
   - Released in the Public Domain
+    - music/EndPuzzle/Music for Funeral Home - Part 1.mp3
     - music/Puzzles/Space/Future Setting A.mp3
 - Manfred Klein
   - Downloaded from dafont.com -- Set as "100% free"

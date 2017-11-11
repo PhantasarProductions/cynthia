@@ -3,7 +3,7 @@ local leaderdata
 
 ep.ot = 0
 
-ep.gui = { kind='pivot', x =0, y = 0, kids = { { kind='button',BR=127,BG=90,BB=0, caption='>>'}}}
+ep.gui = { kind='pivot', x =0, y = 0, kids = { { kind='button',BR=127,BG=90,BB=0, caption='>>',x=500,y=500}}}
 luna.update(ep.gui)
 lunar.ENDPUZZLE = ep.gui
 
@@ -21,7 +21,7 @@ function ep.draw()
     if type(leaderdata) == 'table' then
        local y=150
        local inc=20
-       for k,d in spairs(ep.loadname) do
+       for k,d in spairs(ep.leadname) do
            QText(d,50,y) y=y+inc;
            for rank=1,5 do
                local r,g,b=255,180,0
@@ -36,7 +36,7 @@ function ep.draw()
     else
        Color(255,0,0,255)
        QText("Failure with Anna:",200,200)
-       QText(leaderdata,200,30)
+       QText(leaderdata,200,300)
     end     
     -- This always comes last
     if screenshot then
