@@ -1,4 +1,4 @@
--- Generated on: Sun 12 November 2017; 10:51:56
+-- Generated on: Sun 12 November 2017; 12:10:22
 -- Author:       Jeroen P. Broks
 -- License:      GPL 3
 
@@ -92,12 +92,52 @@ local ret = {}
 			{ {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}}}
 
 	ret.fetchteddyobject = {}
+		ret.objects[7][4][#ret.objects[7][4]+1] = {
+			objtype = "Snake",
+			coords = {x=4, y=7},
+			data = {
+				['TeddyID'] = "3-6-1",
+				['Wind'] = "E"}}
+		ret.fetchteddyobject['3-6-1'] = ret.objects[7][4][#ret.objects[7][4]]
+
+		ret.objects[9][5][#ret.objects[9][5]+1] = {
+			objtype = "Snake",
+			coords = {x=5, y=9},
+			data = {
+				['TeddyID'] = "4-8-1",
+				['Wind'] = "W"}}
+		ret.fetchteddyobject['4-8-1'] = ret.objects[9][5][#ret.objects[9][5]]
+
 		ret.objects[11][18][#ret.objects[11][18]+1] = {
 			objtype = "Exit",
 			coords = {x=18, y=11},
 			data = {
 				['TeddyID'] = "11-A-1"}}
 		ret.fetchteddyobject['11-A-1'] = ret.objects[11][18][#ret.objects[11][18]]
+
+		ret.objects[12][17][#ret.objects[12][17]+1] = {
+			objtype = "Snake",
+			coords = {x=17, y=12},
+			data = {
+				['TeddyID'] = "10-B-1",
+				['Wind'] = "E"}}
+		ret.fetchteddyobject['10-B-1'] = ret.objects[12][17][#ret.objects[12][17]]
+
+		ret.objects[13][19][#ret.objects[13][19]+1] = {
+			objtype = "Snake",
+			coords = {x=19, y=13},
+			data = {
+				['TeddyID'] = "12-C-1",
+				['Wind'] = "W"}}
+		ret.fetchteddyobject['12-C-1'] = ret.objects[13][19][#ret.objects[13][19]]
+
+		ret.objects[14][18][#ret.objects[14][18]+1] = {
+			objtype = "Snake",
+			coords = {x=18, y=14},
+			data = {
+				['TeddyID'] = "11-D-1",
+				['Wind'] = "W"}}
+		ret.fetchteddyobject['11-D-1'] = ret.objects[14][18][#ret.objects[14][18]]
 
 		ret.objects[15][1][#ret.objects[15][1]+1] = {
 			objtype = "Start",
