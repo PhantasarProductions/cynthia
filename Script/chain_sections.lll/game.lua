@@ -32,7 +32,7 @@ local game = {}
 local pz
 
 game.tex = {}
-local player
+local player,projectile
 
 game.layp = { 
     Floor = {x=-16,y=0,hot='cb'},
@@ -53,6 +53,9 @@ function game.drawlayer(l,ofx,ofy)
               playtag = 'player.'..game.w[player.w]
               if player.w=='DEAD' then player.f=1 end
               DrawImage(assets[playtag],ofx + (x*32) + layp.x + player.gx, ofy + (y*32) + layp.y + player.gy,player.f)
+              if projectile then                 
+                 DrawImage(projectile.img, ofx+(projectile.x*32) + layp.x + projectile.gx, ofy + (projectile.y*32) + layp.y + projectile.gy)
+              end
            end
            if c>0 and c<256 then -- Values above 255 can be used to cause the system to block you anyway.
               tex = pz.defs.texture[c]; assert(tex,"No texture for value "..c); tex=upper(tex)
@@ -104,7 +107,8 @@ game.objs = {
                           if o.spit.x == player.x and o.spit.y==player.y then player.w="DEAD" end
                           if pz.layers.Walls[o.spit.y][o.spit.x]>0 then o.spit=nil end
                        end                          
-                   end
+                   end,
+                   killable=true
   },                 
   Rock = { draw = function(o,x,y,ox,oy)
                       QHot(assets.rock,"cc")
@@ -114,13 +118,42 @@ game.objs = {
                          player.rocks = (player.rocks or 0) +1
                          o.objtype='kill'
                          game.throwrock.caption=player.rocks
+                         game.throwrock.acaption=nil
+                         --game.t_text=nil
                          game.throwrock.visible=true
-                         luna.update(game.throwrock)
+                         --luna.update(game.throwrock)
+                         game.throwrock:lf_init()
+                         print("Rock Button updated?")
                       end      
                   end
   }
 
 }
+
+function game.throw(proj,ax,ay,aw)
+   local w = aw or player.w
+   local x = ax or player.x
+   local y = ay or player.y
+   if projectile then return end -- You cannot throw until the last projectile has reached its destination!
+   if     w=='DEAD' then return end -- You cannot throw when you are dead (obious, eh?
+   projectile = { x=x,y=y,w=w,p=proj,gx=0,gy=0, mx=0, my=0}
+   if     w=='W'    then projectile.mx=-4 projectile.mnx=-32  
+   elseif w=='E'    then projectile.mx= 4 projectile.mnx= 32
+   elseif w=='N'    then projectile.my=-4 projectile.mny=-32 
+   elseif w=='S'    then projectile.my= 4 projectile.mny= 32
+   else   error("Unknown direction for throwing a "..proj.." >> "..w) end
+   if     proj=="Rock"   then projectile.img = assets.rock 
+   elseif proj=='Dagger' then projectile.img = assets['dagger.'..lower(w)]
+   else   error('Unknown projectile: '..proj) end
+   for k,v in spairs(projectile) do print(type(v).." "..k..";") end -- debug line
+   local pro = lower(proj)
+   player[pro.."s"] = player[pro.."s"] - 1
+   game['throw'..pro].caption=player[pro.."s"]
+   game['throw'..pro].acaption=nil
+   game['throw'..pro].visible=player[pro.."s"]>0
+   game['throw'..pro]:lf_init()
+   player.moved = (player.moved or 0) + 1
+end
 
 function game.drawobjects(ox,oy)
     local killed = {}
@@ -132,13 +165,15 @@ function game.drawobjects(ox,oy)
                    assert(game.objs[o.objtype],"No object instructions for "..o.objtype)
                    game.objs[o.objtype].draw(o,x,y,ox,oy)
                 else
-                   killed[#killed]={x=x,y=y,TeddyID=o.data.TeddyID}   
+                   killed[#killed+1]={x=x,y=y,TeddyID=o.data.TeddyID}   
+                   print(o.data.TeddyID.." scheduled to be killed!\n"..serialize("  killed",killed))
                 end                   
             end
         end
     end
     for kill in each(killed) do
         local x,y=kill.x,kill.y
+        print("Killing: "..kill.TeddyID.." on ("..x..","..y..")")
         pz.fetchteddyobject[kill.TeddyID]=nil
         local old = pz.objects[y][x]
         local new = {}
@@ -172,7 +207,7 @@ game.canvas = { kind='$gamecanvas',x=0,y=20,w=800,h=480}
 game.puzzleheader = {kind = 'label',x=5,y=5,font='FONTS/COOLVETICA.TTF',fontsize=10,FR=0,FG=0,FB=0}
 game.puzzletime   = {kind = 'label',x=50,y=510,font='FONTS/COOLVETICA.TTF',fontsize=15,FR=0,FG=0,FB=0}
 game.puzzlemove   = {kind = 'label',x=50,y=530,font='FONTS/COOLVETICA.TTF',fontsize=15,FR=0,FG=0,FB=0}
-game.throwrock    = {kind = 'label',x=400,y=510, caption=0, visible=false,FR=255,FG=180,FB=0,FR=0,FG=1,FB=5,image='GFX/STUFF/ROCK.PNG'}
+game.throwrock    = {kind = 'button',x=400,y=510, caption=0, visible=false,FR=255,FG=180,FB=0,BR=0,BG=1,BB=5,image='GFX/STUFF/ROCK.PNG', action=function() game.throw('Rock') end}
 
 local function gturn(g)
      if player.w=='DEAD' then return end
@@ -227,7 +262,7 @@ game.gui = {
              image='GFX/GENERAL/BACKGROUND.PNG',
              x=0,
              y=0,
-             kids = { game.canvas, game.puzzleheader, game.puzzletime, game.puzzlemove,game.throwrock
+             kids = { game.canvas, game.puzzleheader, game.puzzletime, game.puzzlemove,game.throwrock,
                   { kind = 'button', FR=255,FG=255,FB=0,BR=255,BG=0,BB=0,caption="X",x=0,y=500,action=function() if love.window.showMessageBox( "Cynthia Johnson", "Wanna go back to the main menu?\n(Progress in this puzzle will be lost!)", {"Yes!","No", escapebutton=2} )==1 then chain.go('MAINMENU') end end },
                   { kind = 'button', image='GFX/GAMEUI/CLOCKWISE.PNG', caption="", BR=0,BG=0,BB=20, action=gturn, x=760,y=505, gtid='cw', w=30,imgx=7},
                   { kind = 'button', image='GFX/GAMEUI/COUNTERCLOCKWISE.PNG', caption="", BR=0,BG=0,BB=20, action=gturn, x=700,y=505, gtid='ccw', w=30,imgx=7},
@@ -267,6 +302,33 @@ function game.update()
         player.f=1
         player.keepwalking=false
      end   
+     if projectile then
+        local p = projectile
+        p.time = p.time or nt
+        if math.abs(nt-p.time)>.03 then
+           p.gx = p.gx + p.mx
+           p.gy = p.gy + p.my
+           if p.gx<-32 then p.gx=0 p.x = p.x - 1 p.gx=0 end
+           if p.gy<-32 then p.gy=0 p.y = p.y - 1 p.gy=0 end
+           if p.gx> 32 then p.gx=0 p.x = p.x + 1 p.gx=0 end
+           if p.gy> 32 then p.gy=0 p.y = p.y + 1 p.gy=0 end
+           --print("p("..p.x..","..p.y.."); g("..p.gx..","..p.gy.."); m("..p.mx..","..p.my.."); w="..p.w)
+           if p.x<1 or p.x>25 or p.y<1 or p.y>15 then projectile=nil end
+           if projectile and pz.layers.Walls[p.y][p.x]>0 and pz.layers.Walls[p.y][p.x]~=0xff then projectile=nil end
+           if p.gx==0 and p.gy==0 then
+              for tid,o in pairs(pz.fetchteddyobject) do
+                  --print('Checking: '..tid.." "..o.objtype)
+                  if o.coords.x==p.x and o.coords.y==p.y and game.objs[o.objtype].killable then
+                     o.objtype='kill'
+                     pz.layers.Walls[p.y][p.x]=0
+                     if p.p=='dagger' then o.objtype='dagger' end 
+                     projectile=nil
+                  end
+              end     
+           end
+           p.time = nt
+        end
+     end
 end        
         
 local function imove(pl)
