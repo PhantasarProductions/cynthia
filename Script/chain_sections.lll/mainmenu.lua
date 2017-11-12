@@ -56,6 +56,12 @@ mm.gui = {
                        x=400,
                        y=-200
                   },
+                  playname = {
+                     kind='label',
+                     caption="",
+                     x=5,
+                     x=5
+                  },
                   version = {
                        kind="label",
                        caption="",
@@ -101,6 +107,7 @@ function mm.update()
     g.ay = g.y
     mm.gui.kids.debuglogoy.caption = "g.y = "..g.y.."; ".." y = "..y.."; fix="..sval(g.fixatednow).."; time="..time
     mm.gui.kids.version.caption = mkl.newestversion()
+    mm.gui.kids.playname.caption = user.showname
     mm.gui.kids.copy.caption="(c) Jeroen P. Broks, 2017-20"..left(mm.gui.kids.version.caption,2)..", GPL 3 licensed"
     for g in each(mm.buttons) do 
         if g.x>100 then g.x=g.x-2 g.ax=g.x end
