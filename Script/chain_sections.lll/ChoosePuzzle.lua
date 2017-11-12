@@ -45,7 +45,7 @@ local pzsg = {
              if user.solved[pz.file] then
                 color(255,180,0)
                 love.graphics.print( "Best time: "..sec2time(user.solved[pz.file].time), 400, y+120)
-                love.graphics.print( "lst actions: "..user.solved[pz.file].actions, 500, y+120)             
+                love.graphics.print( "lst actions: "..(user.solved[pz.file].actions or 'N/A'), 500, y+120)             
              else
                 color(255,0,0)
                 love.graphics.print( "< Unsolved >",450,y+120 )

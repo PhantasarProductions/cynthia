@@ -48,6 +48,7 @@
     - GFX/Tiles/Egypt/Floor_Sand32_East_Bank.png
     - GFX/Tiles/Egypt/Floor_Sand32_West_Bank.png
     - GFX/Tiles/Egypt/Floor_Sand_Dark.png
+    - GFX/Tiles/Egypt/Front_BigPyramid.png
     - GFX/Tiles/Egypt/Obstacle_Cactus.png
     - GFX/Tiles/Egypt/Obstacle_Pyramid.png
     - License
@@ -64,6 +65,7 @@
     - Script/loadpuzzle.lua
     - Script/puzzles/maps/Egypt_Level1.lua
     - Script/puzzles/maps/Egypt_Level2.lua
+    - Script/puzzles/maps/Egypt_Level3.lua
     - Script/puzzles/titles.lua
     - Script/users.lua
     - disclaimer.md
