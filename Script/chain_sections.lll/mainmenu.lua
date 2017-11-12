@@ -54,7 +54,7 @@ mm.gui = {
                        image='GFX/GENERAL/LOGO.PNG',
                        hot='c',
                        x=400,
-                       y=-600
+                       y=-200
                   },
                   version = {
                        kind="label",
