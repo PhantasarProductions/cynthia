@@ -1,4 +1,4 @@
--- Generated on: Sun 12 November 2017; 12:10:22
+-- Generated on: Sun 12 November 2017; 12:33:48
 -- Author:       Jeroen P. Broks
 -- License:      GPL 3
 
@@ -92,6 +92,20 @@ local ret = {}
 			{ {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}}}
 
 	ret.fetchteddyobject = {}
+		ret.objects[3][4][#ret.objects[3][4]+1] = {
+			objtype = "Rock",
+			coords = {x=4, y=3},
+			data = {
+				['TeddyID'] = "3-2-1"}}
+		ret.fetchteddyobject['3-2-1'] = ret.objects[3][4][#ret.objects[3][4]]
+
+		ret.objects[3][6][#ret.objects[3][6]+1] = {
+			objtype = "Rock",
+			coords = {x=6, y=3},
+			data = {
+				['TeddyID'] = "5-2-1"}}
+		ret.fetchteddyobject['5-2-1'] = ret.objects[3][6][#ret.objects[3][6]]
+
 		ret.objects[7][4][#ret.objects[7][4]+1] = {
 			objtype = "Snake",
 			coords = {x=4, y=7},
