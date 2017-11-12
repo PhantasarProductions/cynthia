@@ -86,6 +86,7 @@ game.objs = {
   Start = { draw = function() end},
   Snake = { draw = function(o,x,y,ox,oy)
                        QHot(assets.snake,"bc")
+                       white()
                        local s,sp=1,1; if o.data.Wind=='W' or o.data.Wind=="w" then s=-1 sp=0 end
                        DrawImage(assets.snake,ox+((x-sp)*32),oy+((y-1)*32),1,0,s,1)
                        if pz.layers.Walls[y][x]==0 then 
@@ -111,6 +112,7 @@ game.objs = {
                    killable=true
   },                 
   Rock = { draw = function(o,x,y,ox,oy)
+                      white()
                       QHot(assets.rock,"cc")
                       DrawImage(assets.rock,ox+(x*32)-16,oy+(y*32)-16)
                       if player.x==x and player.y==y then
