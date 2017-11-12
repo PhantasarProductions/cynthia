@@ -105,12 +105,12 @@ game.objs = {
                           if pz.layers.Walls[o.spit.y][o.spit.x]>0 then o.spit=nil end
                        end   
                        
-                   end,
+                   end
+  },                 
   Rock = { draw = function(o,x,y,ox,oy)
                       QHot(assets.rock,"cc")
                       DrawImage(assets.rock,ox+(x*32)-16,oy+(y*32)-16)
                   end
-  }                 
   }
 
 }
@@ -120,7 +120,7 @@ function game.drawobjects(ox,oy)
         for x=1,25 do
             --if #pz.objects[y][x]>0 then print(serialize(x..","..y,pz.objects[y][x])) end -- debug line MUST BE DEACTIVATED IN ACTUAL PLAY
             for o in each(pz.objects[y][x]) do
-                assert(game.objs[o.objtype],"No object instructions")
+                assert(game.objs[o.objtype],"No object instructions for "..o.objtype)
                 game.objs[o.objtype].draw(o,x,y,ox,oy)                
             end
         end

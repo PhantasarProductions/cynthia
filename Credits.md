@@ -18,6 +18,7 @@
     - Build/Game Jolt/Banner2.png
     - Build/Game Jolt/Tumbnail.png
     - Build/Game Jolt/Tumbnail2.png
+    - Build/Game Jolt/readme.md
     - Credits.md
     - GFX/Cynthia/Dead.png
     - GFX/Cynthia/East.jcr
