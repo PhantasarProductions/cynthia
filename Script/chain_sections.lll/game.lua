@@ -103,26 +103,45 @@ game.objs = {
                           o.spit.x = o.spit.x + s
                           if o.spit.x == player.x and o.spit.y==player.y then player.w="DEAD" end
                           if pz.layers.Walls[o.spit.y][o.spit.x]>0 then o.spit=nil end
-                       end   
-                       
+                       end                          
                    end
   },                 
   Rock = { draw = function(o,x,y,ox,oy)
                       QHot(assets.rock,"cc")
                       DrawImage(assets.rock,ox+(x*32)-16,oy+(y*32)-16)
+                      if player.x==x and player.y==y then
+                         PlaySount('pickup')
+                         player.rocks = (player.rocks or 0) +1
+                         o.objtype='kill'
+                      end      
                   end
   }
 
 }
 
 function game.drawobjects(ox,oy)
+    local killed = {}
     for y=1,15 do
         for x=1,25 do
             --if #pz.objects[y][x]>0 then print(serialize(x..","..y,pz.objects[y][x])) end -- debug line MUST BE DEACTIVATED IN ACTUAL PLAY
             for o in each(pz.objects[y][x]) do
-                assert(game.objs[o.objtype],"No object instructions for "..o.objtype)
-                game.objs[o.objtype].draw(o,x,y,ox,oy)                
+                if o.objtype(o.objtype~='kill') then
+                   assert(game.objs[o.objtype],"No object instructions for "..o.objtype)
+                   game.objs[o.objtype].draw(o,x,y,ox,oy)
+                else
+                   killed[#killed]={x=x,y=y,TeddyID=o.data.TeddyID}   
+                end                   
             end
+        end
+    end
+    for kill in each(killed) do
+        local x,y=kill.x,kill.y
+        pz.fetchteddyobject[kill.TeddyID]=nil
+        local old = pz.objects[y][x]
+        local new = {}
+        pz.objects[y][x] = new
+        for keepo in each(old) do
+            if keepo.data.TeddyID~=kill.TeddyID then new[#new]=keepo else print("KILLED OBJECT: "..kill.TeddyID) end
         end
     end    
 end
