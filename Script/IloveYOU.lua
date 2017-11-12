@@ -66,6 +66,7 @@ function load_all_my_crap()
   phantasar.adddir(junk,'font','FONTS/')
   phantasar.adddir(junk,"image","GFX/STUFF/")
   phantasar.adddir(junk,"image","GFX/ENDPUZZLE/")
+  phantasar.adddir(junk,"audio","AUDIO/")
   print("Loading all assets");
   phantasar.after(function()
     -- backquad = love.graphics.newQuad(0,0,800,600,64,64)

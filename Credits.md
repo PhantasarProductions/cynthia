@@ -8,6 +8,7 @@
     - Music/Egypt/Hypnotic-Puzzle3.mp3.crdownload
 - Jeroen P. Broks
   - Most of the game's script files (all files suffixed with .lua) are either GNU/GPL licensed or zLib licensed, but check the files themselves to be sure. All asset files I created myself are licensed under a http://creativecommons.org/licenses/by-nc-sa/4.0/ license unless explicitly stated otherwise in files coming along. All 3rd party assets are copyrighted by their respective creators and their original licenses do still apply.
+    - Audio/Pickup.wav
     - Build/Cynthia4Icon.png
     - Build/CynthiaAndroidIcon.lha
     - Build/CynthiaIOSIcon.lha
@@ -39,6 +40,7 @@
     - GFX/General/GPL3.png
     - GFX/General/Logo.png
     - GFX/Stuff/Exit.png
+    - GFX/Stuff/Rock.png
     - GFX/Stuff/Snake.png
     - GFX/Stuff/Spit.png
     - GFX/Tiles/All/Water.png

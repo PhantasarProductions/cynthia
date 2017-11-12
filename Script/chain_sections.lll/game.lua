@@ -105,7 +105,12 @@ game.objs = {
                           if pz.layers.Walls[o.spit.y][o.spit.x]>0 then o.spit=nil end
                        end   
                        
-                   end
+                   end,
+  Rock = { draw = function(o,x,y,ox,oy)
+                      QHot(assets.rock,"cc")
+                      DrawImage(assets.rock,ox+(x*32)-16,oy+(y*32)-16)
+                  end
+  }                 
   }
 
 }
