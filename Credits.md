@@ -9,6 +9,7 @@
     - GFX/Tiles/Inside/Wall South
     - GFX/Tiles/Inside/Wall_East.png
     - GFX/Tiles/Inside/Wall_SC_SW.png
+    - GFX/Tiles/Inside/Wall_South.png
     - GFX/Tiles/Inside/Wall_West.png
 - Eric Matyas
   - Read for full license infor Eric's own website: http://soundimage.org/
@@ -50,9 +51,9 @@
     - GFX/General/Logo.png
     - GFX/Stuff/Dagger.East.png
     - GFX/Stuff/Dagger.North.png
+    - GFX/Stuff/Dagger.Schuin.png
     - GFX/Stuff/Dagger.South.png
     - GFX/Stuff/Dagger.West.png
-    - GFX/Stuff/Dagger.png
     - GFX/Stuff/Exit.png
     - GFX/Stuff/Rock.png
     - GFX/Stuff/Snake.png
@@ -63,7 +64,6 @@
     - GFX/Tiles/Egypt/Egypt_Wall_Isis_Gone.png
     - GFX/Tiles/Egypt/Egypt_Wall_Isis_L.png
     - GFX/Tiles/Egypt/Egypt_Wall_Isis_R.png
-    - GFX/Tiles/Egypt/Egypt_Wall_Isis_T.png
     - GFX/Tiles/Egypt/Floor.png
     - GFX/Tiles/Egypt/Floor_Sand.png
     - GFX/Tiles/Egypt/Floor_Sand32.png
@@ -90,6 +90,7 @@
     - Script/puzzles/maps/Egypt_Level1.lua
     - Script/puzzles/maps/Egypt_Level2.lua
     - Script/puzzles/maps/Egypt_Level3.lua
+    - Script/puzzles/maps/Egypt_Level4.lua
     - Script/puzzles/titles.lua
     - Script/users.lua
     - disclaimer.md

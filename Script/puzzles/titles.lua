@@ -14,6 +14,10 @@ local ret = {}
 			file='Egypt_Level3',
 			title="Entrance to the great pyramid"
 		}
+	ret.Egypt[4] = {
+			file='Egypt_Level4',
+			title="Inside the Pyramid"
+		}
 
 
 return ret
