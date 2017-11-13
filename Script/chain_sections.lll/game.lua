@@ -128,8 +128,26 @@ game.objs = {
                          print("Rock Button updated?")
                       end      
                   end
+  },
+  Dagger = { draw = function(o,x,y,ox,oy)
+                      white()
+                      QHot(assets.dagger,"cc")
+                      DrawImage(assets.dagger,ox+(x*32)-16,oy+(y*32)-16)
+                      if player.x==x and player.y==y then
+                         PlaySound('pickup')
+                         player.daggers = (player.daggers or 0) +1
+                         o.objtype='kill'
+                         game.throwdagger.caption=player.dagger
+                         game.throwdagger.acaption=nil
+                         --game.t_text=nil
+                         game.throwdagger.visible=true
+                         --luna.update(game.throwrock)
+                         game.throwdagger:lf_init()
+                         print("Rock Button updated?")
+                      end      
+                  end
   }
-
+  
 }
 
 function game.throw(proj,ax,ay,aw)
@@ -210,6 +228,7 @@ game.puzzleheader = {kind = 'label',x=5,y=5,font='FONTS/COOLVETICA.TTF',fontsize
 game.puzzletime   = {kind = 'label',x=50,y=510,font='FONTS/COOLVETICA.TTF',fontsize=15,FR=0,FG=0,FB=0}
 game.puzzlemove   = {kind = 'label',x=50,y=530,font='FONTS/COOLVETICA.TTF',fontsize=15,FR=0,FG=0,FB=0}
 game.throwrock    = {kind = 'button',x=400,y=510, caption=0, visible=false,FR=255,FG=180,FB=0,BR=0,BG=1,BB=5,image='GFX/STUFF/ROCK.PNG', action=function() game.throw('Rock') end}
+game.throwrock    = {kind = 'button',x=500,y=510, caption=0, visible=false,FR=255,FG=180,FB=0,BR=0,BG=1,BB=5,image='GFX/STUFF/DAGGER.PNG', action=function() game.throw('Dagger') end}
 
 local function gturn(g)
      if player.w=='DEAD' then return end
@@ -264,7 +283,7 @@ game.gui = {
              image='GFX/GENERAL/BACKGROUND.PNG',
              x=0,
              y=0,
-             kids = { game.canvas, game.puzzleheader, game.puzzletime, game.puzzlemove,game.throwrock,
+             kids = { game.canvas, game.puzzleheader, game.puzzletime, game.puzzlemove,game.throwrock, game,throwdagger,
                   { kind = 'button', FR=255,FG=255,FB=0,BR=255,BG=0,BB=0,caption="X",x=0,y=500,action=function() if love.window.showMessageBox( "Cynthia Johnson", "Wanna go back to the main menu?\n(Progress in this puzzle will be lost!)", {"Yes!","No", escapebutton=2} )==1 then chain.go('MAINMENU') end end },
                   { kind = 'button', image='GFX/GAMEUI/CLOCKWISE.PNG', caption="", BR=0,BG=0,BB=20, action=gturn, x=760,y=505, gtid='cw', w=30,imgx=7},
                   { kind = 'button', image='GFX/GAMEUI/COUNTERCLOCKWISE.PNG', caption="", BR=0,BG=0,BB=20, action=gturn, x=700,y=505, gtid='ccw', w=30,imgx=7},
