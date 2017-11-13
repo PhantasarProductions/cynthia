@@ -150,6 +150,7 @@ game.objs = {
   
 }
 
+local tw = {W='west',E='east',N='north',S='south'}
 function game.throw(proj,ax,ay,aw)
    local w = aw or player.w
    local x = ax or player.x
@@ -163,7 +164,7 @@ function game.throw(proj,ax,ay,aw)
    elseif w=='S'    then projectile.my= 4 projectile.mny= 32
    else   error("Unknown direction for throwing a "..proj.." >> "..w) end
    if     proj=="Rock"   then projectile.img = assets.rock 
-   elseif proj=='Dagger' then projectile.img = assets['dagger_'..lower(w)]
+   elseif proj=='Dagger' then projectile.img = assets['dagger_'..tw[w]]
    else   error('Unknown projectile: '..proj) end
    for k,v in spairs(projectile) do print(type(v).." "..k..";") end -- debug line
    local pro = lower(proj)

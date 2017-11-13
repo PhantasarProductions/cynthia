@@ -49,11 +49,11 @@
     - GFX/General/Cynthia.png
     - GFX/General/GPL3.png
     - GFX/General/Logo.png
-    - GFX/Stuff/Dagger.East.png
-    - GFX/Stuff/Dagger.North.png
-    - GFX/Stuff/Dagger.Schuin.png
-    - GFX/Stuff/Dagger.South.png
-    - GFX/Stuff/Dagger.West.png
+    - GFX/Stuff/Dagger_East.png
+    - GFX/Stuff/Dagger_North.png
+    - GFX/Stuff/Dagger_Schuin.png
+    - GFX/Stuff/Dagger_South.png
+    - GFX/Stuff/Dagger_West.png
     - GFX/Stuff/Exit.png
     - GFX/Stuff/Rock.png
     - GFX/Stuff/Snake.png
