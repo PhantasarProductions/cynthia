@@ -137,10 +137,10 @@ game.objs = {
                          PlaySound('pickup')
                          player.daggers = (player.daggers or 0) +1
                          o.objtype='kill'
-                         game.throwdagger_caption=player.daggers
-                         game.throwdagger_acaption=nil
+                         game.throwdagger.caption=player.daggers
+                         game.throwdagger.acaption=nil
                          --game.t_text=nil
-                         game.throwdagger_visible=true
+                         game.throwdagger.visible=true
                          --luna.update(game.throwrock)
                          game.throwdagger:lf_init()
                          print("Rock Button updated?")
