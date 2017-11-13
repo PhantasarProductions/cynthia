@@ -3,6 +3,13 @@
 ## Contributors:
 
 
+- /Volumes/Scyndi/Projects/Applications/Love2D/Games/Cynthia/src/Man Of Steel
+  - Creative Commons - Attribute - Non-Commercial - ShareAlike
+    - GFX/Tiles/Inside/WALL_SC_SE.png
+    - GFX/Tiles/Inside/Wall South
+    - GFX/Tiles/Inside/Wall_East.png
+    - GFX/Tiles/Inside/Wall_SC_SW.png
+    - GFX/Tiles/Inside/Wall_West.png
 - Eric Matyas
   - Read for full license infor Eric's own website: http://soundimage.org/
     - Music/Egypt/Hypnotic-Puzzle3.mp3.crdownload
@@ -45,12 +52,19 @@
     - GFX/Stuff/Dagger.North.png
     - GFX/Stuff/Dagger.South.png
     - GFX/Stuff/Dagger.West.png
-    - GFX/Stuff/Dagger.piko
+    - GFX/Stuff/Dagger.png
     - GFX/Stuff/Exit.png
     - GFX/Stuff/Rock.png
     - GFX/Stuff/Snake.png
     - GFX/Stuff/Spit.png
     - GFX/Tiles/All/Water.png
+    - GFX/Tiles/Egypt/Egypt_Wall_Isis (Autosaved).piko
+    - GFX/Tiles/Egypt/Egypt_Wall_Isis.piko
+    - GFX/Tiles/Egypt/Egypt_Wall_Isis_Gone.png
+    - GFX/Tiles/Egypt/Egypt_Wall_Isis_L.png
+    - GFX/Tiles/Egypt/Egypt_Wall_Isis_R.png
+    - GFX/Tiles/Egypt/Egypt_Wall_Isis_T.png
+    - GFX/Tiles/Egypt/Floor.png
     - GFX/Tiles/Egypt/Floor_Sand.png
     - GFX/Tiles/Egypt/Floor_Sand32.png
     - GFX/Tiles/Egypt/Floor_Sand32_Bright.png
@@ -58,6 +72,7 @@
     - GFX/Tiles/Egypt/Floor_Sand32_West_Bank.png
     - GFX/Tiles/Egypt/Floor_Sand_Dark.png
     - GFX/Tiles/Egypt/Front_BigPyramid.png
+    - GFX/Tiles/Egypt/Isis.md
     - GFX/Tiles/Egypt/Obstacle_Cactus.png
     - GFX/Tiles/Egypt/Obstacle_Pyramid.png
     - License
