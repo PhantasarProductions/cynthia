@@ -19,6 +19,7 @@
     - Build/Game Jolt/Tumbnail.png
     - Build/Game Jolt/Tumbnail2.png
     - Build/Game Jolt/readme.md
+    - Build/HatIcon.png
     - Credits.md
     - GFX/Cynthia/Dead.png
     - GFX/Cynthia/East.jcr
@@ -40,6 +41,11 @@
     - GFX/General/Cynthia.png
     - GFX/General/GPL3.png
     - GFX/General/Logo.png
+    - GFX/Stuff/Dagger.East.png
+    - GFX/Stuff/Dagger.North.png
+    - GFX/Stuff/Dagger.South.png
+    - GFX/Stuff/Dagger.West.png
+    - GFX/Stuff/Dagger.piko
     - GFX/Stuff/Exit.png
     - GFX/Stuff/Rock.png
     - GFX/Stuff/Snake.png
