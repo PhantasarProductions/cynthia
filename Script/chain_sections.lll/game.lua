@@ -164,7 +164,7 @@ function game.throw(proj,ax,ay,aw)
    elseif w=='S'    then projectile.my= 4 projectile.mny= 32
    else   error("Unknown direction for throwing a "..proj.." >> "..w) end
    if     proj=="Rock"   then projectile.img = assets.rock 
-   elseif proj=='Dagger' then projectile.img = assets['dagger_'..tw[w]]
+   elseif proj=='Dagger' then projectile.img = assets['dagger_'..tw[w]]  QHot(projectile.img,'cc')
    else   error('Unknown projectile: '..proj) end
    for k,v in spairs(projectile) do print(type(v).." "..k..";") end -- debug line
    local pro = lower(proj)
@@ -173,7 +173,7 @@ function game.throw(proj,ax,ay,aw)
    game['throw'..pro].acaption=nil
    game['throw'..pro].visible=player[pro.."s"]>0
    game['throw'..pro]:lf_init()
-   player.moved = (player.moved or 0) + 1
+   player:imove()
 end
 
 function game.drawobjects(ox,oy)
@@ -343,7 +343,7 @@ function game.update()
                   if o.coords.x==p.x and o.coords.y==p.y and game.objs[o.objtype].killable then
                      o.objtype='kill'
                      pz.layers.Walls[p.y][p.x]=0
-                     if p.p=='dagger' then o.objtype='dagger' end 
+                     if lower(p.p)=='dagger' then o.objtype='Dagger' end 
                      projectile=nil
                   end
               end     
