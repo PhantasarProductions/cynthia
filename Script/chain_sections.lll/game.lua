@@ -336,7 +336,22 @@ function game.update()
            if p.gy> 32 then p.gy=0 p.y = p.y + 1 p.gy=0 end
            --print("p("..p.x..","..p.y.."); g("..p.gx..","..p.gy.."); m("..p.mx..","..p.my.."); w="..p.w)
            if p.x<1 or p.x>25 or p.y<1 or p.y>15 then projectile=nil end
-           if projectile and pz.layers.Walls[p.y][p.x]>0 and pz.layers.Walls[p.y][p.x]~=0xff then projectile=nil end
+           if projectile and pz.layers.Walls[p.y][p.x]>0 and pz.layers.Walls[p.y][p.x]~=0xff then 
+              projectile=nil
+              if lower(p.p)=='dagger' then
+                 local c = 0
+                 repeat c = c + 1 until not(pz.fetchteddyobject['MES'..c])
+                 local nieuwmes = { objtype='Dagger', coords={x=p.x,y=p.y},data={TeddyID='MES'..c}}
+                 if     p.w=='N' then nieuwmes.coords.y=p.y+1
+                 elseif p.w=='S' then nieuwmes.coords.y=p.y-1
+                 elseif p.w=='W' then nieuwmes.coords.x=p.x+1
+                 elseif p.w=='E' then nieuwmes.coords.x=p.x-1 end
+                 pz.fetchteddyobject['MES'..c] = nieuwmes
+                 local ol = pz.objects[nieuwmes.coords.y][nieuwmes.coords.x]
+                 ol[#ol+1] = nieuwmes                 
+                 print(serialize('nieuwmes',nieuwmes).."\n"..serialize('ol',ol)..'\n'..serialize("fetch",pz.fetchteddyobject)) -- debug line
+              end 
+           end
            if p.gx==0 and p.gy==0 then
               for tid,o in pairs(pz.fetchteddyobject) do
                   --print('Checking: '..tid.." "..o.objtype)
