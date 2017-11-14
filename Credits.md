@@ -75,6 +75,7 @@
     - GFX/Tiles/Egypt/Isis.md
     - GFX/Tiles/Egypt/Obstacle_Cactus.png
     - GFX/Tiles/Egypt/Obstacle_Pyramid.png
+    - GFX/Tiles/Egypt/Wall_Hieroglief.png
     - License
     - Readme.md
     - Script/IloveYOU.lua
@@ -91,6 +92,7 @@
     - Script/puzzles/maps/Egypt_Level2.lua
     - Script/puzzles/maps/Egypt_Level3.lua
     - Script/puzzles/maps/Egypt_Level4.lua
+    - Script/puzzles/maps/Egypt_Level5.lua
     - Script/puzzles/titles.lua
     - Script/users.lua
     - disclaimer.md
