@@ -336,7 +336,7 @@ function game.update()
            if p.gy> 32 then p.gy=0 p.y = p.y + 1 p.gy=0 end
            --print("p("..p.x..","..p.y.."); g("..p.gx..","..p.gy.."); m("..p.mx..","..p.my.."); w="..p.w)
            if p.x<1 or p.x>25 or p.y<1 or p.y>15 then projectile=nil end
-           if projectile and pz.layers.Walls[p.y][p.x]>0 and pz.layers.Walls[p.y][p.x]~=0xff then 
+           if projectile and pz.layers.Walls[p.y][p.x]>0 and pz.layers.Walls[p.y][p.x]~=0x100 then 
               projectile=nil
               if lower(p.p)=='dagger' then
                  local c = 0
