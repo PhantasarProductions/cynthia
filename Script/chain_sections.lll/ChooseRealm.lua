@@ -24,7 +24,7 @@ Version: 17.11.12
 ]]
 local cr= {}
 
-local realms = {"Egypt"}
+local realms = {"Egypt","Ireland","Greece"}
 
 
 function cr.draw()
