@@ -56,6 +56,8 @@
     - GFX/General/Logo.png
     - GFX/Net/Anna.piko
     - GFX/Net/Anna.png
+    - GFX/Stuff/Clover.piko
+    - GFX/Stuff/Clover.png
     - GFX/Stuff/Dagger_East.png
     - GFX/Stuff/Dagger_North.png
     - GFX/Stuff/Dagger_Schuin.png

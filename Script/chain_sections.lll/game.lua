@@ -25,7 +25,7 @@ Version: 17.11.12
 
 local tutor = j_love_import('/SCRIPT/INGAMETUTORS.LUA')
 
-local allowinstantwin = true -- Must be false in full release
+local allowinstantwin = false -- Must be false in full release
 local debugcoords = false 
 
 local debugcoordsgadget = { visible = debugcoords, kind='label', caption="", x=600,y=5 }
@@ -113,6 +113,34 @@ game.objs = {
                    end,
                    killable=true
   },                 
+  Leprechaun = {
+             draw = function(o,x,y,ox,oy)
+                       Hot(assets.leprechaun,16,64)
+                       white()                       
+                       DrawImage(assets.leprechaun,ox+(x*32)-16,oy+(y*32)+8,1,0,1,1)
+                       if pz.clover then return end -- Protection by the four leaved clover
+                       if (player.x==x and (player.y==y-1 or player.y==y+1))
+                       or (player.y==y and (player.x==x-1 or player.x==x+1)) then
+                          user.keys=nil
+                          user.rocks=nil
+                          user.daggers=nil
+                          game.throwrock.visible=false
+                          game.throwdagger.visible=false
+                       end                             
+             end,
+             killable = true          
+  },
+  Clover = { draw = function(o,x,y,ox,oy)
+                      white()
+                      QHot(assets.clover,"cc")
+                      DrawImage(assets.clover,ox+(x*32)-16,oy+(y*32)-16)
+                      if player.x==x and player.y==y then
+                         PlaySound('pickup')
+                         pz.clover=true
+                         o.objtype='kill'
+                      end      
+                  end
+  },
   Rock = { draw = function(o,x,y,ox,oy)
                       white()
                       QHot(assets.rock,"cc")
@@ -226,7 +254,11 @@ local canvasgadget = {
                  if pz.datamap.Tutorial and pz.datamap.Tutorial~="" then
                     for tut in each(mysplit(pz.datamap.Tutorial,",")) do tutor(tut) end
                  end
-              end        
+              end      
+             if pz.clover then
+                color(255,255,255,255*math.abs(math.sin(love.timer.getTime())))
+                DrawImage(assets.clover,770,100)
+             end      
       end
 }
 luna.addgadget("gamecanvas",canvasgadget)
