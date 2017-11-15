@@ -1,4 +1,4 @@
--- Generated on: Sun 12 November 2017; 12:33:48
+-- Generated on: Wed 15 November 2017; 17:30:28
 -- Author:       Jeroen P. Broks
 -- License:      GPL 3
 
@@ -21,6 +21,7 @@ local ret = {}
 	ret.datamap = {}
 		ret.datamap['Music'] = ""
 		ret.datamap['Title'] = "Entrance to the great pyramid"
+		ret.datamap['Tutorial'] = "rock"
 
 
 	ret.layers={}		ret.layers.Floor = {

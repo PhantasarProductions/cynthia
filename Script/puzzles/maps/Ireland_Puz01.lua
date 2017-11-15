@@ -1,4 +1,4 @@
--- Generated on: Wed 15 November 2017; 14:40:47
+-- Generated on: Wed 15 November 2017; 17:30:28
 -- Author:       Jeroen P. Broks
 -- License:      GPL 3
 
@@ -16,7 +16,8 @@ local ret = {}
 
 	ret.datamap = {}
 		ret.datamap['Music'] = ""
-		ret.datamap['Title'] = "."
+		ret.datamap['Title'] = "The Leprechaun Field"
+		ret.datamap['Tutorial'] = "leprechaun"
 
 
 	ret.layers={}		ret.layers.Floor = {

@@ -62,6 +62,8 @@
     - GFX/Stuff/Dagger_South.png
     - GFX/Stuff/Dagger_West.png
     - GFX/Stuff/Exit.png
+    - GFX/Stuff/Leprechaun.piko
+    - GFX/Stuff/Leprechaun.png
     - GFX/Stuff/Rock.png
     - GFX/Stuff/Snake.png
     - GFX/Stuff/Spit.png
@@ -94,6 +96,7 @@
     - Script/chain_sections.lll/game.lua
     - Script/chain_sections.lll/mainmenu.lua
     - Script/chain_sections.lll/newuser.lua
+    - Script/ingametutors.lua
     - Script/loadpuzzle.lua
     - Script/puzzles/maps/Egypt_Level1.lua
     - Script/puzzles/maps/Egypt_Level2.lua

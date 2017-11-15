@@ -23,6 +23,8 @@
 Version: 17.11.12
 ]]
 
+local tutor = j_love_import('/SCRIPT/INGAMETUTORS.LUA')
+
 local allowinstantwin = true -- Must be false in full release
 local debugcoords = false 
 
@@ -219,7 +221,12 @@ local canvasgadget = {
                        screenshotalpha=255
                        chain.go('ENDPUZZLE')
               end         
-                      
+              if (not pz.tutored) then                 
+                 pz.tutored=true
+                 if pz.datamap.Tutorial and pz.datamap.Tutorial~="" then
+                    for tut in each(mysplit(pz.datamap.Tutorial,",")) do tutor(tut) end
+                 end
+              end        
       end
 }
 luna.addgadget("gamecanvas",canvasgadget)

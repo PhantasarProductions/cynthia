@@ -30,7 +30,7 @@ local ret = {}
 	ret.Ireland = {}
 	ret.Ireland[1] = {
 			file='Ireland_Puz01',
-			title="."
+			title="The Leprechaun Field"
 		}
 
 
