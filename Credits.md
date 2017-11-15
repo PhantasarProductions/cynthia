@@ -84,6 +84,8 @@
     - GFX/Tiles/Egypt/Obstacle_Cactus.png
     - GFX/Tiles/Egypt/Obstacle_Pyramid.png
     - GFX/Tiles/Egypt/Wall_Hieroglief.png
+    - GFX/Tiles/Ireland/Bush.png
+    - GFX/Tiles/Ireland/Grass.png
     - License
     - Readme.md
     - Script/IloveYOU.lua
