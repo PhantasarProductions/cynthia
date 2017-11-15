@@ -14,6 +14,11 @@
 - Eric Matyas
   - Read for full license infor Eric's own website: http://soundimage.org/
     - Music/Egypt/Hypnotic-Puzzle3.mp3.crdownload
+- Game Jolt
+  - This file belongs to Game Jolt
+    - GFX/Net/Anna.png
+    - GFX/Net/Game Jolt (te groot).png
+    - GFX/Net/Game Jolt.png
 - Jeroen P. Broks
   - Most of the game's script files (all files suffixed with .lua) are either GNU/GPL licensed or zLib licensed, but check the files themselves to be sure. All asset files I created myself are licensed under a http://creativecommons.org/licenses/by-nc-sa/4.0/ license unless explicitly stated otherwise in files coming along. All 3rd party assets are copyrighted by their respective creators and their original licenses do still apply.
     - Audio/Pickup.wav
@@ -49,6 +54,7 @@
     - GFX/General/Cynthia.png
     - GFX/General/GPL3.png
     - GFX/General/Logo.png
+    - GFX/Net/Anna.piko
     - GFX/Stuff/Dagger_East.png
     - GFX/Stuff/Dagger_North.png
     - GFX/Stuff/Dagger_Schuin.png

@@ -140,14 +140,16 @@ nu.gui = {
                        { kind="button",caption=">>",y=550,x=500, action=nu.createuser, BG=180, BB=0}
                   }},
                   anna = {kind='pivot',x=0,y=0, kids = {
-                       { kind='label',caption='id:', x=50,y=100},
-                       { kind='label',caption='secu code:',x=50,y=125},
-                       id = { kind='textfield',x=200,y=100,w=500},
-                       secu = {kind='textfield',x=200,y=125,w=500},
+                       { kind='picture',image='GFX/NET/ANNA.PNG',x=187,y=5},
+                       { kind='label',caption='id:', x=50,y=300},
+                       { kind='label',caption='secu code:',x=50,y=325},
+                       id = { kind='textfield',x=200,y=300,w=500},
+                       secu = {kind='textfield',x=200,y=325,w=500},
                        { kind = 'button', x=50,y=550,caption="Create Anna account", action=nu.createanna,BG=180, BB=0},
                        { kind="button",caption=">>",y=550,x=500, action=nu.deal_anna, BG=180, BB=0}
                   }},
                   gamejolt = {kind='pivot',x=0,y=0, kids = {
+                       { kind='picture',image='GFX/NET/GAME JOLT.PNG',x=80,y=5},
                        { kind='label',caption='User name:', x=50,y=100},
                        { kind='label',caption='Token:',x=50,y=125},
                        username = { kind='textfield',x=200,y=100,w=500},
