@@ -3,17 +3,9 @@
 ## Contributors:
 
 
-- /Volumes/Scyndi/Projects/Applications/Love2D/Games/Cynthia/src/Art Of Escapism
+- Art Of Escapism
   - Creative Commons - By Attribution - Share Alike
     - Music/Ireland/Art_Of_Escapism_-_Guardians.mp3
-- /Volumes/Scyndi/Projects/Applications/Love2D/Games/Cynthia/src/Man Of Steel
-  - Creative Commons - Attribute - Non-Commercial - ShareAlike
-    - GFX/Tiles/Inside/WALL_SC_SE.png
-    - GFX/Tiles/Inside/Wall South
-    - GFX/Tiles/Inside/Wall_East.png
-    - GFX/Tiles/Inside/Wall_SC_SW.png
-    - GFX/Tiles/Inside/Wall_South.png
-    - GFX/Tiles/Inside/Wall_West.png
 - Eric Matyas
   - Read for full license infor Eric's own website: http://soundimage.org/
     - Music/Egypt/Hypnotic-Puzzle3.mp3.crdownload
@@ -128,6 +120,14 @@
     - music/EndPuzzle/Music for Funeral Home - Part 1.mp3
     - music/Puzzles/Egypt/East of Tunesia.mp3
     - music/Puzzles/Space/Future Setting A.mp3
+- Man Of Steel
+  - Creative Commons - Attribute - Non-Commercial - ShareAlike
+    - GFX/Tiles/Inside/WALL_SC_SE.png
+    - GFX/Tiles/Inside/Wall South
+    - GFX/Tiles/Inside/Wall_East.png
+    - GFX/Tiles/Inside/Wall_SC_SW.png
+    - GFX/Tiles/Inside/Wall_South.png
+    - GFX/Tiles/Inside/Wall_West.png
 - Manfred Klein
   - Downloaded from dafont.com -- Set as "100% free"
     - fonts/BodoniXT.ttf
