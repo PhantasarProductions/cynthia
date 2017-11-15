@@ -110,6 +110,33 @@ function cr.update()
     gui.kids.ok.visible=user.unlocked.realms[realms[cr.p]]
 end    
 
+function cr.keypressed(key)
+    if key=='up'   and cr.p>      1 then cr.p = cr.p - 1 end
+    if key=='down' and cr.p<#realms then cr.p = cr.p + 1 end
+    if key=='return' or key=='enter' then gui.kids.ok:action() end
+    if key=='escape' then gui.kids.cancel:action() end
+end    
+
+function cr.mousepressed(mx,my,b)
+  print("Realm list click: ("..mx..","..my..") button: "..b)
+  if b==1 then
+     for i,realm in ipairs(realms) do
+         local y = ((i-1)*15)+100
+         if my>y and my<y+16 and mx>25 and mx<775 then
+            if cr.p==i then 
+               gui.kids.ok:action() 
+            else 
+               cr.p=i
+            end -- if cr.p==i
+         end -- if my etc.   
+     end -- for
+   end -- if b
+end -- fun
+  
+            
+      
+ 
+
 
 
 return cr
