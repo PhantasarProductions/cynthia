@@ -3,6 +3,9 @@
 ## Contributors:
 
 
+- /Volumes/Scyndi/Projects/Applications/Love2D/Games/Cynthia/src/Art Of Escapism
+  - Creative Commons - By Attribution - Share Alike
+    - Music/Ireland/Art_Of_Escapism_-_Guardians.mp3
 - /Volumes/Scyndi/Projects/Applications/Love2D/Games/Cynthia/src/Man Of Steel
   - Creative Commons - Attribute - Non-Commercial - ShareAlike
     - GFX/Tiles/Inside/WALL_SC_SE.png
@@ -120,6 +123,7 @@
     - Music/General/Call to Adventure.mp3
     - Music/puzzles/Egypt/Return of the Mummy.mp3
     - Music/puzzles/Egypt/Silver Flame.mp3
+    - Music/puzzles/Ireland/Celtic Impulse.mp3
   - Released in the Public Domain
     - music/EndPuzzle/Music for Funeral Home - Part 1.mp3
     - music/Puzzles/Egypt/East of Tunesia.mp3
