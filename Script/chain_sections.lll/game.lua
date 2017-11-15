@@ -23,7 +23,7 @@
 Version: 17.11.12
 ]]
 
-local allowinstantwin = false -- Must be false in full release
+local allowinstantwin = true -- Must be false in full release
 local debugcoords = false 
 
 local debugcoordsgadget = { visible = debugcoords, kind='label', caption="", x=600,y=5 }
@@ -292,7 +292,7 @@ game.gui = {
                   { kind = 'button', image='GFX/GAMEUI/DOWN.PNG', caption="", BR=0,BG=0,BB=20, action=gmove, x=730,y=535, gtid='d', w=30,imgx=7},
                   { kind = 'button', image='GFX/GAMEUI/LEFT.PNG', caption="", BR=0,BG=0,BB=20, action=gmove, x=700,y=535, gtid='l', w=30,imgx=7},
                   { kind = 'button', image='GFX/GAMEUI/RIGHT.PNG', caption="", BR=0,BG=0,BB=20, action=gmove, x=760,y=535, gtid='r', w=30,imgx=7},
-                  { kind = 'button', caption="INSTANT WIN", BR=255,BG=0,BB=0,FR=255,FG=180,FB=180, visible=allowinstantwin, action=function() game.pend=true user.endstatus='success' end,y=550}  ,
+                  { kind = 'button', caption="INSTANT WIN", BR=255,BG=0,BB=0,FR=255,FG=180,FB=180, visible=allowinstantwin, action=function() game.pend=true user.endstatus='success' user.noanna=true end,y=550}  ,
                   debugcoordsgadget                                 
              }
 }

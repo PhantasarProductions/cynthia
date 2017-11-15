@@ -35,8 +35,13 @@ local function unlocknext()
       user.pzp = user.pzp + 1
       user.unlocked.puzzles[puzzles[user.realm][user.pzp].file] = true
       saveuser()
+      chain.go("CHOOSEPUZZLE")
+   else 
+      user.pzp = 1
+      EndTheRealm(user.realm) 
+      print("Ending realm: "..user.realm)  
    end
-   chain.go("CHOOSEPUZZLE")
+   
 end
 
 local function whatnext()
@@ -114,7 +119,7 @@ function ep.arrive()
       annadata.time  = user.time
       annadata.moves = user.moved or 1
       annadata.realm = user.realm
-      good,data = Anna_Request(annadata)
+      if not user.noanna then good,data = Anna_Request(annadata) end user.noanna = nil
       -- print("Anna results:"..serialize('good',good).."\n"..serialize('data',data).."\nEnd Anna Results!\n\n")
       user.solved[user.puzzle] = user.solved[user.puzzle] or {}
       local solved = user.solved[user.puzzle]

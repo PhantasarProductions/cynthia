@@ -16,7 +16,6 @@
     - Music/Egypt/Hypnotic-Puzzle3.mp3.crdownload
 - Game Jolt
   - This file belongs to Game Jolt
-    - GFX/Net/Anna.png
     - GFX/Net/Game Jolt (te groot).png
     - GFX/Net/Game Jolt.png
 - Jeroen P. Broks
@@ -39,6 +38,12 @@
     - GFX/Cynthia/North.jcr
     - GFX/Cynthia/South.jcr
     - GFX/Cynthia/West.jcr
+    - GFX/CynthiaSpeaks/EndEgypt/001.png
+    - GFX/CynthiaSpeaks/EndEgypt/002.png
+    - GFX/CynthiaSpeaks/EndEgypt/003.png
+    - GFX/CynthiaSpeaks/EndEgypt/004.png
+    - GFX/CynthiaSpeaks/EndEgypt/005.png
+    - GFX/CynthiaSpeaks/EndEgypt/006.png
     - GFX/CynthiaSpeaks/NewUser/Hello.png
     - GFX/CynthiaSpeaks/NewUser/Intro.png
     - GFX/EndPuzzle/Failed.png
@@ -55,6 +60,7 @@
     - GFX/General/GPL3.png
     - GFX/General/Logo.png
     - GFX/Net/Anna.piko
+    - GFX/Net/Anna.png
     - GFX/Stuff/Dagger_East.png
     - GFX/Stuff/Dagger_North.png
     - GFX/Stuff/Dagger_Schuin.png
@@ -65,7 +71,6 @@
     - GFX/Stuff/Snake.png
     - GFX/Stuff/Spit.png
     - GFX/Tiles/All/Water.png
-    - GFX/Tiles/Egypt/Egypt_Wall_Isis (Autosaved).piko
     - GFX/Tiles/Egypt/Egypt_Wall_Isis.piko
     - GFX/Tiles/Egypt/Egypt_Wall_Isis_Gone.png
     - GFX/Tiles/Egypt/Egypt_Wall_Isis_L.png
@@ -89,6 +94,7 @@
     - Script/chain_sections.lll/ChoosePuzzle.lua
     - Script/chain_sections.lll/ChooseRealm.lua
     - Script/chain_sections.lll/EndPuzzle.lua
+    - Script/chain_sections.lll/EndRealm.lua
     - Script/chain_sections.lll/chain_sections.lua
     - Script/chain_sections.lll/game.lua
     - Script/chain_sections.lll/mainmenu.lua
@@ -99,6 +105,8 @@
     - Script/puzzles/maps/Egypt_Level3.lua
     - Script/puzzles/maps/Egypt_Level4.lua
     - Script/puzzles/maps/Egypt_Level5.lua
+    - Script/puzzles/maps/Greece_Puz01.lua
+    - Script/puzzles/maps/Ireland_Puz01.lua
     - Script/puzzles/titles.lua
     - Script/users.lua
     - disclaimer.md

@@ -22,6 +22,16 @@ local ret = {}
 			file='Egypt_Level5',
 			title="A message from the Pharao"
 		}
+	ret.Greece = {}
+	ret.Greece[1] = {
+			file='Greece_Puz01',
+			title="."
+		}
+	ret.Ireland = {}
+	ret.Ireland[1] = {
+			file='Ireland_Puz01',
+			title="."
+		}
 
 
 return ret
