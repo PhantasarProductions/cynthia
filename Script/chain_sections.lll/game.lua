@@ -33,6 +33,10 @@ local debugcoordsgadget = { visible = debugcoords, kind='label', caption="", x=6
 local game = {}
 local pz
 
+local cols = { red = {255,0,0},      green={0,255,0}, blue={0,0,255},
+               yellow = {255,255,0}, cyan={0,255,255}, magenta={255,0,255}
+             }
+
 game.tex = {}
 local player,projectile
 
@@ -118,12 +122,17 @@ game.objs = {
                        Hot(assets.leprechaun,16,64)
                        white()                       
                        DrawImage(assets.leprechaun,ox+(x*32)-16,oy+(y*32)+8,1,0,1,1)
+                       if pz.layers.Walls[y][x]==0 then 
+                          pz.layers.Walls[y][x] = 256
+                          print('Blockade $ff on ('..x..","..y..')') 
+                       end -- Make sure the player won't walk through the snake
+
                        if pz.clover then return end -- Protection by the four leaved clover
                        if (player.x==x and (player.y==y-1 or player.y==y+1))
                        or (player.y==y and (player.x==x-1 or player.x==x+1)) then
-                          user.keys=nil
-                          user.rocks=nil
-                          user.daggers=nil
+                          player.keys=nil
+                          player.rocks=nil
+                          player.daggers=nil
                           game.throwrock.visible=false
                           game.throwdagger.visible=false
                        end                             
@@ -140,6 +149,49 @@ game.objs = {
                          o.objtype='kill'
                       end      
                   end
+  },                
+  Key = { draw = function(o,x,y,ox,oy)
+                      white()
+                      QHot(assets.key,"cc")
+                      local c=cols[lower(o.data.Color)]
+                      assert(c,"K:Unknown color: "..sval(o.data.Color))
+                      color(c[1],c[2],c[3])
+                      DrawImage(assets.key,ox+(x*32)-16,oy+(y*32)-16)
+                      if player.x==x and player.y==y then
+                         PlaySound('pickup')
+                         player.keys = player.keys or {}
+                         player.keys[o.data.Color] = (player.keys[o.data.Color] or 0) + 1
+                         o.objtype='kill'
+                      end      
+                  end
+
+  },
+  Lock = { draw = function(o,x,y,ox,oy)
+                      white()
+                      QHot(assets.lock,"cc")
+                      local c=cols[lower(o.data.Color)]
+                      assert(c,"L:Unknown color: "..sval(o.data.Color))
+                      color(c[1],c[2],c[3])
+                      DrawImage(assets.lock,ox+(x*32)-16,oy+(y*32)-16)
+                       if pz.layers.Walls[y][x]==0 then 
+                          pz.layers.Walls[y][x] = 256
+                          print('Blockade $ff on ('..x..","..y..')') 
+                       end -- Make sure the player won't walk through the snake
+                      if ((player.x==x and (player.y==y-1 or player.y==y+1))
+                      or  (player.y==y and (player.x==x-1 or player.x==x+1))) 
+                      and (player.keys and player.keys[o.data.Color] and player.keys[o.data.Color]>0) then
+                          player.keys[o.data.Color] = player.keys[o.data.Color] - 1
+                          if player.keys[o.data.Color]<=0 then player.keys[o.data.Color]=nil end
+                          o.objtype='kill'
+                          PlaySound('unlock')
+                          if pz.layers.Walls[y][x]==256 then 
+                             pz.layers.Walls[y][x] = 0
+                             print('Blockade $ff on ('..x..","..y..') removed')
+                          end    
+                      end
+                      
+                   end
+
   },
   Rock = { draw = function(o,x,y,ox,oy)
                       white()
@@ -255,10 +307,23 @@ local canvasgadget = {
                     for tut in each(mysplit(pz.datamap.Tutorial,",")) do tutor(tut) end
                  end
               end      
-             if pz.clover then
-                color(255,255,255,255*math.abs(math.sin(love.timer.getTime())))
+              local alpha
+              if pz.clover then
+                color(255,255,255,alpha)
                 DrawImage(assets.clover,770,100)
-             end      
+              end    
+              if player.keys then
+                 local keyi = 0
+                 love.graphics.setFont(assets.coolvetica30)
+                 for tcolor,number in pairs(player.keys) do
+                     color(cols[tcolor][1],cols[tcolor][2],cols[tcolor][3],alpha)
+                     keyi = keyi + 1
+                     local keyx = keyi * 64
+                     DrawImage(assets.key,keyx,80)
+                     color(255,255,255,alpha)
+                     love.graphics.print(number,keyx+40,75)
+                 end
+              end
       end
 }
 luna.addgadget("gamecanvas",canvasgadget)
@@ -437,6 +502,7 @@ function game.arrive()
             if player.w=="" then player.w="N" end
             print(serialize('player',player))
          end   
+         if o.objtype=='Key' or o.objtype=='Lock' then o.data.Color = lower(o.data.Color) end
      end
      assert(player,"There is no start position in puzzle: "..user.puzzle)
      game.puzzletime.caption=""

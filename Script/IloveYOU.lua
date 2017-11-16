@@ -72,6 +72,7 @@ function load_all_my_crap()
     -- backquad = love.graphics.newQuad(0,0,800,600,64,64)
     for w in each({"north","south","east","west","dead"}) do QHot(assets['player.'..w],'cb') end
     for k,v in spairs(assets) do print("\27[34mI do have asset: \27[33m"..k.."\27[0m") end
+    assets.coolvetica30 = love.graphics.newFont("FONTS/COOLVETICA.TTF",30)
   end)
   assets = phantasar.init(junk,ichain)                        
 end 

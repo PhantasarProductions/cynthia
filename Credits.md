@@ -16,6 +16,7 @@
 - Jeroen P. Broks
   - Most of the game's script files (all files suffixed with .lua) are either GNU/GPL licensed or zLib licensed, but check the files themselves to be sure. All asset files I created myself are licensed under a http://creativecommons.org/licenses/by-nc-sa/4.0/ license unless explicitly stated otherwise in files coming along. All 3rd party assets are copyrighted by their respective creators and their original licenses do still apply.
     - Audio/Pickup.wav
+    - Audio/Unlock.wav
     - Build/Cynthia4Icon.png
     - Build/CynthiaAndroidIcon.lha
     - Build/CynthiaIOSIcon.lha
@@ -66,9 +67,11 @@
     - GFX/Stuff/Exit.png
     - GFX/Stuff/Leprechaun.piko
     - GFX/Stuff/Leprechaun.png
+    - GFX/Stuff/Lock.png
     - GFX/Stuff/Rock.png
     - GFX/Stuff/Snake.png
     - GFX/Stuff/Spit.png
+    - GFX/Stuff/key.png
     - GFX/Tiles/All/Water.png
     - GFX/Tiles/Egypt/Egypt_Wall_Isis.piko
     - GFX/Tiles/Egypt/Egypt_Wall_Isis_Gone.png
@@ -109,6 +112,7 @@
     - Script/puzzles/maps/Egypt_Level5.lua
     - Script/puzzles/maps/Greece_Puz01.lua
     - Script/puzzles/maps/Ireland_Puz01.lua
+    - Script/puzzles/maps/Ireland_Puz02.lua
     - Script/puzzles/titles.lua
     - Script/users.lua
     - disclaimer.md
