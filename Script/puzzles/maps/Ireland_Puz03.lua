@@ -1,4 +1,4 @@
--- Generated on: Fri 17 November 2017; 00:13:48
+-- Generated on: Fri 17 November 2017; 00:17:08
 -- Author:       Jeroen P. Broks
 -- License:      GPL 3
 
@@ -240,10 +240,9 @@ local ret = {}
 		ret.fetchteddyobject['5-C-1'] = ret.objects[13][6][#ret.objects[13][6]]
 
 		ret.objects[13][8][#ret.objects[13][8]+1] = {
-			objtype = "Key",
+			objtype = "Clover",
 			coords = {x=8, y=13},
 			data = {
-				['Color'] = "Clover",
 				['TeddyID'] = "7-C-1"}}
 		ret.fetchteddyobject['7-C-1'] = ret.objects[13][8][#ret.objects[13][8]]
 
