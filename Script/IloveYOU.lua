@@ -32,6 +32,7 @@ Version: 17.11.12
 -- *import music
 -- *import loadpuzzle
 -- *import sec2time
+
 flow = chain_sections
 
 
@@ -50,7 +51,7 @@ if love.filesystem.isFile("config/autologin.lua") then
 end 
 
 
-function load_all_my_crap()
+function load_all_my_crap()  
   local ichain
   if not user then ichain="NEWUSER" else ichain="MAINMENU" end
   local junk =            {
@@ -81,6 +82,7 @@ load_all_my_crap()
 load_all_my_crap = nil              
  
 function love.quit()
+  if forcequit then return false end
   if chain.currentname=="GAME" --and false 
     then -- and false must be removed in actual version
      love.window.showMessageBox( "Cynthia Johnson", "You can not quit while in-game.\nIn order to quit, please go back to the main menu and use the quit feature there.", "error", true )     

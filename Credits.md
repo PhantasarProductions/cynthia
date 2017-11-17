@@ -29,6 +29,7 @@
     - Build/Game Jolt/readme.md
     - Build/HatIcon.png
     - Credits.md
+    - Cynthia.GHD
     - GFX/Cynthia/Dead.png
     - GFX/Cynthia/East.jcr
     - GFX/Cynthia/North.jcr

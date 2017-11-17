@@ -23,11 +23,15 @@
 Version: 17.11.05
 ]]
 
+-- *import annaandgamejolt
+
 mkl.version("Cynthia Johnson - users.lua","17.11.05")
 mkl.lic    ("Cynthia Johnson - users.lua","GNU General Public License 3")
 
+mynet = GAHD_get("CYNTHIA.GHD")
 
 function login(uname)
+    local f = { [false]='failed',[true]='success'}
     -- Load user
     local ufile = "users/"..uname..".lua"
     assert(love.filesystem.isFile(ufile),"User "..ufile.." does not exist")
@@ -37,6 +41,20 @@ function login(uname)
     -- Login: Anna
     -- Login: Game Jolt
     user.username=uname
+    local net,breakdown,ok,msg
+    print(type(mynet),'mynet')
+    repeat
+      net,breakdown = NET_Login(mynet,user)
+      msg = ""
+      for k,d in spairs(breakdown) do msg = msg..k.. ":"..f[breakdown[k].success~=nil and breakdown[k].success~=false] .. "\n"..(breakdown[k].reason or 'No reason received').."\n\n\n" end
+      ok = net 
+      if not ok then
+         local  a =  love.window.showMessageBox( "Network login failure", msg, {[1]='Retry',[2]='Ignore',[3]='Quit',escapebutton=3} )
+         if     a==1 then ok=false; print("Retrying")
+         elseif a==2 then ok=true;  print("Ignoring")
+         else             forcequit=true love.event.quit() ok=true; print("Quitting") end
+      end   
+    until ok  
 end
 
 function saveuser()
