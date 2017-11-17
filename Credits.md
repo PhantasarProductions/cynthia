@@ -113,6 +113,7 @@
     - Script/puzzles/maps/Greece_Puz01.lua
     - Script/puzzles/maps/Ireland_Puz01.lua
     - Script/puzzles/maps/Ireland_Puz02.lua
+    - Script/puzzles/maps/Ireland_Puz03.lua
     - Script/puzzles/titles.lua
     - Script/users.lua
     - disclaimer.md

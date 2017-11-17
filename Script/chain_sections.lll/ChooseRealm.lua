@@ -56,6 +56,12 @@ function gadget.draw()
   end
 end
 
+function cr.arrive()
+   for i,v in ipairs(realms) do
+       if v==user.realm then cr.p = i end
+   end 
+end
+
 local selector = { kind="$realmselector",x=0,y=0}
 
 local gui = {
