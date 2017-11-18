@@ -131,7 +131,7 @@
     - Music/puzzles/Ireland/Celtic Impulse.mp3
   - Released in the Public Domain
     - music/EndPuzzle/Music for Funeral Home - Part 1.mp3
-    - music/Puzzles/Egypt/East of Tunesia.mp3
+    - music/Puzzles/Egypt/East of Tunesia.wav
     - music/Puzzles/Space/Future Setting A.mp3
 - Man Of Steel
   - Creative Commons - Attribute - Non-Commercial - ShareAlike

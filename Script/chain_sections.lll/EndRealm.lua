@@ -64,6 +64,9 @@ function EndTheRealm(param)
     table.sort(erealm.pics) -- make sure all pics are only taken in order
     erealm.picnum = 1
     erealm.updatepics() 
+    local getaward = 'ALL'..upper(erealm.Parameters.REALM)
+    print("Gonna award: "..getaward)
+    mynet:award(getaward)
     chain.go("ENDREALM")
 end
 
