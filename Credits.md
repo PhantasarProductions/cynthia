@@ -73,6 +73,8 @@
     - GFX/Stuff/Snake.png
     - GFX/Stuff/Spit.png
     - GFX/Stuff/key.png
+    - GFX/Stuff/push.piko
+    - GFX/Stuff/push_stone.png
     - GFX/Tiles/All/Water.png
     - GFX/Tiles/Egypt/Egypt_Wall_Isis.piko
     - GFX/Tiles/Egypt/Egypt_Wall_Isis_Gone.png
@@ -115,6 +117,7 @@
     - Script/puzzles/maps/Ireland_Puz01.lua
     - Script/puzzles/maps/Ireland_Puz02.lua
     - Script/puzzles/maps/Ireland_Puz03.lua
+    - Script/puzzles/maps/Ireland_Puz04.lua
     - Script/puzzles/titles.lua
     - Script/users.lua
     - disclaimer.md

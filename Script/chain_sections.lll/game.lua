@@ -227,13 +227,27 @@ game.objs = {
                          game.throwdagger:lf_init()
                          print("Rock Button updated?")
                       end      
-                  end
-  }
+                  end                  
+  },
+  Push_Stone = { draw = function(o,x,y,ox,oy)
+                          white()
+                          o.gx=o.gx or 0
+                          o.gy=o.gy or 0
+                          QHot(assets['push_stone'],"cc")
+                          DrawImage(assets['push_stone'],o.gx+ox+(x*32)-16,o.gy+oy+(y*32)-16)
+                        end,
+                 push = reg_push,
+                 pull = reg_pull,
+                 afterpush = reg_platecheck                        
+                 }
   
 }
 
 local tw = {W='west',E='east',N='north',S='south'}
 function game.throw(proj,ax,ay,aw)
+   local pro = lower(proj)
+   if not player[pro.."s"] then return end
+   if player[pro.."s"]<=0  then return end
    local w = aw or player.w
    local x = ax or player.x
    local y = ay or player.y
@@ -249,7 +263,6 @@ function game.throw(proj,ax,ay,aw)
    elseif proj=='Dagger' then projectile.img = assets['dagger_'..tw[w]]  QHot(projectile.img,'cc')
    else   error('Unknown projectile: '..proj) end
    for k,v in spairs(projectile) do print(type(v).." "..k..";") end -- debug line
-   local pro = lower(proj)
    player[pro.."s"] = player[pro.."s"] - 1
    game['throw'..pro].caption=player[pro.."s"]
    game['throw'..pro].acaption=nil
@@ -321,7 +334,7 @@ local canvasgadget = {
                      local keyx = keyi * 64
                      DrawImage(assets.key,keyx,80)
                      color(255,255,255,alpha)
-                     love.graphics.print(number,keyx+40,75)
+                     love.graphics.print(number,keyx+20,75)
                  end
               end
       end
@@ -535,7 +548,10 @@ function game.keypressed(key)
         if key=='left'   or key=='a' then player.w='W' end
         if key=='right'  or key=='d' then player.w='E' end
         return
-     end   
+     end
+     -- throw
+     if key=='1' then game.throw('Rock') end        
+     if key=='2' then game.throw('Dagger') end
      -- grabbed
      -- just walk
      if key=='up'     or key=='w' then game.walk('u',true) end

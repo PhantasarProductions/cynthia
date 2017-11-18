@@ -40,6 +40,10 @@ local ret = {}
 			file='Ireland_Puz03',
 			title="There, and back again!"
 		}
+	ret.Ireland[4] = {
+			file='Ireland_Puz04',
+			title="Don't PUSH your luck!"
+		}
 
 
 return ret
