@@ -23,6 +23,17 @@
 Version: 17.11.12
 ]]
 
+
+--[[
+
+    Xtra Wall codes
+    256 = Killable enemy
+    257 = Unkillable enemy or general invisible wall
+    258 = Pushable item
+    259 = Pullable item
+    260 = Pushable and pullable item
+]]
+
 local tutor = j_love_import('/SCRIPT/INGAMETUTORS.LUA')
 
 local allowinstantwin = false -- Must be false in full release
@@ -74,6 +85,12 @@ function game.drawlayer(l,ofx,ofy)
            end
         end
     end
+end
+
+local function reg_push(o)
+end
+
+local function reg_pull(o)
 end
 
 game.objs = {
@@ -283,7 +300,13 @@ function game.drawobjects(ox,oy)
                 else
                    killed[#killed+1]={x=x,y=y,TeddyID=o.data.TeddyID}   
                    print(o.data.TeddyID.." scheduled to be killed!\n"..serialize("  killed",killed))
-                end                   
+                end
+                if pz.layers.Walls[y][x]==0 and o.objtype~='kill' then
+                   assert(game.objs[o.objtype],"No action data for object type: "..o.objtype) 
+                   if     game.objs[o.objtype].push and game.objs[o.objtype].pull then pz.layers.Walls[y][x]=260
+                   elseif                               game.objs[o.objtype].pull then pz.layers.Walls[y][x]=259
+                   elseif game.objs[o.objtype].push                               then pz.layers.Walls[y][x]=258 end
+                end                            
             end
         end
     end
@@ -341,12 +364,15 @@ local canvasgadget = {
 }
 luna.addgadget("gamecanvas",canvasgadget)
 
-game.canvas = { kind='$gamecanvas',x=0,y=20,w=800,h=480}
+game.canvas       = { kind='$gamecanvas',x=0,y=20,w=800,h=480}
 game.puzzleheader = {kind = 'label',x=5,y=5,font='FONTS/COOLVETICA.TTF',fontsize=10,FR=0,FG=0,FB=0}
 game.puzzletime   = {kind = 'label',x=50,y=510,font='FONTS/COOLVETICA.TTF',fontsize=15,FR=0,FG=0,FB=0}
 game.puzzlemove   = {kind = 'label',x=50,y=530,font='FONTS/COOLVETICA.TTF',fontsize=15,FR=0,FG=0,FB=0}
 game.throwrock    = {kind = 'button',x=400,y=510, caption=0, visible=false,FR=255,FG=180,FB=0,BR=0,BG=1,BB=5,image='GFX/STUFF/ROCK.PNG', action=function() game.throw('Rock') end}
 game.throwdagger  = {kind = 'button',x=500,y=510, caption=0, visible=false,FR=0,FG=180,FB=255,BR=0,BG=1,BB=5,image='GFX/STUFF/DAGGER_SCHUIN.PNG', action=function() game.throw('Dagger') end}
+game.push         = {kind = 'button', x=270,y=519, caption='', visible=false, IR=0, IG=180,IB=255,BR=5,BG=0,BB=0,image='GFX/GAMEUI/PUSH.PNG', action=game.performpush}
+game.pull         = {kind = 'button', x=190,y=519, caption='', visible=false, IR=0, IG=180,IB=255,BR=5,BG=0,BB=0,image='GFX/GAMEUI/PULL.PNG', action=game.performpull}
+
 
 local function gturn(g)
      if player.w=='DEAD' then return end
@@ -401,7 +427,7 @@ game.gui = {
              image='GFX/GENERAL/BACKGROUND.PNG',
              x=0,
              y=0,
-             kids = { game.canvas, game.puzzleheader, game.puzzletime, game.puzzlemove,game.throwrock, game.throwdagger,
+             kids = { game.canvas, game.puzzleheader, game.puzzletime, game.puzzlemove,game.throwrock, game.throwdagger, game.push, game.pull,
                   { kind = 'button', FR=255,FG=255,FB=0,BR=255,BG=0,BB=0,caption="X",x=0,y=500,action=function() if love.window.showMessageBox( "Cynthia Johnson", "Wanna go back to the main menu?\n(Progress in this puzzle will be lost!)", {"Yes!","No", escapebutton=2} )==1 then chain.go('MAINMENU') end end },
                   { kind = 'button', image='GFX/GAMEUI/CLOCKWISE.PNG', caption="", BR=0,BG=0,BB=20, action=gturn, x=760,y=505, gtid='cw', w=30,imgx=7},
                   { kind = 'button', image='GFX/GAMEUI/COUNTERCLOCKWISE.PNG', caption="", BR=0,BG=0,BB=20, action=gturn, x=700,y=505, gtid='ccw', w=30,imgx=7},
@@ -440,7 +466,19 @@ function game.update()
         player.frametime = nil
         player.f=1
         player.keepwalking=false
-     end   
+     end  
+     local fx = player.x
+     local fy = player.y
+     local fw = player.w
+     if     fw=='N' then fy=fy-1 
+     elseif fw=='S' then fy=fy+1
+     elseif fw=='E' then fx=fx+1
+     else                fx=fx-1 end
+     local inbounds = fx>0 and fx<26 and fy>0 and fy<16
+     local fwall = nil
+     if inbounds then fwall = pz.layers.Walls[fy][fx] end 
+     game.push.visible = fwall==260 or fwall==258
+     game.pull.visible = fwall==260 or fwall==259
      if projectile then
         local p = projectile
         p.time = p.time or nt
