@@ -5,7 +5,7 @@
 
 - Art Of Escapism
   - Creative Commons - By Attribution - Share Alike
-    - Music/Ireland/Art_Of_Escapism_-_Guardians.mp3
+    - Music/Puzzles/Ireland/Art_Of_Escapism_-_Guardians.mp3
 - Eric Matyas
   - Read for full license infor Eric's own website: http://soundimage.org/
     - Music/Egypt/Hypnotic-Puzzle3.mp3.crdownload
@@ -50,6 +50,8 @@
     - GFX/GameUI/CounterClockwise.png
     - GFX/GameUI/Down.png
     - GFX/GameUI/Left.png
+    - GFX/GameUI/Pull.png
+    - GFX/GameUI/Push.png
     - GFX/GameUI/Right.png
     - GFX/GameUI/Up.png
     - GFX/General/Background.png
