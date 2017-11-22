@@ -41,6 +41,12 @@
     - GFX/CynthiaSpeaks/EndEgypt/004.png
     - GFX/CynthiaSpeaks/EndEgypt/005.png
     - GFX/CynthiaSpeaks/EndEgypt/006.png
+    - GFX/CynthiaSpeaks/EndIreland/001.png
+    - GFX/CynthiaSpeaks/EndIreland/002.png
+    - GFX/CynthiaSpeaks/EndIreland/003.png
+    - GFX/CynthiaSpeaks/EndIreland/004.png
+    - GFX/CynthiaSpeaks/EndIreland/005.png
+    - GFX/CynthiaSpeaks/EndIreland/006.png
     - GFX/CynthiaSpeaks/NewUser/Hello.png
     - GFX/CynthiaSpeaks/NewUser/Intro.png
     - GFX/EndPuzzle/Failed.png
