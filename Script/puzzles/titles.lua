@@ -22,6 +22,11 @@ local ret = {}
 			file='Egypt_Level5',
 			title="A message from the Pharao"
 		}
+	ret.Germany = {}
+	ret.Germany[1] = {
+			file='Germany_Puz01',
+			title="Es gibt noch nichts hier. Komm zur&uuml;ck sp&auml;ter, bitte!"
+		}
 	ret.Greece = {}
 	ret.Greece[1] = {
 			file='Greece_Puz01',
@@ -43,6 +48,10 @@ local ret = {}
 	ret.Ireland[4] = {
 			file='Ireland_Puz04',
 			title="Don't PUSH your luck!"
+		}
+	ret.Ireland[5] = {
+			file='Ireland_Puz05',
+			title="The end of the rainbow"
 		}
 
 
