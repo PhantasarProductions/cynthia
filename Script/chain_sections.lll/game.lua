@@ -87,10 +87,42 @@ function game.drawlayer(l,ofx,ofy)
     end
 end
 
-local function reg_push(o)
+local push_data = { N = { y=-1, x= 0, gx=  0,gy= 32},
+                    S = { y= 1, x= 0, gx=  0,gy=-32},
+                    W = { y= 0, x=-1, gx= 32,gy=  0},
+                    E = { y= 0, x= 1, gx=-32,gy=  0}
+
+}
+local function reg_push(o,w,f)
+     local od = game.objs[o.objtype]
+     if not(od.push or f) then return end
+     local c = o.coords
+     local wl = pz.layers.Walls
+     local pd = push_data[w]
+     if c.y+pd.y>15 then return end -- No moving through the southern boundary
+     if c.y+pd.y< 1 then return end -- No moving through the nothern boundary
+     if c.x+pd.x>25 then return end -- No moving through the eastern boundary
+     if c.x+pd.x< 1 then return end -- No moving through the western boundary      
+     if wl[c.y+pd.y][c.x+pd.x]>0 then return end -- Let's not push stuff into walls, shall we?
+     o.moving = f or 'pushed'
+     local kill_i
+     for i,oi in ipairs(pz.objects[c.y][c.x]) do if oi==0 then kill_i=i end end
+     table.remove(pz.objects[c.y][c.x],kill_i)
+     local v = wl[c.y][c.x]
+     wl[c.y][c.x] = 0
+     io.write("Moving block "..o.data.TeddyID.." from ("..c.x..","..c.y..") to ")
+     c.y = c.y + pd.y
+     c.x = c.x + pd.x 
+     o.gx = pd.gx
+     o.gy = pd.gy
+     wl[c.y][c.x] = v
+     o.pwind = w     
+     print("("..c.x..","..c.y..") w="..o.pwind.." mving="..sval(o.moving)..' Fine tuning ('..o.gx..","..o.gy..")")
+     pz.objects[c.y][c.x][#pz.objects[c.y][c.x]+1]=o
+     player:imove()
 end
 
-local function reg_pull(o)
+local function reg_pull(o,w)
 end
 
 game.objs = {
@@ -364,6 +396,17 @@ local canvasgadget = {
 }
 luna.addgadget("gamecanvas",canvasgadget)
 
+
+function game.performpush()
+    local pd = push_data[player.w]
+    local oj = pz.objects[player.y+pd.y][player.x+pd.x]
+    local od
+    for o in each(oj) do
+        od = game.objs[o.objtype]
+        if od.push then od.push(o,player.w) end
+    end
+end
+
 game.canvas       = { kind='$gamecanvas',x=0,y=20,w=800,h=480}
 game.puzzleheader = {kind = 'label',x=5,y=5,font='FONTS/COOLVETICA.TTF',fontsize=10,FR=0,FG=0,FB=0}
 game.puzzletime   = {kind = 'label',x=50,y=510,font='FONTS/COOLVETICA.TTF',fontsize=15,FR=0,FG=0,FB=0}
@@ -445,12 +488,14 @@ luna.update(game.gui)
 
 function game.update()
      local nt = love.timer.getTime()
+     -- Updating time label
      if math.abs(nt-game.timer)>1 then
         player.time = player.time + 1
         game.timer  = nt
         game.puzzletime.caption = "Time: "..sec2time(player.time)
         user.time = player.time
      end
+     -- Walking player
      if player.keepwalking then game.walk(player.keepwalking,true) end
      if player.w=='DEAD' then player.gx=0 player.gy=0 player.keepwalking=false player.f=0 player.frametime=nil end
      if player.gx~=0 or player.gy~=0 or love.keyboard.isDown('up') or love.keyboard.isDown('down') or love.keyboard.isDown('left') or love.keyboard.isDown('right') or love.keyboard.isDown('w') or love.keyboard.isDown('a') or love.keyboard.isDown('s') or love.keyboard.isDown('d') then
@@ -467,6 +512,7 @@ function game.update()
         player.f=1
         player.keepwalking=false
      end  
+     -- Pushable/Pullable items in front of the player?
      local fx = player.x
      local fy = player.y
      local fw = player.w
@@ -479,6 +525,23 @@ function game.update()
      if inbounds then fwall = pz.layers.Walls[fy][fx] end 
      game.push.visible = fwall==260 or fwall==258
      game.pull.visible = fwall==260 or fwall==259
+     -- Items being pushed or pulled?
+     pz.pushtime = pz.pushtime or nt
+     if math.abs(nt-pz.pushtime)>.08 then 
+        for k,o in pairs(pz.fetchteddyobject) do
+             --print('checking: '..k..' >> '..sval(o.moving)) -- debug line... MUST be on comment when not in use for debugging!
+             if o.moving then
+                if o.gx>0 then o.gx = o.gx - 4 end
+                if o.gx<0 then o.gx = o.gx + 4 end 
+                if o.gy>0 then o.gy = o.gy - 4 end
+                if o.gy<0 then o.gy = o.gy + 4 end 
+                if o.gx==0 and o.gy == 0 then
+                   if game.objs[o.objtype].keepmoving then game.objs[o.objtype](o,o.pwind,o.moved) else o.moved = nil end
+                end                      
+             end
+        end     
+     end
+     -- Thrown projectiles
      if projectile then
         local p = projectile
         p.time = p.time or nt
