@@ -96,6 +96,8 @@
     - GFX/Tiles/Egypt/Wall_Hieroglief.png
     - GFX/Tiles/Ireland/Bush.png
     - GFX/Tiles/Ireland/Grass.png
+    - GFX/Tiles/Ireland/The Pot of Gold at th End of the Rainbow.piko
+    - GFX/Tiles/Ireland/The Pot of Gold at th End of the Rainbow.png
     - License
     - Readme.md
     - Script/IloveYOU.lua
@@ -115,11 +117,13 @@
     - Script/puzzles/maps/Egypt_Level3.lua
     - Script/puzzles/maps/Egypt_Level4.lua
     - Script/puzzles/maps/Egypt_Level5.lua
+    - Script/puzzles/maps/Germany_Puz01.lua
     - Script/puzzles/maps/Greece_Puz01.lua
     - Script/puzzles/maps/Ireland_Puz01.lua
     - Script/puzzles/maps/Ireland_Puz02.lua
     - Script/puzzles/maps/Ireland_Puz03.lua
     - Script/puzzles/maps/Ireland_Puz04.lua
+    - Script/puzzles/maps/Ireland_Puz05.lua
     - Script/puzzles/titles.lua
     - Script/users.lua
     - disclaimer.md
