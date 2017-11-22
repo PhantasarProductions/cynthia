@@ -87,10 +87,10 @@ function game.drawlayer(l,ofx,ofy)
     end
 end
 
-local push_data = { N = { y=-1, x= 0, gx=  0,gy= 32},
-                    S = { y= 1, x= 0, gx=  0,gy=-32},
-                    W = { y= 0, x=-1, gx= 32,gy=  0},
-                    E = { y= 0, x= 1, gx=-32,gy=  0}
+local push_data = { N = { y=-1, x= 0, gx=  0,gy= 32, rev='S', pull='d'},
+                    S = { y= 1, x= 0, gx=  0,gy=-32, rev='N', pull='u'},
+                    W = { y= 0, x=-1, gx= 32,gy=  0, rev='E', pull='r'},
+                    E = { y= 0, x= 1, gx=-32,gy=  0, rev='W', pull='l'}
 
 }
 local function reg_push(o,w,f)
@@ -123,6 +123,20 @@ local function reg_push(o,w,f)
 end
 
 local function reg_pull(o,w)
+     local od = game.objs[o.objtype]
+     if not od.pull then return end
+     local  pl = player -- LAZY!!!!
+     local tpd = push_data[w]
+     local  pd = push_data[tpd.rev]
+     local  wl = pz.layers.Walls
+     if pl.y+pd.y>15 then return end -- No moving through the southern boundary
+     if pl.y+pd.y< 1 then return end -- No moving through the nothern boundary
+     if pl.x+pd.x>25 then return end -- No moving through the eastern boundary
+     if pl.x+pd.x< 1 then return end -- No moving through the western boundary      
+     if wl[pl.y+pd.y][pl.x+pd.x]>0 then return end -- Let's not pull stuff forcing Cynthia into walls, shall we?
+     game.walk(tpd.pull,false)
+     player.w=w
+     reg_push(o,tpd.rev,'pulled')
 end
 
 game.objs = {
@@ -407,6 +421,16 @@ function game.performpush()
     end
 end
 
+function game.performpull()
+    local pd = push_data[player.w]
+    local oj = pz.objects[player.y+pd.y][player.x+pd.x]
+    local od
+    for o in each(oj) do
+        od = game.objs[o.objtype]
+        if od.push then od.pull(o,player.w) end
+    end
+end
+
 game.canvas       = { kind='$gamecanvas',x=0,y=20,w=800,h=480}
 game.puzzleheader = {kind = 'label',x=5,y=5,font='FONTS/COOLVETICA.TTF',fontsize=10,FR=0,FG=0,FB=0}
 game.puzzletime   = {kind = 'label',x=50,y=510,font='FONTS/COOLVETICA.TTF',fontsize=15,FR=0,FG=0,FB=0}
@@ -447,6 +471,7 @@ function game.walk(d,keepwalking)
    if player.x ==25 and d=='r' then return end
    if player.y ==15 and d=='d' then return end
    local wd = game.walkdata[d]
+   assert(wd,"No walk data for direction request: "..sval(d))
    if pz.layers.Walls[player.y+wd.py][player.x+wd.px]>0 then return end
    player:imove()
    player. x=player.x+wd.px
