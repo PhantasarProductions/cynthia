@@ -341,7 +341,6 @@ game.objs = {
                           DrawImage(assets['boulder'],o.gx+ox+(x*32)-16,o.gy+oy+(y*32)-16,o.frame)
                         end,
                  push = reg_push,
-                 pull = reg_pull,
                  afterpush = reg_platecheck  ,
                  keepmoving = true                      
                  }
