@@ -34,6 +34,7 @@
     - GFX/Cynthia/East.jcr
     - GFX/Cynthia/North.jcr
     - GFX/Cynthia/South.jcr
+    - GFX/Cynthia/Stone.png
     - GFX/Cynthia/West.jcr
     - GFX/CynthiaSpeaks/EndEgypt/001.png
     - GFX/CynthiaSpeaks/EndEgypt/002.png
@@ -81,6 +82,10 @@
     - GFX/Stuff/Snake.png
     - GFX/Stuff/Spit.png
     - GFX/Stuff/key.png
+    - GFX/Stuff/medusa_east.png
+    - GFX/Stuff/medusa_north.png
+    - GFX/Stuff/medusa_south.png
+    - GFX/Stuff/medusa_west.png
     - GFX/Stuff/push.piko
     - GFX/Stuff/push_stone.png
     - GFX/Tiles/All/Water.png
@@ -104,6 +109,7 @@
     - GFX/Tiles/Ireland/Grass.png
     - GFX/Tiles/Ireland/The Pot of Gold at th End of the Rainbow.piko
     - GFX/Tiles/Ireland/The Pot of Gold at th End of the Rainbow.png
+    - GFX/boulder.jcr
     - License
     - Readme.md
     - Script/IloveYOU.lua
@@ -125,6 +131,8 @@
     - Script/puzzles/maps/Egypt_Level5.lua
     - Script/puzzles/maps/Germany_Puz01.lua
     - Script/puzzles/maps/Greece_Puz01.lua
+    - Script/puzzles/maps/Greece_Puz02.lua
+    - Script/puzzles/maps/Greece_Puz03.lua
     - Script/puzzles/maps/Ireland_Puz01.lua
     - Script/puzzles/maps/Ireland_Puz02.lua
     - Script/puzzles/maps/Ireland_Puz03.lua
@@ -143,6 +151,8 @@
     - Music/General/Call to Adventure.mp3
     - Music/puzzles/Egypt/Return of the Mummy.mp3
     - Music/puzzles/Egypt/Silver Flame.mp3
+    - Music/puzzles/Greece/Ascending the Value.mp3
+    - Music/puzzles/Greece/Enchanted Journey.mp3
     - Music/puzzles/Ireland/Celtic Impulse.mp3
   - Released in the Public Domain
     - music/EndPuzzle/Music for Funeral Home - Part 1.mp3
@@ -150,6 +160,38 @@
     - music/Puzzles/Space/Future Setting A.mp3
 - Man Of Steel
   - Creative Commons - Attribute - Non-Commercial - ShareAlike
+    - GFX/Tiles/Caves/Grey/E.png
+    - GFX/Tiles/Caves/Grey/F.png
+    - GFX/Tiles/Caves/Grey/F_Sea.png
+    - GFX/Tiles/Caves/Grey/F_Shore.png
+    - GFX/Tiles/Caves/Grey/N.png
+    - GFX/Tiles/Caves/Grey/NE.png
+    - GFX/Tiles/Caves/Grey/NW.png
+    - GFX/Tiles/Caves/Grey/S.png
+    - GFX/Tiles/Caves/Grey/SE.png
+    - GFX/Tiles/Caves/Grey/SW.png
+    - GFX/Tiles/Caves/Grey/W.png
+    - GFX/Tiles/Caves/Grey/stalagmiet.png
+    - GFX/Tiles/Caves/Grey/stalagmiet2.png
+    - GFX/Tiles/Caves/GreyAlpha/E.png
+    - GFX/Tiles/Caves/GreyAlpha/F.png
+    - GFX/Tiles/Caves/GreyAlpha/F_Sea.png
+    - GFX/Tiles/Caves/GreyAlpha/F_Shore.png
+    - GFX/Tiles/Caves/GreyAlpha/F_Shore_W.png
+    - GFX/Tiles/Caves/GreyAlpha/N.png
+    - GFX/Tiles/Caves/GreyAlpha/NE.png
+    - GFX/Tiles/Caves/GreyAlpha/NW.png
+    - GFX/Tiles/Caves/GreyAlpha/S.png
+    - GFX/Tiles/Caves/GreyAlpha/SE.png
+    - GFX/Tiles/Caves/GreyAlpha/SW.png
+    - GFX/Tiles/Caves/GreyAlpha/stalagmiet.png
+    - GFX/Tiles/Caves/GreyAlpha/stalagmiet2.png
+    - GFX/Tiles/Greece/CheckeredTiles.png
+    - GFX/Tiles/Greece/Pillar.PNG
+    - GFX/Tiles/Greece/Pillar2.PNG
+    - GFX/Tiles/Greece/Wall.png
+    - GFX/Tiles/Greece/Wall_lv.png
+    - GFX/Tiles/Greece/Wall_rv.png
     - GFX/Tiles/Inside/WALL_SC_SE.png
     - GFX/Tiles/Inside/Wall South
     - GFX/Tiles/Inside/Wall_East.png
@@ -159,6 +201,9 @@
 - Manfred Klein
   - Downloaded from dafont.com -- Set as "100% free"
     - fonts/BodoniXT.ttf
+- Plusplus
+  - Creative Commons - Attribute - Non-Commercial - ShareAlike
+    - Music/Puzzles/Greece/Plusplus_-_01_-_Greek_Tragedy.mp3
 - Ray Larabie
   - Free for commercial and personal use - Full license file found on DaFont
     - Fonts/Coolvetica.ttf

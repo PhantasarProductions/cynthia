@@ -57,7 +57,7 @@ game.layp = {
     Walls = {x=-16,y=0,hot='cb', player=true}
 }
 
-game.w = {N='north',W='west',E='east',S='south',DEAD='dead'}
+game.w = {N='north',W='west',E='east',S='south',DEAD='dead',STONE='stone'}
 
 function game.drawlayer(l,ofx,ofy)
     local vx,vy,c,tag,layp,tex,teximg,playtag
@@ -68,7 +68,7 @@ function game.drawlayer(l,ofx,ofy)
            c = pz.layers[l][y][x]
            if layp.player and x==player.x and y==player.y then
               playtag = 'player.'..game.w[player.w]
-              if player.w=='DEAD' then player.f=1 end
+              if player.w=='DEAD' or player.w=='STONE' then player.f=1 end
               DrawImage(assets[playtag],ofx + (x*32) + layp.x + player.gx, ofy + (y*32) + layp.y + player.gy,player.f)
               if projectile then                 
                  DrawImage(projectile.img, ofx+(projectile.x*32) + layp.x + projectile.gx, ofy + (projectile.y*32) + layp.y + projectile.gy)
@@ -139,6 +139,8 @@ local function reg_pull(o,w)
      reg_push(o,tpd.rev,'pulled')
 end
 
+
+
 game.objs = {
 
   Exit = { draw = function(o,x,y,ox,oy)
@@ -201,6 +203,32 @@ game.objs = {
                        end                             
              end,
              killable = true          
+  },
+  Medusa = {
+             data = {   N = {pic='medusa_north', cynthia='S', x= 0, y=-1 },
+                        S = {pic='medusa_south', cynthia='N', x= 0, y= 1 },
+                        W = {pic='medusa_west',  cynthia='E', x=-1, y= 0 },
+                        E = {pic='medusa_east',  cynthia='W', x= 1, y= 0 }
+                    },
+             draw = function(o,x,y,ox,oy)
+                       local m=game.objs.Medusa.data[o.data.Wind]
+                       local p=assets[m.pic]       
+                       Hot(p,16,64)
+                       white()                       
+                       DrawImage(p,ox+(x*32)-16,oy+(y*32)+8,1,0,1,1)
+                       if pz.layers.Walls[y][x]==0 then 
+                          pz.layers.Walls[y][x] = 256
+                          print('Blockade $ff on ('..x..","..y..')') 
+                       end -- Make sure the player won't walk through the medusa
+                       if player.x == x or player.y == y then
+                          local petx,pety=x,y
+                          repeat
+                                petx = petx + m.x
+                                pety = pety + m.y
+                                if player.x==petx and player.y==pety and player.w==m.cynthia then player.w='STONE' end
+                          until petx<1 or pety<1 or pety>14 or pety>24 or pz.layers.Walls[pety][petx]>0       
+                       end
+             end,
   },
   Clover = { draw = function(o,x,y,ox,oy)
                       white()
@@ -302,6 +330,20 @@ game.objs = {
                  push = reg_push,
                  pull = reg_pull,
                  afterpush = reg_platecheck                        
+                 },
+  Push_Boulder = { draw = function(o,x,y,ox,oy)
+                          white()
+                          o.gx=o.gx or 0
+                          o.gy=o.gy or 0
+                          o.frame = o.frame or 1
+                          if o.frame>100 then o.frame=1 end
+                          QHot(assets['boulder'],"cc")
+                          DrawImage(assets['boulder'],o.gx+ox+(x*32)-16,o.gy+oy+(y*32)-16,o.frame)
+                        end,
+                 push = reg_push,
+                 pull = reg_pull,
+                 afterpush = reg_platecheck  ,
+                 keepmoving = true                      
                  }
   
 }
@@ -315,7 +357,8 @@ function game.throw(proj,ax,ay,aw)
    local x = ax or player.x
    local y = ay or player.y
    if projectile then return end -- You cannot throw until the last projectile has reached its destination!
-   if     w=='DEAD' then return end -- You cannot throw when you are dead (obious, eh?
+   if     w=='DEAD'  then return end -- You cannot throw when you are dead (obvious, eh?)
+   if     w=='STONE' then return end -- You can also not do this when you are petrified. Who could've imagined
    projectile = { x=x,y=y,w=w,p=proj,gx=0,gy=0, mx=0, my=0}
    if     w=='W'    then projectile.mx=-4 projectile.mnx=-32  
    elseif w=='E'    then projectile.mx= 4 projectile.mnx= 32
@@ -371,7 +414,7 @@ end
 
 local canvasgadget = {
       draw = function(g)
-              if player.w=="DEAD" then game.pend=true user.endstatus='failed' music.play('MUSIC/ENDPUZZLE/MUSIC FOR FUNERAL HOME - PART 1.MP3') end
+              if player.w=="DEAD" or player.w=='STONE' then game.pend=true user.endstatus='failed' music.play('MUSIC/ENDPUZZLE/MUSIC FOR FUNERAL HOME - PART 1.MP3') end
               color(0,0,0,254)
               DrawRect(g.x,g.y,g.w,g.h) 
               game.drawlayer('Floor',g.x,g.y); game.drawobjects(g.x,g.y)
@@ -442,7 +485,7 @@ game.pull         = {kind = 'button', x=190,y=519, caption='', visible=false, IR
 
 
 local function gturn(g)
-     if player.w=='DEAD' then return end
+     if player.w=='DEAD' or player.w=='STONE' then return end
      if g.gtid=="cw" then
         if     player.w=="N" then player.w="E"
         elseif player.w=="E" then player.w="S"
@@ -464,6 +507,7 @@ game.walkdata = { u = {px= 0, py=-1,gx=  0,gy= 32,w='N'},
                 }
 function game.walk(d,keepwalking)
    if player.w=='DEAD'         then return end
+   if player.w=='STONE'        then return end
    if player.gx~= 0            then return end
    if player.gy~= 0            then return end
    if player.x == 1 and d=='l' then return end
@@ -522,7 +566,7 @@ function game.update()
      end
      -- Walking player
      if player.keepwalking then game.walk(player.keepwalking,true) end
-     if player.w=='DEAD' then player.gx=0 player.gy=0 player.keepwalking=false player.f=0 player.frametime=nil end
+     if player.w=='DEAD' or player.w=='STONE' then player.gx=0 player.gy=0 player.keepwalking=false player.f=0 player.frametime=nil end
      if player.gx~=0 or player.gy~=0 or love.keyboard.isDown('up') or love.keyboard.isDown('down') or love.keyboard.isDown('left') or love.keyboard.isDown('right') or love.keyboard.isDown('w') or love.keyboard.isDown('a') or love.keyboard.isDown('s') or love.keyboard.isDown('d') then
         player.frametime = player.frametime or nt
         if math.abs(nt-player.frametime)>.05 then 
@@ -562,7 +606,8 @@ function game.update()
                 if o.gy<0 then o.gy = o.gy + 4 end 
                 if o.gx==0 and o.gy == 0 then
                    if game.objs[o.objtype].keepmoving then game.objs[o.objtype](o,o.pwind,o.moved) else o.moved = nil end
-                end                      
+                end  
+                if o.frame then o.frame = o.frame + 1 end                    
              end
         end     
      end

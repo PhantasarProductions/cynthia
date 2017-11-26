@@ -63,7 +63,9 @@ function load_all_my_crap()
   for w in each({"North","South","East","West"}) do 
       junk.image['player.'..lower(w)] = "GFX/CYNTHIA/"..upper(w)..".JCR" 
   end       
-  junk.image['player.dead']="GFX/CYNTHIA/DEAD.PNG"                                         
+  junk.image['player.dead'] ="GFX/CYNTHIA/DEAD.PNG"
+  junk.image['player.stone']="GFX/CYNTHIA/STONE.PNG"    
+  junk.image.boulder='GFX/BOULDER.JCR'                                     
   phantasar.adddir(junk,'font','FONTS/')
   phantasar.adddir(junk,"image","GFX/STUFF/")
   phantasar.adddir(junk,"image","GFX/ENDPUZZLE/")
@@ -71,7 +73,7 @@ function load_all_my_crap()
   print("Loading all assets");
   phantasar.after(function()
     -- backquad = love.graphics.newQuad(0,0,800,600,64,64)
-    for w in each({"north","south","east","west","dead"}) do QHot(assets['player.'..w],'cb') end
+    for w in each({"north","south","east","west","dead",'stone'}) do QHot(assets['player.'..w],'cb') end
     for k,v in spairs(assets) do print("\27[34mI do have asset: \27[33m"..k.."\27[0m") end
     assets.coolvetica30 = love.graphics.newFont("FONTS/COOLVETICA.TTF",30)
   end)

@@ -30,7 +30,15 @@ local ret = {}
 	ret.Greece = {}
 	ret.Greece[1] = {
 			file='Greece_Puz01',
-			title="."
+			title="After 1000 years. Even YOU might be worth something!"
+		}
+	ret.Greece[2] = {
+			file='Greece_Puz02',
+			title="Eyes up here!"
+		}
+	ret.Greece[3] = {
+			file='Greece_Puz03',
+			title="The Rolling Stones"
 		}
 	ret.Ireland = {}
 	ret.Ireland[1] = {
