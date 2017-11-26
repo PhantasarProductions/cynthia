@@ -1,4 +1,4 @@
--- Generated on: Sun 26 November 2017; 17:53:21
+-- Generated on: Sun 26 November 2017; 23:06:14
 -- Author:       Jeroen P. Broks
 -- License:      GPL 3
 
@@ -155,7 +155,7 @@ local ret = {}
 		ret.fetchteddyobject['B-9-1'] = ret.objects[10][12][#ret.objects[10][12]]
 
 		ret.objects[10][22][#ret.objects[10][22]+1] = {
-			objtype = "Lock",
+			objtype = "Key",
 			coords = {x=22, y=10},
 			data = {
 				['Color'] = "Red",
