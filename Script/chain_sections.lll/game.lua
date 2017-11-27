@@ -604,7 +604,7 @@ function game.update()
                 if o.gy>0 then o.gy = o.gy - 4 end
                 if o.gy<0 then o.gy = o.gy + 4 end 
                 if o.gx==0 and o.gy == 0 then
-                   if game.objs[o.objtype].keepmoving then game.objs[o.objtype](o,o.pwind,o.moved) else o.moved = nil end
+                   if game.objs[o.objtype].keepmoving then game.objs[o.objtype].push(o,o.pwind,o.moved) else o.moved = nil end
                 end  
                 if o.frame then o.frame = o.frame + 1 end                    
              end
