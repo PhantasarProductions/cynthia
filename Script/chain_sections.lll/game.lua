@@ -99,6 +99,7 @@ local function reg_push(o,w,f)
      local c = o.coords
      local wl = pz.layers.Walls
      local pd = push_data[w]
+     o.moving = nil
      if c.y+pd.y>15 then return end -- No moving through the southern boundary
      if c.y+pd.y< 1 then return end -- No moving through the nothern boundary
      if c.x+pd.x>25 then return end -- No moving through the eastern boundary
@@ -599,14 +600,14 @@ function game.update()
         for k,o in pairs(pz.fetchteddyobject) do
              --print('checking: '..k..' >> '..sval(o.moving)) -- debug line... MUST be on comment when not in use for debugging!
              if o.moving then
+                if o.frame then o.frame = o.frame + 1 end                    
                 if o.gx>0 then o.gx = o.gx - 4 end
                 if o.gx<0 then o.gx = o.gx + 4 end 
                 if o.gy>0 then o.gy = o.gy - 4 end
                 if o.gy<0 then o.gy = o.gy + 4 end 
                 if o.gx==0 and o.gy == 0 then
-                   if game.objs[o.objtype].keepmoving then game.objs[o.objtype].push(o,o.pwind,o.moved) else o.moved = nil end
+                   if game.objs[o.objtype].keepmoving then game.objs[o.objtype].push(o,o.pwind,o.moved) else o.moving = nil end
                 end  
-                if o.frame then o.frame = o.frame + 1 end                    
              end
         end     
      end
