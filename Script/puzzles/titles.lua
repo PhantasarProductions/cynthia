@@ -40,6 +40,14 @@ local ret = {}
 			file='Greece_Puz03',
 			title="The Rolling Stones"
 		}
+	ret.Greece[4] = {
+			file='Greece_Puz04',
+			title="The Temple of Doom"
+		}
+	ret.Greece[5] = {
+			file='Greece_Puz05',
+			title="Hold your horses!"
+		}
 	ret.Ireland = {}
 	ret.Ireland[1] = {
 			file='Ireland_Puz01',

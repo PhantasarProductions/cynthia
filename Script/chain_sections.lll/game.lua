@@ -230,6 +230,19 @@ game.objs = {
                           until petx<1 or pety<1 or pety>14 or pety>24 or pz.layers.Walls[pety][petx]>0       
                        end
              end,
+             killable=true
+  },
+  Pegasus = {
+              draw = function(o,x,y,ox,oy)
+                     white()
+                     --love.graphics.print("Pegasus is located at: ("..ox..","..oy..")",0,50)
+                     if pz.layers.Walls[y][x]~=0 then return end
+                     local p = assets.pegasus
+                     white()
+                     Hot(p,p.image:getWidth()/2,0)
+                     DrawImage(p,400,20)
+              end,
+              killable=false
   },
   Clover = { draw = function(o,x,y,ox,oy)
                       white()
@@ -407,7 +420,7 @@ function game.drawobjects(ox,oy)
         local new = {}
         pz.objects[y][x] = new
         for keepo in each(old) do
-            if keepo.data.TeddyID~=kill.TeddyID then new[#new]=keepo else print("KILLED OBJECT: "..kill.TeddyID) end
+            if keepo.data.TeddyID~=kill.TeddyID then new[#new+1]=keepo else print("KILLED OBJECT: "..kill.TeddyID) end
         end
     end    
 end
@@ -644,6 +657,7 @@ function game.update()
               for tid,o in pairs(pz.fetchteddyobject) do
                   --print('Checking: '..tid.." "..o.objtype)
                   if o.coords.x==p.x and o.coords.y==p.y and game.objs[o.objtype].killable then
+                     print("Killing: "..o.objtype)
                      o.objtype='kill'
                      pz.layers.Walls[p.y][p.x]=0
                      if lower(p.p)=='dagger' then o.objtype='Dagger' end 

@@ -9,6 +9,9 @@
 - Eric Matyas
   - Read for full license infor Eric's own website: http://soundimage.org/
     - Music/Egypt/Hypnotic-Puzzle3.mp3.crdownload
+- GDJ
+  - Released in the Public Domain
+    - GFX/Stuff/Pegasus.png
 - Game Jolt
   - This file belongs to Game Jolt
     - GFX/Net/Game Jolt (te groot).png
@@ -133,6 +136,8 @@
     - Script/puzzles/maps/Greece_Puz01.lua
     - Script/puzzles/maps/Greece_Puz02.lua
     - Script/puzzles/maps/Greece_Puz03.lua
+    - Script/puzzles/maps/Greece_Puz04.lua
+    - Script/puzzles/maps/Greece_Puz05.lua
     - Script/puzzles/maps/Ireland_Puz01.lua
     - Script/puzzles/maps/Ireland_Puz02.lua
     - Script/puzzles/maps/Ireland_Puz03.lua
