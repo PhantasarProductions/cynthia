@@ -124,6 +124,7 @@
     - Script/background.lua
     - Script/chain_sections.lll/ChoosePuzzle.lua
     - Script/chain_sections.lll/ChooseRealm.lua
+    - Script/chain_sections.lll/ChooseUser.lua
     - Script/chain_sections.lll/EndPuzzle.lua
     - Script/chain_sections.lll/EndRealm.lua
     - Script/chain_sections.lll/chain_sections.lua
@@ -151,6 +152,7 @@
     - Script/puzzles/titles.lua
     - Script/users.lua
     - disclaimer.md
+    - troubleshooting.md
 - Johnny Automatic
   - Released in the Public Domain
     - GFX/Tiles/Egypt/Sphinx.piko

@@ -28,6 +28,10 @@ nu.nu = { bestmoves = {}, besttime={}}
 
 nu.showcynthia = {hello=true,intro=true}
 
+function nu_reset()
+  nu.nu = { bestmoves = {}, besttime={}}
+end
+
 function nu.setstage(s)
    nu.stage = s
    for k,g in pairs(nu.gui.kids) do

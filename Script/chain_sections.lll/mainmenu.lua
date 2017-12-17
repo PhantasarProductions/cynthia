@@ -34,7 +34,8 @@ mm.actions = {
     github = function() if not love.system.openURL( 'https://github.com/PhantasarProductions/cynthia' ) then love.window.showMessageBox( "Cynthia Johnson", "Sorry, I was unable to go to github", "error", true ) end end,
     website = function() if not love.system.openURL( 'https://tricky.gamejolt.io/cynthia' ) then love.window.showMessageBox( "Cynthia Johnson", "Sorry, I was unable to go to Game Jolt, where the site is located", "error", true ) end end,
     quit = love.event.quit,
-    play = function() CHOOSEREALM_backchainer = "MAINMENU" chain.go('CHOOSEREALM') end
+    play = function() CHOOSEREALM_backchainer = "MAINMENU" chain.go('CHOOSEREALM') end,
+    change = function() chain.go("CHOOSEUSER") end
 }
 
 mm.gui = {
