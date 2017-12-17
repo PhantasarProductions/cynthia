@@ -45,6 +45,11 @@
     - GFX/CynthiaSpeaks/EndEgypt/004.png
     - GFX/CynthiaSpeaks/EndEgypt/005.png
     - GFX/CynthiaSpeaks/EndEgypt/006.png
+    - GFX/CynthiaSpeaks/EndGreece/001.png
+    - GFX/CynthiaSpeaks/EndGreece/002.png
+    - GFX/CynthiaSpeaks/EndGreece/003.png
+    - GFX/CynthiaSpeaks/EndGreece/004.png
+    - GFX/CynthiaSpeaks/EndGreece/005.png
     - GFX/CynthiaSpeaks/EndIreland/001.png
     - GFX/CynthiaSpeaks/EndIreland/002.png
     - GFX/CynthiaSpeaks/EndIreland/003.png
