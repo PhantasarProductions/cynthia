@@ -27,8 +27,13 @@
     - Build/CynthiaWindowsIcon.ico
     - Build/Game Jolt/Banner.png
     - Build/Game Jolt/Banner2.png
+    - Build/Game Jolt/Tumbnail (Autosaved).piko
+    - Build/Game Jolt/Tumbnail.piko
     - Build/Game Jolt/Tumbnail.png
     - Build/Game Jolt/Tumbnail2.png
+    - Build/Game Jolt/Tumbnail_Itch.piko
+    - Build/Game Jolt/Tumbnail_Itch.png
+    - Build/Game Jolt/Tumbnail_Itch_jpg.jpg
     - Build/Game Jolt/readme.md
     - Build/HatIcon.png
     - Credits.md
@@ -120,6 +125,7 @@
     - GFX/boulder.jcr
     - License
     - Readme.md
+    - Script/DemoRealms.lua
     - Script/IloveYOU.lua
     - Script/background.lua
     - Script/chain_sections.lll/ChoosePuzzle.lua
