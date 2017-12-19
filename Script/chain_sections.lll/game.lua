@@ -706,6 +706,10 @@ function game.arrive()
      game.puzzletime.caption=""
      game.puzzlemove.caption=""
      game.timer = love.timer.getTime()
+     for pro in each({'dagger','rock'}) do
+      game['throw'..pro].visible=false
+     end
+     
      player.time=0
      player.moved=0
      player.imove = imove
