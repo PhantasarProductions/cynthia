@@ -357,7 +357,47 @@ game.objs = {
                  push = reg_push,
                  afterpush = reg_platecheck  ,
                  keepmoving = true                      
-                 }
+                 },
+  WitchExit = {draw=function() end}, -- This only needs to exist, or the game could crash
+  Witch = {
+             data = {   N = {pic='witch_north', cynthia='S', x= 0, y=-1 },
+                        S = {pic='witch_south', cynthia='N', x= 0, y= 1 },
+                        W = {pic='witch_west',  cynthia='E', x=-1, y= 0 },
+                        E = {pic='witch_east',  cynthia='W', x= 1, y= 0 }
+                    },
+             draw = function(o,x,y,ox,oy)
+                       local m=game.objs.Witch.data[o.data.Wind]
+                       local p=assets[m.pic]       
+                       Hot(p,11,64)
+                       white()                       
+                       DrawImage(p,ox+(x*32)-16,oy+(y*32)+8,1,0,1,1)
+                       if pz.layers.Walls[y][x]==0 then 
+                          pz.layers.Walls[y][x] = 256
+                          print('Blockade $ff on ('..x..","..y..')') 
+                       end -- Make sure the player won't walk through the medusa
+                       if player.x == x or player.y == y then
+                          local petx,pety=x,y
+                          local transported
+                          repeat
+                                petx = petx + m.x
+                                pety = pety + m.y
+                                if player.x==petx and player.y==pety and math.abs(player.gx)<6 and math.abs(player.gy)<6 then
+                                  transported=false
+                                  for _,oe in pairs(pz.fetchteddyobject) do
+                                      if oe.data.Spot==o.data.Goto and oe.objtype=="WitchExit" then
+                                         if transported then error("Hey! Double transport for "..o.data.Goto) end
+                                         player.x=oe.coords.x
+                                         player.y=oe.coords.y
+                                         PlaySound('wlaugh')
+                                         print("Transporting Cynthia to: "..o.data.Goto)
+                                      end 
+                                  end       
+                                end
+                          until petx<1 or pety<1 or pety>14 or pety>24 or pz.layers.Walls[pety][petx]>0       
+                       end
+             end,
+             killable=true
+  },
   
 }
 

@@ -25,7 +25,7 @@ local ret = {}
 	ret.Germany = {}
 	ret.Germany[1] = {
 			file='Germany_Puz01',
-			title="Es gibt noch nichts hier. Komm zur&uuml;ck sp&auml;ter, bitte!"
+			title="Which witch will help and which witch will bother?"
 		}
 	ret.Greece = {}
 	ret.Greece[1] = {

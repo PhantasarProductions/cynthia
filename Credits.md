@@ -8,7 +8,11 @@
     - Music/Puzzles/Ireland/Art_Of_Escapism_-_Guardians.mp3
 - Eric Matyas
   - Read for full license infor Eric's own website: http://soundimage.org/
-    - Music/Egypt/Hypnotic-Puzzle3.mp3.crdownload
+    - Music/Puzzles/Egypt/Hypnotic-Puzzle3.mp3.crdownload
+    - Music/Puzzles/Germany/Chamber of Jewels.ogg
+- FreeSoundEffects.com
+  - Please read this page for the license stuff: https://www.freesoundeffects.com/licence.php
+    - Audio/wlaugh.mp3
 - GDJ
   - Released in the Public Domain
     - GFX/Stuff/Pegasus.png
@@ -27,7 +31,6 @@
     - Build/CynthiaWindowsIcon.ico
     - Build/Game Jolt/Banner.png
     - Build/Game Jolt/Banner2.png
-    - Build/Game Jolt/Tumbnail (Autosaved).piko
     - Build/Game Jolt/Tumbnail.piko
     - Build/Game Jolt/Tumbnail.png
     - Build/Game Jolt/Tumbnail2.png
@@ -101,6 +104,14 @@
     - GFX/Stuff/medusa_west.png
     - GFX/Stuff/push.piko
     - GFX/Stuff/push_stone.png
+    - GFX/Stuff/witch_east.piko
+    - GFX/Stuff/witch_east.png
+    - GFX/Stuff/witch_north.piko
+    - GFX/Stuff/witch_north.png
+    - GFX/Stuff/witch_south.piko
+    - GFX/Stuff/witch_south.png
+    - GFX/Stuff/witch_west.piko
+    - GFX/Stuff/witch_west.png
     - GFX/Tiles/All/Water.png
     - GFX/Tiles/Egypt/Egypt_Wall_Isis.piko
     - GFX/Tiles/Egypt/Egypt_Wall_Isis_Gone.png
@@ -125,7 +136,6 @@
     - GFX/boulder.jcr
     - License
     - Readme.md
-    - Script/DemoRealms.lua
     - Script/IloveYOU.lua
     - Script/background.lua
     - Script/chain_sections.lll/ChoosePuzzle.lua
@@ -169,6 +179,7 @@
     - Music/General/Call to Adventure.mp3
     - Music/puzzles/Egypt/Return of the Mummy.mp3
     - Music/puzzles/Egypt/Silver Flame.mp3
+    - Music/puzzles/Germany/Tenebrous Brothers Carnival - Mermaid.ogg
     - Music/puzzles/Greece/Ascending the Value.mp3
     - Music/puzzles/Greece/Enchanted Journey.mp3
     - Music/puzzles/Ireland/Celtic Impulse.mp3
@@ -225,6 +236,9 @@
 - Ray Larabie
   - Free for commercial and personal use - Full license file found on DaFont
     - Fonts/Coolvetica.ttf
+- Wicky77
+  -  This music piece was written for use in my games, but is not licensed for free usage explicitly. Please contact the original artist for permission to usage in your own work.
+    - Music/Puzzles/Germany/Teardrops.ogg
 
 
 
