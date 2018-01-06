@@ -53,6 +53,7 @@
     - GFX/CynthiaSpeaks/EndEgypt/004.png
     - GFX/CynthiaSpeaks/EndEgypt/005.png
     - GFX/CynthiaSpeaks/EndEgypt/006.png
+    - GFX/CynthiaSpeaks/EndGermany/001.png
     - GFX/CynthiaSpeaks/EndGreece/001.png
     - GFX/CynthiaSpeaks/EndGreece/002.png
     - GFX/CynthiaSpeaks/EndGreece/003.png
@@ -91,6 +92,7 @@
     - GFX/Stuff/Dagger_South.png
     - GFX/Stuff/Dagger_West.png
     - GFX/Stuff/Exit.png
+    - GFX/Stuff/Faerie.piko
     - GFX/Stuff/Leprechaun.piko
     - GFX/Stuff/Leprechaun.png
     - GFX/Stuff/Lock.png
@@ -136,6 +138,7 @@
     - GFX/boulder.jcr
     - License
     - Readme.md
+    - Script/DemoRealms.lua
     - Script/IloveYOU.lua
     - Script/background.lua
     - Script/chain_sections.lll/ChoosePuzzle.lua
@@ -155,6 +158,10 @@
     - Script/puzzles/maps/Egypt_Level4.lua
     - Script/puzzles/maps/Egypt_Level5.lua
     - Script/puzzles/maps/Germany_Puz01.lua
+    - Script/puzzles/maps/Germany_Puz02.lua
+    - Script/puzzles/maps/Germany_Puz03.lua
+    - Script/puzzles/maps/Germany_Puz04.lua
+    - Script/puzzles/maps/Germany_Puz05.lua
     - Script/puzzles/maps/Greece_Puz01.lua
     - Script/puzzles/maps/Greece_Puz02.lua
     - Script/puzzles/maps/Greece_Puz03.lua
@@ -165,6 +172,7 @@
     - Script/puzzles/maps/Ireland_Puz03.lua
     - Script/puzzles/maps/Ireland_Puz04.lua
     - Script/puzzles/maps/Ireland_Puz05.lua
+    - Script/puzzles/maps/Italy_Puz01.lua
     - Script/puzzles/titles.lua
     - Script/users.lua
     - disclaimer.md
@@ -183,6 +191,8 @@
     - Music/puzzles/Greece/Ascending the Value.mp3
     - Music/puzzles/Greece/Enchanted Journey.mp3
     - Music/puzzles/Ireland/Celtic Impulse.mp3
+    - Music/puzzles/Italy/Hero Down.mp3
+    - Music/puzzles/Italy/Heroic Age.mp3
   - Released in the Public Domain
     - music/EndPuzzle/Music for Funeral Home - Part 1.mp3
     - music/Puzzles/Egypt/East of Tunesia.wav

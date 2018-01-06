@@ -27,6 +27,22 @@ local ret = {}
 			file='Germany_Puz01',
 			title="Which witch will help and which witch will bother?"
 		}
+	ret.Germany[2] = {
+			file='Germany_Puz02',
+			title="Help can be given, you know!"
+		}
+	ret.Germany[3] = {
+			file='Germany_Puz03',
+			title="I'm in love with a faerie tale, even though it hurts"
+		}
+	ret.Germany[4] = {
+			file='Germany_Puz04',
+			title="It's a kind of magic"
+		}
+	ret.Germany[5] = {
+			file='Germany_Puz05',
+			title="Wir schaffen das!"
+		}
 	ret.Greece = {}
 	ret.Greece[1] = {
 			file='Greece_Puz01',
@@ -68,6 +84,11 @@ local ret = {}
 	ret.Ireland[5] = {
 			file='Ireland_Puz05',
 			title="The end of the rainbow"
+		}
+	ret.Italy = {}
+	ret.Italy[1] = {
+			file='Italy_Puz01',
+			title="ALEA IACTA EST"
 		}
 
 

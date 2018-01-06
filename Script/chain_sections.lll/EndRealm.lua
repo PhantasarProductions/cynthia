@@ -2,7 +2,7 @@ EREALMPARAM = {}
 
 local erealm = { Parameters = EREALMPARAM }
 
-local unlockrealms = { Egypt = {'Ireland','Greece'}, Ireland = {'Germany'}, Greece = {'Italy'} }
+local unlockrealms = { Egypt = {'Ireland','Greece'}, Ireland = {'Germany'}, Greece = {'Italy'}, Germany = {'Norway'} }
 
 erealm.textpic = {kind='picture',image='GFX/GENERAL/LOGO.PNG' --[[ Make sure we got something in here or the game will crash]], x=50,y=50}
 

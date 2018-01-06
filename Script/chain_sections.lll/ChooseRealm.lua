@@ -24,7 +24,7 @@ Version: 17.11.12
 ]]
 local cr= {}
 
-local realms = {"Egypt","Ireland","Greece","Germany","Italy"}
+local realms = {"Egypt","Ireland","Greece","Germany","Italy","Norway"}
 
 if love.filesystem.isFile("SCRIPT/DEMOREALMS.LUA") then realms=j_love_import("SCRIPT/DEMOREALMS.LUA") end
 

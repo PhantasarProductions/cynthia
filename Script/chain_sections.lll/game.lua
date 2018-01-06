@@ -193,7 +193,7 @@ game.objs = {
                           print('Blockade $ff on ('..x..","..y..')') 
                        end -- Make sure the player won't walk through the snake
 
-                       if pz.clover then return end -- Protection by the four leaved clover
+                       if pz.clover or pz.faerie then return end -- Protection by the four leaved clover
                        if (player.x==x and (player.y==y-1 or player.y==y+1))
                        or (player.y==y and (player.x==x-1 or player.x==x+1)) then
                           player.keys=nil
@@ -226,7 +226,7 @@ game.objs = {
                           repeat
                                 petx = petx + m.x
                                 pety = pety + m.y
-                                if player.x==petx and player.y==pety and player.w==m.cynthia then player.w='STONE' end
+                                if player.x==petx and player.y==pety and player.w==m.cynthia and (not faerie) then player.w='STONE' end
                           until petx<1 or pety<1 or pety>14 or pety>24 or pz.layers.Walls[pety][petx]>0       
                        end
              end,
@@ -381,7 +381,7 @@ game.objs = {
                           repeat
                                 petx = petx + m.x
                                 pety = pety + m.y
-                                if player.x==petx and player.y==pety and math.abs(player.gx)<6 and math.abs(player.gy)<6 then
+                                if player.x==petx and player.y==pety and math.abs(player.gx)<6 and math.abs(player.gy)<6 and (not pz.faerie) then
                                   transported=false
                                   for _,oe in pairs(pz.fetchteddyobject) do
                                       if oe.data.Spot==o.data.Goto and oe.objtype=="WitchExit" then
@@ -396,8 +396,23 @@ game.objs = {
                           until petx<1 or pety<1 or pety>14 or pety>24 or pz.layers.Walls[pety][petx]>0       
                        end
              end,
-             killable=true
+             killable=true             
   },
+  Faerie = {
+             draw = function(o,x,y,ox,oy)
+                local time = love.timer.getTime( )
+                local my = math.sin(time)*6
+                local p=assets.faerie
+                Hot(p,16,32)
+                white()
+                DrawImage(p,ox+(x*32)-16,oy+(y*32)+8+my,1,0,1,1)
+                if x==player.x and y==player.y then 
+                   if (not pz.faerie) or pz.faerie<o.data.Duration then pz.faerie=o.data.Duration end
+                end
+             end,
+             killable=false
+
+  }
   
 }
 
@@ -485,11 +500,16 @@ local canvasgadget = {
                     for tut in each(mysplit(pz.datamap.Tutorial,",")) do tutor(tut) end
                  end
               end      
-              local alpha
+              local alpha = (math.abs(math.sin(love.timer.getTime()))*150)+100
               if pz.clover then
                 color(255,255,255,alpha)
                 DrawImage(assets.clover,770,100)
               end    
+              if pz.faerie then
+                color(255,255,255,alpha)
+                DrawImage(assets.faerie,770,150)
+                love.graphics.print(pz.faerie,790,130)
+              end 
               if player.keys then
                  local keyi = 0
                  love.graphics.setFont(assets.coolvetica30)
@@ -714,6 +734,10 @@ local function imove(pl)
     pl.moved = pl.moved + 1
     user.moved = pl.moved
     game.puzzlemove.caption = "Actions: "..pl.moved
+    if pz.faerie then
+       pz.faerie = pz.faerie - 1
+       if pz.faerie<=0 then pz.faerie = nil end
+    end
 end            
      
 
