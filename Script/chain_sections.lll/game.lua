@@ -345,6 +345,55 @@ game.objs = {
                  pull = reg_pull,
                  afterpush = reg_platecheck                        
                  },
+  Push_Color = { draw = function(o,x,y,ox,oy)
+                          PC_Cols = PC_Cols or { {255,0,0}, {255,255,0}, {0,0,255},{0,255,0}}
+                          --white()
+                          local colcode = tonumber(o.data.Color) or 1
+                          local img=assets['push_col'..colcode]
+                          color(PC_Cols[colcode][1],PC_Cols[colcode][2],PC_Cols[colcode][3])
+                          o.gx=o.gx or 0
+                          o.gy=o.gy or 0
+                          QHot(img,"cc")
+                          DrawImage(img,o.gx+ox+(x*32)-16,o.gy+oy+(y*32)-16)
+                          local adject                          
+                          if not o.moving then
+                             for _,oe in pairs(pz.fetchteddyobject) do
+                                 if oe~=o and (not oe.moving) and oe.objtype=='Push_Color' and oe.data.Color==o.data.Color then
+                                    --adject=false
+                                    for chk in each(game.objs.Push_Color.check) do
+                                        -- adject = adject or (oe.coords.x==o.coords.x+chk[1] and oe.coords.y==o.coords.y+chk[2])
+                                        if oe.coords.x==o.coords.x+chk[1] and oe.coords.y==o.coords.y+chk[2] then --adject then 
+                                           o.KILL=true
+                                           oe.KILL=true
+                                           pz.layers.Walls[o .coords.y][o .coords.x]=0
+                                           pz.layers.Walls[oe.coords.y][oe.coords.x]=0
+                                        end   
+                                    end                                     
+                                 end
+                             end
+                          end
+                        end,
+                 push = reg_push,
+                 pull = reg_pull,
+                 check = {{-1,0},{1,0},{0,-1},{0,1}},
+                 afterpush = reg_platecheck                        
+                 },
+  ColBarrier = { draw = function(o,x,y,ox,oy)
+                            local count = 0
+                            for _,oe in pairs(pz.fetchteddyobject) do
+                                if oe.objtype=='Push_Color' and (o.data.Color=='ALL' or o.data.Color==oe.data.Color) then count=count+1 end                                
+                            end
+                            if count==0 then
+                               o.objtype='kill'
+                               pz.layers.Walls[o.coords.y][o.coords.x]=0
+                            else
+                               pz.layers.Walls[o.coords.y][o.coords.x]=256
+                               white()
+                               QHot(assets['colorbarrier'],"cc")
+                               DrawImage(assets['colorbarrier'],ox+(x*32)-16,oy+(y*32)-16)
+                            end
+                        end
+                }, 
   Push_Boulder = { draw = function(o,x,y,ox,oy)
                           white()
                           o.gx=o.gx or 0
@@ -477,7 +526,11 @@ function game.drawobjects(ox,oy)
         for keepo in each(old) do
             if keepo.data.TeddyID~=kill.TeddyID then new[#new+1]=keepo else print("KILLED OBJECT: "..kill.TeddyID) end
         end
-    end    
+    end
+    -- This looks odd, but there are a few cases in which the kill can best be delayed to the next cycle to prevent conflicts.   
+    for _,oe in pairs(pz.fetchteddyobject) do
+        if oe.KILL then oe.objtype='kill' end
+    end 
 end
 
 local canvasgadget = {
@@ -547,7 +600,7 @@ function game.performpull()
     end
 end
 
-game.canvas       = { kind='$gamecanvas',x=0,y=20,w=800,h=480}
+game.canvas       = {kind='$gamecanvas',x=0,y=20,w=800,h=480}
 game.puzzleheader = {kind = 'label',x=5,y=5,font='FONTS/COOLVETICA.TTF',fontsize=10,FR=0,FG=0,FB=0}
 game.puzzletime   = {kind = 'label',x=50,y=510,font='FONTS/COOLVETICA.TTF',fontsize=15,FR=0,FG=0,FB=0}
 game.puzzlemove   = {kind = 'label',x=50,y=530,font='FONTS/COOLVETICA.TTF',fontsize=15,FR=0,FG=0,FB=0}

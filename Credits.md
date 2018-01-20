@@ -86,6 +86,8 @@
     - GFX/Net/Anna.png
     - GFX/Stuff/Clover.piko
     - GFX/Stuff/Clover.png
+    - GFX/Stuff/ColorBarrier.piko
+    - GFX/Stuff/ColorBarrier.png
     - GFX/Stuff/Dagger_East.png
     - GFX/Stuff/Dagger_North.png
     - GFX/Stuff/Dagger_Schuin.png
@@ -105,6 +107,10 @@
     - GFX/Stuff/medusa_south.png
     - GFX/Stuff/medusa_west.png
     - GFX/Stuff/push.piko
+    - GFX/Stuff/push_col1.png
+    - GFX/Stuff/push_col2.png
+    - GFX/Stuff/push_col3.png
+    - GFX/Stuff/push_col4.png
     - GFX/Stuff/push_stone.png
     - GFX/Stuff/witch_east.piko
     - GFX/Stuff/witch_east.png
@@ -173,6 +179,7 @@
     - Script/puzzles/maps/Ireland_Puz04.lua
     - Script/puzzles/maps/Ireland_Puz05.lua
     - Script/puzzles/maps/Italy_Puz01.lua
+    - Script/puzzles/maps/Italy_Puz02.lua
     - Script/puzzles/titles.lua
     - Script/users.lua
     - disclaimer.md
