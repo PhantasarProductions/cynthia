@@ -1,4 +1,4 @@
--- Generated on: Fri 19 January 2018; 11:38:54
+-- Generated on: Wed 24 January 2018; 15:27:52
 -- Author:       Jeroen P. Broks
 -- License:      GPL 3
 
@@ -28,7 +28,7 @@ local ret = {}
 	ret.datamap = {}
 		ret.datamap['Music'] = ""
 		ret.datamap['Title'] = "Can you paint with all the colors of the wind?"
-		ret.datamap['Tutorial'] = ""
+		ret.datamap['Tutorial'] = "colblocks"
 
 
 	ret.layers={}		ret.layers.Floor = {
