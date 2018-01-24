@@ -94,6 +94,10 @@ local ret = {}
 			file='Italy_Puz02',
 			title="Can you paint with all the colors of the wind?"
 		}
+	ret.Italy[3] = {
+			file='Italy_Puz03',
+			title="DE COLORIBVS INSANIAM"
+		}
 
 
 return ret

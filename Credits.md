@@ -144,6 +144,7 @@
     - GFX/boulder.jcr
     - License
     - Readme.md
+    - Script/DemoRealms.lua
     - Script/IloveYOU.lua
     - Script/background.lua
     - Script/chain_sections.lll/ChoosePuzzle.lua
@@ -179,6 +180,7 @@
     - Script/puzzles/maps/Ireland_Puz05.lua
     - Script/puzzles/maps/Italy_Puz01.lua
     - Script/puzzles/maps/Italy_Puz02.lua
+    - Script/puzzles/maps/Italy_Puz03.lua
     - Script/puzzles/titles.lua
     - Script/users.lua
     - disclaimer.md
