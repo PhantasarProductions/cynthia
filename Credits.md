@@ -144,7 +144,6 @@
     - GFX/boulder.jcr
     - License
     - Readme.md
-    - Script/DemoRealms.lua
     - Script/IloveYOU.lua
     - Script/background.lua
     - Script/chain_sections.lll/ChoosePuzzle.lua
