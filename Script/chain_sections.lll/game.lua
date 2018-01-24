@@ -507,7 +507,7 @@ function game.drawobjects(ox,oy)
                    killed[#killed+1]={x=x,y=y,TeddyID=o.data.TeddyID}   
                    print(o.data.TeddyID.." scheduled to be killed!\n"..serialize("  killed",killed))
                 end
-                if pz.layers.Walls[y][x]==0 and o.objtype~='kill' then
+                if pz.layers.Walls[y][x]==0 and o.objtype~='kill' and (not o.KILL) then
                    assert(game.objs[o.objtype],"No action data for object type: "..o.objtype) 
                    if     game.objs[o.objtype].push and game.objs[o.objtype].pull then pz.layers.Walls[y][x]=260
                    elseif                               game.objs[o.objtype].pull then pz.layers.Walls[y][x]=259
