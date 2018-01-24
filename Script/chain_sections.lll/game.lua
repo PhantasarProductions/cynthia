@@ -4,7 +4,7 @@
 	
 	
 	
-	(c) Jeroen P. Broks, 2017, All rights reserved
+	(c) Jeroen P. Broks, 2017, 2018, All rights reserved
 	
 		This program is free software: you can redistribute it and/or modify
 		it under the terms of the GNU General Public License as published by
@@ -20,7 +20,7 @@
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 17.11.12
+Version: 18.01.24
 ]]
 
 
