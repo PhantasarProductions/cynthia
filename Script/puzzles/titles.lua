@@ -98,6 +98,19 @@ local ret = {}
 			file='Italy_Puz03',
 			title="DE COLORIBVS INSANIAM"
 		}
+	ret.Italy[4] = {
+			file='Italy_Puz04',
+			title="Graeca pulchritudo"
+		}
+	ret.Italy[5] = {
+			file='Italy_Puz05',
+			title="CEREBRVM CONTERAM VOBIS"
+		}
+	ret.Norway = {}
+	ret.Norway[1] = {
+			file='Norway_Puz01',
+			title="The Nordic Swamps"
+		}
 
 
 return ret
