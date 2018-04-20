@@ -22,6 +22,7 @@
     - GFX/Net/Game Jolt.png
 - Jeroen P. Broks
   - Most of the game's script files (all files suffixed with .lua) are either GNU/GPL licensed or zLib licensed, but check the files themselves to be sure. All asset files I created myself are licensed under a http://creativecommons.org/licenses/by-nc-sa/4.0/ license unless explicitly stated otherwise in files coming along. All 3rd party assets are copyrighted by their respective creators and their original licenses do still apply.
+    - Audio/Crystal.wav
     - Audio/Pickup.wav
     - Audio/Unlock.wav
     - Build/Cynthia4Icon.png
@@ -65,6 +66,10 @@
     - GFX/CynthiaSpeaks/EndIreland/004.png
     - GFX/CynthiaSpeaks/EndIreland/005.png
     - GFX/CynthiaSpeaks/EndIreland/006.png
+    - GFX/CynthiaSpeaks/EndItaly/001.png
+    - GFX/CynthiaSpeaks/EndItaly/002.png
+    - GFX/CynthiaSpeaks/EndItaly/003.png
+    - GFX/CynthiaSpeaks/EndItaly/004.png
     - GFX/CynthiaSpeaks/NewUser/Hello.png
     - GFX/CynthiaSpeaks/NewUser/Intro.png
     - GFX/EndPuzzle/Failed.png
@@ -144,7 +149,6 @@
     - GFX/boulder.jcr
     - License
     - Readme.md
-    - Script/DemoRealms.lua
     - Script/IloveYOU.lua
     - Script/background.lua
     - Script/chain_sections.lll/ChoosePuzzle.lua
@@ -181,6 +185,9 @@
     - Script/puzzles/maps/Italy_Puz01.lua
     - Script/puzzles/maps/Italy_Puz02.lua
     - Script/puzzles/maps/Italy_Puz03.lua
+    - Script/puzzles/maps/Italy_Puz04.lua
+    - Script/puzzles/maps/Italy_Puz05.lua
+    - Script/puzzles/maps/Norway_Puz01.lua
     - Script/puzzles/titles.lua
     - Script/users.lua
     - disclaimer.md
@@ -201,6 +208,9 @@
     - Music/puzzles/Ireland/Celtic Impulse.mp3
     - Music/puzzles/Italy/Hero Down.mp3
     - Music/puzzles/Italy/Heroic Age.mp3
+    - Music/puzzles/Norway/Snowdrop.mp3
+    - Music/puzzles/Norway/The North.mp3
+    - Music/puzzles/Norway/The Snow Queen.mp3
   - Released in the Public Domain
     - music/EndPuzzle/Music for Funeral Home - Part 1.mp3
     - music/Puzzles/Egypt/East of Tunesia.wav
@@ -245,6 +255,19 @@
     - GFX/Tiles/Inside/Wall_SC_SW.png
     - GFX/Tiles/Inside/Wall_South.png
     - GFX/Tiles/Inside/Wall_West.png
+    - GFX/Tiles/Swamp/E.png
+    - GFX/Tiles/Swamp/Edge_E.png
+    - GFX/Tiles/Swamp/Edge_N.png
+    - GFX/Tiles/Swamp/Edge_NEI.png
+    - GFX/Tiles/Swamp/Edge_NW.png
+    - GFX/Tiles/Swamp/Edge_S.png
+    - GFX/Tiles/Swamp/Edge_SE.png
+    - GFX/Tiles/Swamp/Edge_SW.png
+    - GFX/Tiles/Swamp/Edge_W
+    - GFX/Tiles/Swamp/Edge_W.png
+    - GFX/Tiles/Swamp/I.png
+    - GFX/Tiles/Swamp/Isle.png
+    - GFX/Tiles/Swamp/SwampWater.png
 - Manfred Klein
   - Downloaded from dafont.com -- Set as "100% free"
     - fonts/BodoniXT.ttf
