@@ -20,13 +20,13 @@
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 18.01.24
+Version: 18.04.20
 ]]
 EREALMPARAM = {}
 
 local erealm = { Parameters = EREALMPARAM }
 
-local unlockrealms = { Egypt = {'Ireland','Greece'}, Ireland = {'Germany'}, Greece = {'Italy'}, Germany = {'Norway'} }
+local unlockrealms = { Egypt = {'Ireland','Greece'}, Ireland = {'Germany'}, Greece = {'Italy'}, Germany = {'Norway'}, Italy={'China'} }
 
 erealm.textpic = {kind='picture',image='GFX/GENERAL/LOGO.PNG' --[[ Make sure we got something in here or the game will crash]], x=50,y=50}
 
