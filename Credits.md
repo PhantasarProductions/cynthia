@@ -106,6 +106,8 @@
     - GFX/Stuff/Rock.png
     - GFX/Stuff/Snake.png
     - GFX/Stuff/Spit.png
+    - GFX/Stuff/Troll.piko
+    - GFX/Stuff/Troll.png
     - GFX/Stuff/key.png
     - GFX/Stuff/medusa_east.png
     - GFX/Stuff/medusa_north.png
@@ -188,6 +190,7 @@
     - Script/puzzles/maps/Italy_Puz04.lua
     - Script/puzzles/maps/Italy_Puz05.lua
     - Script/puzzles/maps/Norway_Puz01.lua
+    - Script/puzzles/maps/Norway_Puz02.lua
     - Script/puzzles/titles.lua
     - Script/users.lua
     - disclaimer.md
