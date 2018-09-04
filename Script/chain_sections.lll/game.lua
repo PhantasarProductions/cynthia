@@ -141,6 +141,8 @@ local function reg_pull(o,w)
 end
 
 
+local function TrollPush(o,x,y,wind)
+end
 
 game.objs = {
 
@@ -467,12 +469,17 @@ game.objs = {
             winds = {'N','S','E','W'},
             draw = function(o,x,y,ox,oy)
                 local p=assets.troll
+                o.Push = o.Push or TrollPush -- Method attachment
                 o.PushTo = o.PushTo or {}
                 o.look = o.look or 1                
                 if x<player.x then o.look=-1 elseif x>player.x then o.look=1 end
                 Hot(p,16,64)
                 white()
                 DrawImage(p,ox+(x*32)-16,oy+(y*32),1,0,o.look,1)
+                if     x==player.x   and y==player.y-1 then o:Push(x,y,'N')
+                elseif x==player.x   and y==player.y+1 then o:Push(x,y,'S')
+                elseif x==player.x-1 and y==player.y   then o:Push(x,y,'W')
+                elseif x==player.x+1 and y==player.y   then o:Push(x,y,'E') end
             end
   }
   
