@@ -20,7 +20,7 @@
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 18.01.24
+Version: 18.09.04
 ]]
 
 
@@ -461,6 +461,19 @@ game.objs = {
              end,
              killable=false
 
+  },
+  Troll = {
+            killable=true,
+            winds = {'N','S','E','W'},
+            draw = function(o,x,y,ox,oy)
+                local p=assets.troll
+                o.PushTo = o.PushTo or {}
+                o.look = o.look or 1                
+                if x<player.x then o.look=-1 elseif x>player.x then o.look=1 end
+                Hot(p,16,64)
+                white()
+                DrawImage(p,ox+(x*32)-16,oy+(y*32),1,0,o.look,1)
+            end
   }
   
 }
