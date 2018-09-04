@@ -111,6 +111,10 @@ local ret = {}
 			file='Norway_Puz01',
 			title="The Nordic Swamps"
 		}
+	ret.Norway[2] = {
+			file='Norway_Puz02',
+			title="She's rocking the trolls, tonight"
+		}
 
 
 return ret
