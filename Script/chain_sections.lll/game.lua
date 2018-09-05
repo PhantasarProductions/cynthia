@@ -512,8 +512,8 @@ game.objs = {
                 Hot(p,16,64)
                 white()
                 DrawImage(p,ox+(x*32)-16,oy+(y*32),1,0,o.look,1)
-                if     x==player.x   and y==player.y-1 then o:Push(x,y,'N')
-                elseif x==player.x   and y==player.y+1 then o:Push(x,y,'S')
+                if     x==player.x   and y==player.y+1 then o:Push(x,y,'N')
+                elseif x==player.x   and y==player.y-1 then o:Push(x,y,'S')
                 elseif x==player.x-1 and y==player.y   then o:Push(x,y,'W')
                 elseif x==player.x+1 and y==player.y   then o:Push(x,y,'E') end
             end
