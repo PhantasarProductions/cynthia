@@ -25,7 +25,6 @@ Version: 18.09.04
 
 
 --[[
-
     Xtra Wall codes
     256 = Killable enemy
     257 = Unkillable enemy or general invisible wall
@@ -140,8 +139,45 @@ local function reg_pull(o,w)
      reg_push(o,tpd.rev,'pulled')
 end
 
+local function FindTrollSpot(fx,fy,tx,ty)
+    local xret={}
+    -- if exit spots exist use those in stead!
+    for y=1,15 do
+        for x=1,25 do
+            xret.x=x;xret.y=y
+            --if #pz.objects[y][x]>0 then print(serialize(x..","..y,pz.objects[y][x])) end -- debug line MUST BE DEACTIVATED IN ACTUAL PLAY
+            for o in each(pz.objects[y][x]) do
+                if o.objecttype=="TrollExit" then
+                   if x==fx and tx== 0 and y< fy and ty==-1 then return xret end -- North exit spot
+                   if x==fx and tx== 0 and y> fy and ty== 1 then return xret end -- South exit spot
+                   if x< fx and tx==-1 and y==fy and ty== 0 then return xret end -- West  exit spot
+                   if x> fx and tx== 1 and x==fy and ty== 0 then return xret end -- East  exit spot
+                end  
+            end
+         end
+     end
+     -- No exits found, eh? Let's do this the "hard way" then
+     xret.x=fx
+     xret.y=fy
+     local lay = pz.layers.Walls -- [y][x] 
+     repeat         
+         xret.x = xret.x + tx
+         xret.y = xret.y + ty
+     until xret.x<=1 or xret.y<=1 or lay[xret.y+ty][xret.x+tx]~=0
+     return xret 
+end
 
 local function TrollPush(o,x,y,wind)
+    PlaySound('trollhit')
+    if not o.PushTo[wind] then
+       if     wind=="N" then o.PushTo=FindTrollSpot(x,y, 0,-1)
+       elseif wind=="S" then o.PushTo=FindTrollSpot(x,y, 0, 1)
+       elseif wind=="E" then o.PushTo=FindTrollSpot(x,y, 1, 0)
+       elseif wind=="W" then o.PushTo=FindTrollSpot(x,y,-1, 0)
+       else   error("Unknown TrollPushWind: "..wind) end       
+    end
+    player.x=o.PushTo.x
+    player.y=o.PushTo.y
 end
 
 game.objs = {
