@@ -8,7 +8,7 @@
     - Music/Puzzles/Ireland/Art_Of_Escapism_-_Guardians.mp3
 - Eric Matyas
   - Read for full license infor Eric's own website: http://soundimage.org/
-    - Music/Puzzles/Egypt/Hypnotic-Puzzle3.mp3.crdownload
+    - Music/Puzzles/Egypt/Hypnotic-Puzzle3.mp3
     - Music/Puzzles/Germany/Chamber of Jewels.ogg
 - FreeSoundEffects.com
   - Please read this page for the license stuff: https://www.freesoundeffects.com/licence.php
@@ -191,6 +191,7 @@
     - Script/puzzles/maps/Italy_Puz05.lua
     - Script/puzzles/maps/Norway_Puz01.lua
     - Script/puzzles/maps/Norway_Puz02.lua
+    - Script/puzzles/maps/Norway_Puz03.lua
     - Script/puzzles/titles.lua
     - Script/users.lua
     - disclaimer.md
