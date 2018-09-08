@@ -119,6 +119,10 @@ local ret = {}
 			file='Norway_Puz03',
 			title="Trololololol!"
 		}
+	ret.Norway[4] = {
+			file='Norway_Puz04',
+			title="Witch troll will help?"
+		}
 
 
 return ret
