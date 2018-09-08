@@ -123,6 +123,10 @@ local ret = {}
 			file='Norway_Puz04',
 			title="Witch troll will help?"
 		}
+	ret.Norway[5] = {
+			file='Norway_Puz05',
+			title="The Nordic Road to Atlantis"
+		}
 
 
 return ret
