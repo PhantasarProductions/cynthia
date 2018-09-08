@@ -20,7 +20,7 @@
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 18.09.05
+Version: 18.09.06
 ]]
 
 
@@ -139,7 +139,7 @@ local function reg_pull(o,w)
      reg_push(o,tpd.rev,'pulled')
 end
 
-local function FindTrollSpot(fx,fy,tx,ty)
+local function FindTrollSpot(troll,fx,fy,tx,ty,w)
     local xret={}
     -- if exit spots exist use those in stead!
     for y=1,15 do
@@ -147,11 +147,26 @@ local function FindTrollSpot(fx,fy,tx,ty)
             xret.x=x;xret.y=y
             --if #pz.objects[y][x]>0 then print(serialize(x..","..y,pz.objects[y][x])) end -- debug line MUST BE DEACTIVATED IN ACTUAL PLAY
             for o in each(pz.objects[y][x]) do
-                if o.objecttype=="TrollExit" then
+                if o.objtype=="TrollExit" then
+                   -- error("FUCK YOU: "..x..","..y..": "..(troll.Goto or 'niks').."&"..(o.spot or 'waar?'))
+                   --[[
+                      local bbb={[true]="true",[false]="false"}
+                      local dbglul = "EXIT:\n"
+                      for k,v in pairs(o.data) do dbglul = dbglul .. "\t"..k .." = "..v.."\n" end
+                      dbglul = dbglul .. "\n\nTROLL:\n"
+                      for k,v in pairs(troll.data) do dbglul = dbglul .. "\t"..k .." = "..v.."\n" end
+                      dbglul = dbglul .. "\n\nWIND = "..w.."\n"
+                      dbglul = dbglul .. "CONCHECK1 = "..bbb[o.data.Spot==(troll.data.Goto or 'niks')].."\n"
+                      dbglul = dbglul .. "CONCHECK2 = "..bbb[o.data.Spot==(w or 'niks').."."..(troll.data.Goto or 'niksniksniks')].."\n"
+                      love.window.showMessageBox( "Cynthia Johnson", dbglul, "info", true )
+                   -- ]]
+                   --[[
                    if x==fx and tx== 0 and y< fy and ty==-1 then return xret end -- North exit spot
                    if x==fx and tx== 0 and y> fy and ty== 1 then return xret end -- South exit spot
                    if x< fx and tx==-1 and y==fy and ty== 0 then return xret end -- West  exit spot
                    if x> fx and tx== 1 and x==fy and ty== 0 then return xret end -- East  exit spot
+                   ]]
+                   if o.data.Spot==(troll.data.Goto or 'niks') or o.data.Spot==(w or 'niks').."."..(troll.data.Goto or 'niksniksniks') then return xret end -- spot found
                 end  
             end
          end
@@ -170,10 +185,10 @@ end
 local function TrollPush(o,x,y,wind)
     PlaySound('trollhit')
     if not o.PushTo[wind] then
-       if     wind=="N" then o.PushTo=FindTrollSpot(x,y, 0,-1)
-       elseif wind=="S" then o.PushTo=FindTrollSpot(x,y, 0, 1)
-       elseif wind=="E" then o.PushTo=FindTrollSpot(x,y, 1, 0)
-       elseif wind=="W" then o.PushTo=FindTrollSpot(x,y,-1, 0)
+       if     wind=="N" then o.PushTo=FindTrollSpot(o,x,y, 0,-1,wind)
+       elseif wind=="S" then o.PushTo=FindTrollSpot(o,x,y, 0, 1,wind)
+       elseif wind=="E" then o.PushTo=FindTrollSpot(o,x,y, 1, 0,wind)
+       elseif wind=="W" then o.PushTo=FindTrollSpot(o,x,y,-1, 0,wind)
        else   error("Unknown TrollPushWind: "..wind) end       
     end
     player.x=o.PushTo.x
@@ -512,12 +527,15 @@ game.objs = {
                 Hot(p,16,64)
                 white()
                 DrawImage(p,ox+(x*32)-16,oy+(y*32),1,0,o.look,1)
-                if     x==player.x   and y==player.y+1 then o:Push(x,y,'N')
-                elseif x==player.x   and y==player.y-1 then o:Push(x,y,'S')
-                elseif x==player.x-1 and y==player.y   then o:Push(x,y,'W')
-                elseif x==player.x+1 and y==player.y   then o:Push(x,y,'E') end
+                if math.abs(player.gx)<6 and math.abs(player.gy)<6 then
+                   if     x==player.x   and y==player.y+1 then o:Push(x,y,'N')
+                   elseif x==player.x   and y==player.y-1 then o:Push(x,y,'S')
+                   elseif x==player.x-1 and y==player.y   then o:Push(x,y,'E')
+                   elseif x==player.x+1 and y==player.y   then o:Push(x,y,'W') end
+                end
             end
-  }
+  },
+  TrollExit = { draw=function() end } -- All this has to do is to exist.
   
 }
 
