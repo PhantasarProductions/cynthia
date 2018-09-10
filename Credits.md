@@ -48,6 +48,7 @@
     - GFX/Cynthia/South.jcr
     - GFX/Cynthia/Stone.png
     - GFX/Cynthia/West.jcr
+    - GFX/CynthiaSpeaks/EndChina/000.png
     - GFX/CynthiaSpeaks/EndEgypt/001.png
     - GFX/CynthiaSpeaks/EndEgypt/002.png
     - GFX/CynthiaSpeaks/EndEgypt/003.png
@@ -70,6 +71,7 @@
     - GFX/CynthiaSpeaks/EndItaly/002.png
     - GFX/CynthiaSpeaks/EndItaly/003.png
     - GFX/CynthiaSpeaks/EndItaly/004.png
+    - GFX/CynthiaSpeaks/EndNorway/000.png
     - GFX/CynthiaSpeaks/NewUser/Hello.png
     - GFX/CynthiaSpeaks/NewUser/Intro.png
     - GFX/EndPuzzle/Failed.png
@@ -128,6 +130,8 @@
     - GFX/Stuff/witch_west.piko
     - GFX/Stuff/witch_west.png
     - GFX/Tiles/All/Water.png
+    - GFX/Tiles/China/Welkom in China.piko
+    - GFX/Tiles/China/Welkom in China.png
     - GFX/Tiles/Egypt/Egypt_Wall_Isis.piko
     - GFX/Tiles/Egypt/Egypt_Wall_Isis_Gone.png
     - GFX/Tiles/Egypt/Egypt_Wall_Isis_L.png
@@ -164,6 +168,7 @@
     - Script/chain_sections.lll/newuser.lua
     - Script/ingametutors.lua
     - Script/loadpuzzle.lua
+    - Script/puzzles/maps/China_Puz01.lua
     - Script/puzzles/maps/Egypt_Level1.lua
     - Script/puzzles/maps/Egypt_Level2.lua
     - Script/puzzles/maps/Egypt_Level3.lua
@@ -206,6 +211,8 @@
 - Kevin McLeod
   - The music by Kevin McLeod was downloaded from http://incompetech.org and has been released under a creative commons license. Check out Kevin's details for all the details.
     - Music/General/Call to Adventure.mp3
+    - Music/puzzles/China/Asian Drums.mp3
+    - Music/puzzles/China/Eastern Thought.mp3
     - Music/puzzles/Egypt/Return of the Mummy.mp3
     - Music/puzzles/Egypt/Silver Flame.mp3
     - Music/puzzles/Germany/Tenebrous Brothers Carnival - Mermaid.ogg
