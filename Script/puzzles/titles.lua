@@ -1,6 +1,11 @@
 --[[ Generated file ]]
 
 local ret = {}
+	ret.China = {}
+	ret.China[1] = {
+			file='China_Puz01',
+			title="Once upon a time in the East"
+		}
 	ret.Egypt = {}
 	ret.Egypt[1] = {
 			file='Egypt_Level1',
