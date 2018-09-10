@@ -1,4 +1,4 @@
--- Generated on: Sat 08 September 2018; 19:43:56
+-- Generated on: Sat 08 September 2018; 22:58:55
 -- Author:       Jeroen P. Broks
 -- License:      GPL 3
 
@@ -195,9 +195,9 @@ local ret = {}
 			objtype = "WitchExit",
 			coords = {x=3, y=8},
 			data = {
-				['Spot'] = "E",
+				['Spot'] = "Start",
 				['TeddyID'] = "2-7-2",
-				['Wind'] = "Start"}}
+				['Wind'] = "E"}}
 		ret.fetchteddyobject['2-7-2'] = ret.objects[8][3][#ret.objects[8][3]]
 
 		ret.objects[8][21][#ret.objects[8][21]+1] = {
