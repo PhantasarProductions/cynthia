@@ -20,11 +20,11 @@
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 18.04.20
+Version: 18.09.10
 ]]
 local cr= {}
 
-local realms = {"Egypt","Ireland","Greece","Germany","Italy","Norway","China"}
+local realms = {"Egypt","Ireland","Greece","Germany","Italy","Norway","China","Atlantis"}
 
 if love.filesystem.isFile("SCRIPT/DEMOREALMS.LUA") then realms=j_love_import("SCRIPT/DEMOREALMS.LUA") end
 
