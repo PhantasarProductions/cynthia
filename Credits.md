@@ -3,6 +3,9 @@
 ## Contributors:
 
 
+- Anonymous
+  - Released in the Public Domain
+    - GFX/Stuff/Tiger.png
 - Art Of Escapism
   - Creative Commons - By Attribution - Share Alike
     - Music/Puzzles/Ireland/Art_Of_Escapism_-_Guardians.mp3
@@ -20,6 +23,9 @@
   - This file belongs to Game Jolt
     - GFX/Net/Game Jolt (te groot).png
     - GFX/Net/Game Jolt.png
+- J4p4n
+  - Released in the Public Domain
+    - GFX/Stuff/Meat.png
 - Jeroen P. Broks
   - Most of the game's script files (all files suffixed with .lua) are either GNU/GPL licensed or zLib licensed, but check the files themselves to be sure. All asset files I created myself are licensed under a http://creativecommons.org/licenses/by-nc-sa/4.0/ license unless explicitly stated otherwise in files coming along. All 3rd party assets are copyrighted by their respective creators and their original licenses do still apply.
     - Audio/Crystal.wav
