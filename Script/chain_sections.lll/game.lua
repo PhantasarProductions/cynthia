@@ -969,7 +969,9 @@ function game.keypressed(key)
      -- throw
      if key=='1' then game.throw('Rock') end        
      if key=='2' then game.throw('Dagger') end
-     -- grabbed
+     -- push and pull
+     if key=="p" then game.performpush() end
+     if key=="o" then game.performpull() end
      -- just walk
      if key=='up'     or key=='w' then game.walk('u',true) end
      if key=='down'   or key=='s' then game.walk('d',true) end
