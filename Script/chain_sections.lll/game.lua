@@ -564,7 +564,7 @@ game.objs = {
              DrawImage(assets.meat,ox+(x*32)-16,oy+(y*32),1,0,1,1)
              if (x==player.x and player.y==y and o.objtype~="kill") then
                  PlaySound('pickup')
-                 player.daggers = (player.daggers or 0) +1
+                 player.meat = (player.meat or 0) +1
                  o.objtype='kill'
              end            
        end
