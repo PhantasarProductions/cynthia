@@ -6,6 +6,10 @@ local ret = {}
 			file='China_Puz01',
 			title="Once upon a time in the East"
 		}
+	ret.China[2] = {
+			file='China_Puz02',
+			title="Eye of the tiger"
+		}
 	ret.Egypt = {}
 	ret.Egypt[1] = {
 			file='Egypt_Level1',

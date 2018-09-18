@@ -135,7 +135,15 @@
     - GFX/Stuff/witch_south.png
     - GFX/Stuff/witch_west.piko
     - GFX/Stuff/witch_west.png
+    - GFX/Tiles/All/Rubble.png
     - GFX/Tiles/All/Water.png
+    - GFX/Tiles/China/Hemelsblauw/Deur.png
+    - GFX/Tiles/China/Hemelsblauw/Muur.piko
+    - GFX/Tiles/China/Hemelsblauw/Muur.png
+    - GFX/Tiles/China/Hemelsblauw/Muur_Met_Raam_En_Rooster.png
+    - GFX/Tiles/China/Hemelsblauw/Muur_Raam.png
+    - GFX/Tiles/China/Hemelsblauw/Muur_Rooster.png
+    - GFX/Tiles/China/Hemelsblauw/Vloer.png
     - GFX/Tiles/China/Welkom in China.piko
     - GFX/Tiles/China/Welkom in China.png
     - GFX/Tiles/Egypt/Egypt_Wall_Isis.piko
@@ -175,6 +183,7 @@
     - Script/ingametutors.lua
     - Script/loadpuzzle.lua
     - Script/puzzles/maps/China_Puz01.lua
+    - Script/puzzles/maps/China_Puz02.lua
     - Script/puzzles/maps/Egypt_Level1.lua
     - Script/puzzles/maps/Egypt_Level2.lua
     - Script/puzzles/maps/Egypt_Level3.lua

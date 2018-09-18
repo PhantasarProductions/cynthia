@@ -20,7 +20,7 @@
 		
 	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
 	to the project the exceptions are needed for.
-Version: 18.09.06
+Version: 18.09.18
 ]]
 
 
@@ -535,8 +535,38 @@ game.objs = {
                 end
             end
   },
-  TrollExit = { draw=function() end } -- All this has to do is to exist.
-  
+  TrollExit = { draw=function() end }, -- All this has to do is to exist.
+  Tiger = {
+       killable=true,
+       draw = function(o,x,y,ox,oy)
+          if o.pacified then
+             Color(180,255,180)             
+          else
+             Color(255,255,255)
+             if (player.x==x and player.y>=y-1 and player.y<=y+1)
+             or (player.y==y and player.x>=x-1 and player.x<=x+1)
+             then
+                if (player or 0)>1 then
+                   player.meat = player.meat - 1
+                   o.pacified=true;
+                else                
+                   player.w="DEAD"
+                end
+             end   
+          end
+          DrawImage(assets.tiger,ox+(x*32)-16,oy+(y*32),1,0,1,1)
+       end
+  },
+  Meat = {
+       function(o,x,y,ox,oy)
+             DrawImage(assets.meat,ox+(x*32)-16,oy+(y*32),1,0,1,1)
+             if (x==player.x and player.y==y and o.objtype~="kill") then
+                 PlaySound('pickup')
+                 player.daggers = (player.daggers or 0) +1
+                 o.objtype='kill'
+             end            
+       end
+  }
 }
 
 local tw = {W='west',E='east',N='north',S='south'}
