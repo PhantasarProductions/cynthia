@@ -546,7 +546,7 @@ game.objs = {
              if (player.x==x and player.y>=y-1 and player.y<=y+1)
              or (player.y==y and player.x>=x-1 and player.x<=x+1)
              then
-                if (player or 0)>1 then
+                if (player.meat or 0)>1 then
                    player.meat = player.meat - 1
                    o.pacified=true;
                 else                
@@ -554,11 +554,13 @@ game.objs = {
                 end
              end   
           end
+          Hot(assets.tiger,16,60)
           DrawImage(assets.tiger,ox+(x*32)-16,oy+(y*32),1,0,1,1)
        end
   },
   Meat = {
-       function(o,x,y,ox,oy)
+       draw = function(o,x,y,ox,oy)
+             Hot(assets.meat,16,32)
              DrawImage(assets.meat,ox+(x*32)-16,oy+(y*32),1,0,1,1)
              if (x==player.x and player.y==y and o.objtype~="kill") then
                  PlaySound('pickup')
