@@ -1,4 +1,4 @@
--- Generated on: Tue 18 September 2018; 16:08:54
+-- Generated on: Tue 18 September 2018; 16:15:19
 -- Author:       Jeroen P. Broks
 -- License:      GPL 3
 
@@ -203,7 +203,7 @@ local ret = {}
 			coords = {x=25, y=15},
 			data = {
 				['TeddyID'] = "18-E-1",
-				['Wind'] = "E"}}
+				['Wind'] = "W"}}
 		ret.fetchteddyobject['18-E-1'] = ret.objects[15][25][#ret.objects[15][25]]
 
 
