@@ -4,7 +4,7 @@
 	
 	
 	
-	(c) Jeroen P. Broks, 2018, All rights reserved
+	(c) Jeroen P. Broks, 2018, 2019
 	
 		This program is free software: you can redistribute it and/or modify
 		it under the terms of the GNU General Public License as published by
@@ -17,10 +17,11 @@
 		GNU General Public License for more details.
 		You should have received a copy of the GNU General Public License
 		along with this program.  If not, see <http://www.gnu.org/licenses/>.
+	
+	Please note that some references to data like pictures or audio, do not automatically
+	fall under this licenses. Mostly this is noted in the respective files.
 		
-	Exceptions to the standard GNU license are available with Jeroen's written permission given prior 
-	to the project the exceptions are needed for.
-Version: 18.09.18
+Version: 19.02.28
 ]]
 local tutors = {
                      snakes     = "Whenever you get in line with a snake he'll spit poison at you killing you instantly. They cannot turn around, so maybe you can sneak past them",
