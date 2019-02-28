@@ -560,6 +560,7 @@ game.objs = {
   },
   Meat = {
        draw = function(o,x,y,ox,oy)
+             Color(0xff,0xff,0xff)
              Hot(assets.meat,16,32)
              DrawImage(assets.meat,ox+(x*32)-16,oy+(y*32),1,0,1,1)
              if (x==player.x and player.y==y and o.objtype~="kill") then
