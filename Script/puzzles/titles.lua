@@ -1,6 +1,11 @@
 --[[ Generated file ]]
 
 local ret = {}
+	ret.Atlantis = {}
+	ret.Atlantis[1] = {
+			file='Atlantis_Puz01',
+			title="Atlantis is calling"
+		}
 	ret.China = {}
 	ret.China[1] = {
 			file='China_Puz01',
@@ -9,6 +14,18 @@ local ret = {}
 	ret.China[2] = {
 			file='China_Puz02',
 			title="Eye of the tiger"
+		}
+	ret.China[3] = {
+			file='China_Puz03',
+			title="Tiger Woods"
+		}
+	ret.China[4] = {
+			file='China_Puz04',
+			title="China in your hand"
+		}
+	ret.China[5] = {
+			file='China_Puz05',
+			title="The Eastern Road to Atlantis"
 		}
 	ret.Egypt = {}
 	ret.Egypt[1] = {
