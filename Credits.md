@@ -137,6 +137,10 @@
     - GFX/Stuff/witch_west.png
     - GFX/Tiles/All/Rubble.png
     - GFX/Tiles/All/Water.png
+    - GFX/Tiles/Atlantis/Floor.png
+    - GFX/Tiles/Atlantis/Wall (Autosaved).piko
+    - GFX/Tiles/Atlantis/Wall.piko
+    - GFX/Tiles/Atlantis/Wall.png
     - GFX/Tiles/China/Hemelsblauw/Deur.png
     - GFX/Tiles/China/Hemelsblauw/Muur.piko
     - GFX/Tiles/China/Hemelsblauw/Muur.png
@@ -182,8 +186,12 @@
     - Script/chain_sections.lll/newuser.lua
     - Script/ingametutors.lua
     - Script/loadpuzzle.lua
+    - Script/puzzles/maps/Atlantis_Puz01.lua
     - Script/puzzles/maps/China_Puz01.lua
     - Script/puzzles/maps/China_Puz02.lua
+    - Script/puzzles/maps/China_Puz03.lua
+    - Script/puzzles/maps/China_Puz04.lua
+    - Script/puzzles/maps/China_Puz05.lua
     - Script/puzzles/maps/Egypt_Level1.lua
     - Script/puzzles/maps/Egypt_Level2.lua
     - Script/puzzles/maps/Egypt_Level3.lua
@@ -299,6 +307,10 @@
 - Manfred Klein
   - Downloaded from dafont.com -- Set as "100% free"
     - fonts/BodoniXT.ttf
+- Nihilore
+  - Creative Commons By Attribute License
+    - Music/Puzzles/Atlantis/Behind the Mask.mp3
+    - Music/Puzzles/Atlantis/L'appel du vide.mp3
 - Plusplus
   - Creative Commons - Attribute - Non-Commercial - ShareAlike
     - Music/Puzzles/Greece/Plusplus_-_01_-_Greek_Tragedy.mp3
