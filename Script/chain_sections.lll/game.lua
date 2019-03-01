@@ -21,7 +21,7 @@
 	Please note that some references to data like pictures or audio, do not automatically
 	fall under this licenses. Mostly this is noted in the respective files.
 		
-Version: 19.02.28
+Version: 19.03.01
 ]]
 
 
@@ -570,6 +570,15 @@ game.objs = {
                  o.objtype='kill'
              end            
        end
+  },
+  Atlanthean = {
+       killable = false,
+       draw = function(o,x,y,ox,oy)
+          Color(255,255,255)
+          Hot(assets.atlanthean,16,64)
+          DrawImage(assets.atlanthean,ox+(x*32)-16,oy+(y*32),1,0,1,1)
+       end,   
+          
   }
 }
 
