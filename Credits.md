@@ -97,6 +97,7 @@
     - GFX/General/Logo.png
     - GFX/Net/Anna.piko
     - GFX/Net/Anna.png
+    - GFX/Stuff/Atlanthean.png
     - GFX/Stuff/Clover.piko
     - GFX/Stuff/Clover.png
     - GFX/Stuff/ColorBarrier.piko
@@ -187,6 +188,7 @@
     - Script/ingametutors.lua
     - Script/loadpuzzle.lua
     - Script/puzzles/maps/Atlantis_Puz01.lua
+    - Script/puzzles/maps/Atlantis_Puz02.lua
     - Script/puzzles/maps/China_Puz01.lua
     - Script/puzzles/maps/China_Puz02.lua
     - Script/puzzles/maps/China_Puz03.lua
