@@ -6,6 +6,10 @@ local ret = {}
 			file='Atlantis_Puz01',
 			title="Atlantis is calling"
 		}
+	ret.Atlantis[2] = {
+			file='Atlantis_Puz02',
+			title="The Fate Of Atlantis"
+		}
 	ret.China = {}
 	ret.China[1] = {
 			file='China_Puz01',
