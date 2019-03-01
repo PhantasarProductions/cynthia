@@ -574,9 +574,44 @@ game.objs = {
   Atlanthean = {
        killable = false,
        draw = function(o,x,y,ox,oy)
+          local annoy = function() end local s = annoy
+          --local annoy = function(a) love.window.showMessageBox("Cynthia's debug annoyance",a,"info",true) end local s = serialize
           Color(255,255,255)
           Hot(assets.atlanthean,16,64)
           DrawImage(assets.atlanthean,ox+(x*32)-16,oy+(y*32),1,0,1,1)
+          o.recharge = o.recharge or 0         
+          if (o.recharge<=0 and (x==player.x or y==player.y)) then
+             PlaySound('atlasshoot')
+             local cx,cy=x,y
+             repeat
+                if     cx<player.x then cx = cx + 1 
+                elseif cx>player.x then cx = cx - 1 end
+                if     cy<player.y then cy = cy + 1 
+                elseif cy>player.y then cy = cy - 1 end
+                if cx==player.x and cy==player.y then
+                   player.w="DEAD"
+                   cx=0
+                end
+             until cx<1 or cy<1 or cy>14 or cy>24 or pz.layers.Walls[cy][cx]>0
+             o.recharge = tonumber(o.data.Reload) or 10
+             if o.recharge<=0 then o.recharge=10 end
+             o.opx=player.x
+             o.opy=player.y
+             annoy(s('AtlantheanObject',o))
+          elseif o.recharge>0 and (o.opx~=player.x or o.opy~=player.y) then
+             o.recharge = o.recharge - 1    
+             o.opx=player.x
+             o.opy=player.y
+             love.graphics.setFont(assets.coolvetica30)
+             Color(63,127,255)
+             love.graphics.print(o.recharge,ox+((x-1)*32),(oy+(y*32))-32)
+             annoy(s('AtlantheanObject',o))
+          elseif o.recharge>0 then
+             love.graphics.setFont(assets.coolvetica30)
+             Color(255,127,63)
+             love.graphics.print(o.recharge,ox+((x-1)*32),(oy+(y*32))-32)
+             annoy(s('AtlantheanObject',o))
+          end
        end,   
           
   }
