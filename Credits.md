@@ -19,6 +19,9 @@
 - GDJ
   - Released in the Public Domain
     - GFX/Stuff/Pegasus.png
+- GR-Sites
+  - Free
+    - Audio/AtlasShoot.ogg
 - Game Jolt
   - This file belongs to Game Jolt
     - GFX/Net/Game Jolt (te groot).png
