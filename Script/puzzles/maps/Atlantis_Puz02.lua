@@ -1,4 +1,4 @@
--- Generated on: Fri 01 March 2019; 14:53:44
+-- Generated on: Fri 01 March 2019; 16:46:18
 -- Author:       Jeroen P. Broks
 -- License:      GPL 3
 
@@ -59,8 +59,8 @@ local ret = {}
 		ret.layers.Walls = {
 			{   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2,   0,   0,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2},
 			{   2,   0,   0,   0,   0,   0,   0,   0,   2,   2,   2,   2,   2,   0,   0,   2,   2,   2,   2,   2,   2,   2,   2,   2,   2},
-			{   2,   0,   0,   0,   0,   0,   0,   0,   2,   2,   2,   2,   0,   0,   0,   0,   2,   2,   2,   2,   2,   2,   0,   2,   2},
-			{   2,   0,   0,   0,   0,   0,   0,   0,   2,   2,   2,   2,   0,   0,   0,   0,   2,   2,   2,   2,   2,   2,   0,   2,   2},
+			{   2,   0,   0,   0,   0,   0,   0,   0,   2,   2,   2,   0,   2,   0,   0,   2,   0,   2,   2,   2,   2,   2,   0,   2,   2},
+			{   2,   0,   0,   0,   0,   0,   0,   0,   2,   2,   2,   0,   0,   0,   0,   0,   0,   2,   2,   2,   2,   2,   0,   2,   2},
 			{   2,   0,   0,   0,   0,   0,   0,   0,   2,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   2,   0,   0,   0,   0,   0},
 			{   2,   0,   0,   0,   0,   0,   0,   0,   2,   0,   0,   0,   0,   0,   0,   0,   0,   0,   0,   2,   0,   2,   0,   2,   0},
 			{   2,   2,   2,   2,   0,   2,   2,   2,   2,   0,   2,   2,   2,   2,   2,   2,   2,   2,   0,   2,   0,   2,   0,   2,   0},
@@ -193,21 +193,37 @@ local ret = {}
 				['TeddyID'] = "6-3-1"}}
 		ret.fetchteddyobject['6-3-1'] = ret.objects[4][7][#ret.objects[4][7]]
 
-		ret.objects[4][13][#ret.objects[4][13]+1] = {
+		ret.objects[4][12][#ret.objects[4][12]+1] = {
 			objtype = "Atlanthean",
+			coords = {x=12, y=4},
+			data = {
+				['Reload'] = "8",
+				['TeddyID'] = "B-3-1"}}
+		ret.fetchteddyobject['B-3-1'] = ret.objects[4][12][#ret.objects[4][12]]
+
+		ret.objects[4][13][#ret.objects[4][13]+1] = {
+			objtype = "ColBarrier",
 			coords = {x=13, y=4},
 			data = {
-				['Reload'] = "10",
+				['Color'] = "1",
 				['TeddyID'] = "C-3-1"}}
 		ret.fetchteddyobject['C-3-1'] = ret.objects[4][13][#ret.objects[4][13]]
 
 		ret.objects[4][16][#ret.objects[4][16]+1] = {
-			objtype = "Atlanthean",
+			objtype = "ColBarrier",
 			coords = {x=16, y=4},
 			data = {
-				['Reload'] = "10",
+				['Color'] = "3",
 				['TeddyID'] = "F-3-1"}}
 		ret.fetchteddyobject['F-3-1'] = ret.objects[4][16][#ret.objects[4][16]]
+
+		ret.objects[4][17][#ret.objects[4][17]+1] = {
+			objtype = "Atlanthean",
+			coords = {x=17, y=4},
+			data = {
+				['Reload'] = "9",
+				['TeddyID'] = "10-3-1"}}
+		ret.fetchteddyobject['10-3-1'] = ret.objects[4][17][#ret.objects[4][17]]
 
 		ret.objects[5][3][#ret.objects[5][3]+1] = {
 			objtype = "Push_Color",
