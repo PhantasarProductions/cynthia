@@ -142,7 +142,6 @@
     - GFX/Tiles/All/Rubble.png
     - GFX/Tiles/All/Water.png
     - GFX/Tiles/Atlantis/Floor.png
-    - GFX/Tiles/Atlantis/Wall (Autosaved).piko
     - GFX/Tiles/Atlantis/Wall.piko
     - GFX/Tiles/Atlantis/Wall.png
     - GFX/Tiles/China/Hemelsblauw/Deur.png
@@ -192,6 +191,7 @@
     - Script/loadpuzzle.lua
     - Script/puzzles/maps/Atlantis_Puz01.lua
     - Script/puzzles/maps/Atlantis_Puz02.lua
+    - Script/puzzles/maps/Atlantis_Puz03.lua
     - Script/puzzles/maps/China_Puz01.lua
     - Script/puzzles/maps/China_Puz02.lua
     - Script/puzzles/maps/China_Puz03.lua
