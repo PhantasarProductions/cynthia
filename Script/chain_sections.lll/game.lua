@@ -753,7 +753,7 @@ function game.performpull()
     local od
     for o in each(oj) do
         od = game.objs[o.objtype]
-        if od.push then od.pull(o,player.w) end
+        if od.pull then od.pull(o,player.w) end
     end
 end
 
