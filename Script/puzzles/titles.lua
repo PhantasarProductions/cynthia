@@ -14,6 +14,14 @@ local ret = {}
 			file='Atlantis_Puz03',
 			title="Deep into Atlantis"
 		}
+	ret.Atlantis[4] = {
+			file='Atlantis_Puz04',
+			title="The cave of Atlantis"
+		}
+	ret.Atlantis[5] = {
+			file='Atlantis_Puz05',
+			title="The Curse of Atlantis"
+		}
 	ret.China = {}
 	ret.China[1] = {
 			file='China_Puz01',
