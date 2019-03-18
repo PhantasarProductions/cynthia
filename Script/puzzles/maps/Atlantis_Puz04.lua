@@ -1,4 +1,4 @@
--- Generated on: Thu 14 March 2019; 15:54:44
+-- Generated on: Mon 18 March 2019; 16:57:53
 -- Author:       Jeroen P. Broks
 -- License:      GPL 3
 
@@ -156,14 +156,6 @@ local ret = {}
 				['TeddyID'] = "5-5-1"}}
 		ret.fetchteddyobject['5-5-1'] = ret.objects[6][6][#ret.objects[6][6]]
 
-		ret.objects[7][6][#ret.objects[7][6]+1] = {
-			objtype = "Start",
-			coords = {x=6, y=7},
-			data = {
-				['TeddyID'] = "5-6-1",
-				['Wind'] = "S"}}
-		ret.fetchteddyobject['5-6-1'] = ret.objects[7][6][#ret.objects[7][6]]
-
 		ret.objects[8][11][#ret.objects[8][11]+1] = {
 			objtype = "Atlanthean",
 			coords = {x=11, y=8},
@@ -171,6 +163,14 @@ local ret = {}
 				['Reload'] = "1",
 				['TeddyID'] = "A-7-1"}}
 		ret.fetchteddyobject['A-7-1'] = ret.objects[8][11][#ret.objects[8][11]]
+
+		ret.objects[10][5][#ret.objects[10][5]+1] = {
+			objtype = "Start",
+			coords = {x=5, y=10},
+			data = {
+				['TeddyID'] = "4-9-1",
+				['Wind'] = "N"}}
+		ret.fetchteddyobject['4-9-1'] = ret.objects[10][5][#ret.objects[10][5]]
 
 		ret.objects[10][14][#ret.objects[10][14]+1] = {
 			objtype = "Push_Boulder",
