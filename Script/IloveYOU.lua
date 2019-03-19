@@ -33,6 +33,7 @@ Version: 18.01.24
 -- *import loadpuzzle
 -- *import sec2time
 
+
 flow = chain_sections
 
 
@@ -81,7 +82,7 @@ function load_all_my_crap()
 end 
          
 load_all_my_crap()
-load_all_my_crap = nil              
+load_all_my_crap = nil  -- We'll never need this EVER again!
  
 function love.quit()
   if forcequit then return false end
