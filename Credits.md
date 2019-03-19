@@ -194,6 +194,7 @@
     - Script/puzzles/maps/Atlantis_Puz03.lua
     - Script/puzzles/maps/Atlantis_Puz04.lua
     - Script/puzzles/maps/Atlantis_Puz05.lua
+    - Script/puzzles/maps/Atlantis_Puz06.lua
     - Script/puzzles/maps/China_Puz01.lua
     - Script/puzzles/maps/China_Puz02.lua
     - Script/puzzles/maps/China_Puz03.lua
