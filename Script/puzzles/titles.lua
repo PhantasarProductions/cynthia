@@ -34,6 +34,14 @@ local ret = {}
 			file='Atlantis_Puz08',
 			title="The Darkness Of Atlantis"
 		}
+	ret.Atlantis[9] = {
+			file='Atlantis_Puz09',
+			title="The Throne Room of Quahotla"
+		}
+	ret.Atlantis[10] = {
+			file='Atlantis_Puz10',
+			title="Into the void"
+		}
 	ret.China = {}
 	ret.China[1] = {
 			file='China_Puz01',
@@ -180,6 +188,11 @@ local ret = {}
 	ret.Norway[5] = {
 			file='Norway_Puz05',
 			title="The Nordic Road to Atlantis"
+		}
+	ret.Yahlevania = {}
+	ret.Yahlevania[1] = {
+			file='Yahlevania_Puz01',
+			title="Raider of the Lost Ark"
 		}
 
 
