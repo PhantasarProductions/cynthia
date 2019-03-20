@@ -1014,7 +1014,9 @@ function game.keypressed(key)
      if key=='up'     or key=='w' then game.walk('u',true) end
      if key=='down'   or key=='s' then game.walk('d',true) end
      if key=='left'   or key=='a' then game.walk('l',true) end
-     if key=='right'  or key=='d' then game.walk('r',true) end     
+     if key=='right'  or key=='d' then game.walk('r',true) end
+     -- Die
+     if key=="f6" then player.w="DEAD" end
 end
 
 function game.keyreleased(key)
