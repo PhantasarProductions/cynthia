@@ -57,6 +57,18 @@
     - GFX/Cynthia/South.jcr
     - GFX/Cynthia/Stone.png
     - GFX/Cynthia/West.jcr
+    - GFX/CynthiaSpeaks/EndAtlantis/001.png
+    - GFX/CynthiaSpeaks/EndAtlantis/002.png
+    - GFX/CynthiaSpeaks/EndAtlantis/003.png
+    - GFX/CynthiaSpeaks/EndAtlantis/004.png
+    - GFX/CynthiaSpeaks/EndAtlantis/005.png
+    - GFX/CynthiaSpeaks/EndAtlantis/006.png
+    - GFX/CynthiaSpeaks/EndAtlantis/007.png
+    - GFX/CynthiaSpeaks/EndAtlantis/008.png
+    - GFX/CynthiaSpeaks/EndAtlantis/009.png
+    - GFX/CynthiaSpeaks/EndAtlantis/010.png
+    - GFX/CynthiaSpeaks/EndAtlantis/011.png
+    - GFX/CynthiaSpeaks/EndAtlantis/012.png
     - GFX/CynthiaSpeaks/EndChina/000.png
     - GFX/CynthiaSpeaks/EndEgypt/001.png
     - GFX/CynthiaSpeaks/EndEgypt/002.png
@@ -120,6 +132,7 @@
     - GFX/Stuff/Spit.png
     - GFX/Stuff/Troll.piko
     - GFX/Stuff/Troll.png
+    - GFX/Stuff/Void.png
     - GFX/Stuff/key.png
     - GFX/Stuff/medusa_east.png
     - GFX/Stuff/medusa_north.png
@@ -197,6 +210,8 @@
     - Script/puzzles/maps/Atlantis_Puz06.lua
     - Script/puzzles/maps/Atlantis_Puz07.lua
     - Script/puzzles/maps/Atlantis_Puz08.lua
+    - Script/puzzles/maps/Atlantis_Puz09.lua
+    - Script/puzzles/maps/Atlantis_Puz10.lua
     - Script/puzzles/maps/China_Puz01.lua
     - Script/puzzles/maps/China_Puz02.lua
     - Script/puzzles/maps/China_Puz03.lua
@@ -232,6 +247,7 @@
     - Script/puzzles/maps/Norway_Puz03.lua
     - Script/puzzles/maps/Norway_Puz04.lua
     - Script/puzzles/maps/Norway_Puz05.lua
+    - Script/puzzles/maps/Yahlevania_Puz01.lua
     - Script/puzzles/titles.lua
     - Script/users.lua
     - disclaimer.md
@@ -333,6 +349,9 @@
 - Wicky77
   -  This music piece was written for use in my games, but is not licensed for free usage explicitly. Please contact the original artist for permission to usage in your own work.
     - Music/Puzzles/Germany/Teardrops.ogg
+- dear_theophillius
+  - Released in the Public Domain
+    - GFX/Tiles/Atlantis/Throne.png
 
 
 
