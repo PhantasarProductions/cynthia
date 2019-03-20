@@ -605,7 +605,14 @@ game.objs = {
              annoy(s('AtlantheanObject',o))
           end
        end,   
-          
+  },
+  Void = {
+     draw = function(o,x,y,ox,oy)
+          o.turn=(o.turn or 0)-1
+          if o.turn<360 then o.turn = o.turn+360 end
+          Hot(assets.void,250,250)
+          DrawImage(assets.void,ox+(x*32)-16,oy+(y*32),1,o.turn*(180/3.141),1,1) -- I know this is not the exact way to use pi, but in this code, it'll have to do
+     end
   }
 }
 
