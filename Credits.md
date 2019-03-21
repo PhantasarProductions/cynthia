@@ -186,6 +186,10 @@
     - GFX/Tiles/Ireland/Grass.png
     - GFX/Tiles/Ireland/The Pot of Gold at th End of the Rainbow.piko
     - GFX/Tiles/Ireland/The Pot of Gold at th End of the Rainbow.png
+    - GFX/Tiles/Yahlevania/Barrier.png
+    - GFX/Tiles/Yahlevania/Empty.png
+    - GFX/Tiles/Yahlevania/Floor.png
+    - GFX/Tiles/Yahlevania/Wall.png
     - GFX/boulder.jcr
     - License
     - Readme.md
@@ -248,6 +252,7 @@
     - Script/puzzles/maps/Norway_Puz04.lua
     - Script/puzzles/maps/Norway_Puz05.lua
     - Script/puzzles/maps/Yahlevania_Puz01.lua
+    - Script/puzzles/maps/Yahlevania_Puz02.lua
     - Script/puzzles/titles.lua
     - Script/users.lua
     - disclaimer.md
@@ -273,6 +278,10 @@
     - Music/puzzles/Norway/Snowdrop.mp3
     - Music/puzzles/Norway/The North.mp3
     - Music/puzzles/Norway/The Snow Queen.mp3
+    - Music/puzzles/Yahlevania/Dark Fog.mp3
+    - Music/puzzles/Yahlevania/Dark Walk.mp3
+    - Music/puzzles/Yahlevania/Final Battle of the Dark Wizards.mp3
+    - Music/puzzles/Yahlevania/Sugar Plum Dark Mix.mp3
   - Released in the Public Domain
     - music/EndPuzzle/Music for Funeral Home - Part 1.mp3
     - music/Puzzles/Egypt/East of Tunesia.wav
