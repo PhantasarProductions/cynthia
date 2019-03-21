@@ -194,6 +194,10 @@ local ret = {}
 			file='Yahlevania_Puz01',
 			title="Raider of the Lost Ark"
 		}
+	ret.Yahlevania[2] = {
+			file='Yahlevania_Puz02',
+			title="The Key In Yellow"
+		}
 
 
 return ret
