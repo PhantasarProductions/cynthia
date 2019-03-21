@@ -21,10 +21,11 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 Please note that some references to data like pictures or audio, do not automatically
 fall under this licenses. Mostly this is noted in the respective files.
 
-Version: 19.03.19
+Version: 19.03.21
 ]]
 
 
+local math=math
 
 local tutor = j_love_import('/SCRIPT/INGAMETUTORS.LUA')
 
@@ -50,6 +51,36 @@ game.layp = {
 }
 
 game.w = {N='north',W='west',E='east',S='south',DEAD='dead',STONE='stone'}
+
+
+local Yahl = {}
+function game.Yahlevania(y1,y2)
+    Yahl.r = Yahl.r or math.random(200,255)
+    Yahl.g = Yahl.g or 255
+    Yahl.b = Yahl.b or math.random(0,255)
+    Yahl.rc = Yahl.rc or math.random(0,100)
+    if Yahl.g>0 and math.floor(Yahl.r)%10==0 then Yahl.g = Yahl.g - 1 end
+    if Yahl.r>180 then Yahl.rc = -math.random(0,100)/100.0 end
+    if Yahl.b>255 then Yahl.rb = -math.random(0,100)/100.0 Yahl.b=255 end
+    if Yahl.r<0   then Yahl.rc =  math.random(0,100)/100.0 Yahl.r=  0 end
+    if Yahl.b<0   then Yahl.bc =  math.random(0,100)/100.0 Yahl.b=  0 end
+    if #Yahl<3000 then Yahl[#Yahl+1] = {
+      r = math.floor(Yahl.r),
+      g = math.floor(Yahl.g),
+      b = math.floor(Yahl.b),
+      x1 = 800,
+      x2 = 1000,
+    } end 
+    Yahl.r = Yahl.r + Yahl.rc
+    Yahl.b = Yahl.b + Yahl.rc
+    if Yahl[1].x2<-10 then table.remove(Yahl,1) end
+    for Y in each(Yahl) do
+        Color(Y.r,Y.g,Y.b)
+        love.graphics.line(Y.x1,y1 or 0,Y.x2,y2 or 600)
+        Y.x1 = Y.x1 - 1
+        if Y.x1%2==0 then Y.x2 = Y.x2-1 end
+    end
+end
 
 function game.drawlayer(l,ofx,ofy)
     local vx,vy,c,tag,layp,tex,teximg,playtag
@@ -685,10 +716,11 @@ function game.drawobjects(ox,oy)
 end
 
 local canvasgadget = {
-      draw = function(g)
+      draw = function(g)              
               if player.w=="DEAD" or player.w=='STONE' then game.pend=true user.endstatus='failed' music.play('MUSIC/ENDPUZZLE/MUSIC FOR FUNERAL HOME - PART 1.MP3') end
               color(0,0,0,254)
-              DrawRect(g.x,g.y,g.w,g.h) 
+              DrawRect(g.x,g.y,g.w,g.h)
+              if user.realm=="Yahlevania" then game.Yahlevania(g.y,g.y+g.h) end 
               game.drawlayer('Floor',g.x,g.y); game.drawobjects(g.x,g.y)
               game.drawlayer('Walls',g.x,g.y)
               game.drawlayer('Front',g.x,g.y)
