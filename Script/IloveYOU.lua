@@ -21,8 +21,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 Please note that some references to data like pictures or audio, do not automatically
 fall under this licenses. Mostly this is noted in the respective files.
 
-Version: 19.03.19
+Version: 19.03.21
 ]]
+
 
 
 -- *import phantasar
@@ -40,7 +41,7 @@ flow = chain_sections
 
 
 
-mkl.version("Cynthia Johnson - IloveYOU.lua","19.03.19")
+mkl.version("Cynthia Johnson - IloveYOU.lua","19.03.21")
 mkl.lic    ("Cynthia Johnson - IloveYOU.lua","GNU General Public License 3")
 
 
@@ -94,5 +95,11 @@ function love.quit()
      return true
   end
   if user then saveuser() end
-  return love.window.showMessageBox( "Cynthia Johnson", "What? You really want to get out of this game?", {"Of course! This game stinks!","Oops! My mistake, sorry!", escapebutton=2} )==2
+     local yes = "Of course! This game stinks!"
+     local no  = "Oops! My mistake, sorry!"
+  -- *if $WINDOWS
+       yes = "Yes"
+       no  = "No"
+  -- *fi
+  return love.window.showMessageBox( "Cynthia Johnson", "What? You really want to get out of this game?", {yes,no, escapebutton=2} )==2
 end  
