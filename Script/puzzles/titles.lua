@@ -198,6 +198,18 @@ local ret = {}
 			file='Yahlevania_Puz02',
 			title="The Key In Yellow"
 		}
+	ret.Yahlevania[3] = {
+			file='Yahlevania_Puz03',
+			title="Don't turn around, bright eyes!"
+		}
+	ret.Yahlevania[4] = {
+			file='Yahlevania_Puz04',
+			title="Cynthia, madness returns"
+		}
+	ret.Yahlevania[5] = {
+			file='Yahlevania_Puz05',
+			title="Braindead!"
+		}
 
 
 return ret
