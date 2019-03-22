@@ -58,21 +58,21 @@ function game.Yahlevania(y1,y2)
     Yahl.r = Yahl.r or math.random(200,255)
     Yahl.g = Yahl.g or 255
     Yahl.b = Yahl.b or math.random(0,255)
-    Yahl.rc = Yahl.rc or math.random(0,100)
+    Yahl.bc = Yahl.bc or math.random(0,100)
     if Yahl.g>0 and math.floor(Yahl.r)%10==0 then Yahl.g = Yahl.g - 1 end
-    if Yahl.r>180 then Yahl.rc = -math.random(0,100)/100.0 end
-    if Yahl.b>255 then Yahl.rb = -math.random(0,100)/100.0 Yahl.b=255 end
-    if Yahl.r<0   then Yahl.rc =  math.random(0,100)/100.0 Yahl.r=  0 end
-    if Yahl.b<0   then Yahl.bc =  math.random(0,100)/100.0 Yahl.b=  0 end
+    if Yahl.r>180 then Yahl.rc = -math.random(0,101)/100.0 end
+    if Yahl.b>255 then Yahl.rb = -math.random(0,102)/100.0 Yahl.b=255 end
+    if Yahl.r<0   then Yahl.rc =  math.random(0,103)/100.0 Yahl.r=  0 end
+    if Yahl.b<0   then Yahl.bc =  math.random(0,104)/100.0 Yahl.b=  0 end
     if #Yahl<3000 then Yahl[#Yahl+1] = {
       r = math.floor(Yahl.r),
       g = math.floor(Yahl.g),
       b = math.floor(Yahl.b),
       x1 = 800,
-      x2 = 1000,
+      x2 = #Yahl,
     } end 
     Yahl.r = Yahl.r + Yahl.rc
-    Yahl.b = Yahl.b + Yahl.rc
+    Yahl.b = Yahl.b + Yahl.bc
     if Yahl[1].x2<-10 then table.remove(Yahl,1) end
     for Y in each(Yahl) do
         Color(Y.r,Y.g,Y.b)
