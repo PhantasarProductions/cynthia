@@ -253,6 +253,9 @@
     - Script/puzzles/maps/Norway_Puz05.lua
     - Script/puzzles/maps/Yahlevania_Puz01.lua
     - Script/puzzles/maps/Yahlevania_Puz02.lua
+    - Script/puzzles/maps/Yahlevania_Puz03.lua
+    - Script/puzzles/maps/Yahlevania_Puz04.lua
+    - Script/puzzles/maps/Yahlevania_Puz05.lua
     - Script/puzzles/titles.lua
     - Script/users.lua
     - disclaimer.md
