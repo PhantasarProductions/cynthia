@@ -1,4 +1,4 @@
--- Generated on: Fri 22 March 2019; 16:45:37
+-- Generated on: Fri 22 March 2019; 16:56:31
 -- Author:       Jeroen P. Broks
 -- License:      GPL 3
 
@@ -93,6 +93,15 @@ local ret = {}
 			{ {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}, {}}}
 
 	ret.fetchteddyobject = {}
+		ret.objects[3][15][#ret.objects[3][15]+1] = {
+			objtype = "WitchExit",
+			coords = {x=15, y=3},
+			data = {
+				['Spot'] = "kill",
+				['TeddyID'] = "E-2-1",
+				['Wind'] = "S"}}
+		ret.fetchteddyobject['E-2-1'] = ret.objects[3][15][#ret.objects[3][15]]
+
 		ret.objects[4][9][#ret.objects[4][9]+1] = {
 			objtype = "Tiger",
 			coords = {x=9, y=4},
@@ -125,15 +134,6 @@ local ret = {}
 				['Reload'] = "1",
 				['TeddyID'] = "E-4-1"}}
 		ret.fetchteddyobject['E-4-1'] = ret.objects[5][15][#ret.objects[5][15]]
-
-		ret.objects[6][15][#ret.objects[6][15]+1] = {
-			objtype = "WitchExit",
-			coords = {x=15, y=6},
-			data = {
-				['Spot'] = "kill",
-				['TeddyID'] = "E-5-1",
-				['Wind'] = "N"}}
-		ret.fetchteddyobject['E-5-1'] = ret.objects[6][15][#ret.objects[6][15]]
 
 		ret.objects[7][6][#ret.objects[7][6]+1] = {
 			objtype = "Start",
