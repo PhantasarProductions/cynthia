@@ -210,6 +210,10 @@ local ret = {}
 			file='Yahlevania_Puz05',
 			title="Braindead!"
 		}
+	ret.Yahlevania[6] = {
+			file='Yahlevania_Puz06',
+			title="Needful things"
+		}
 
 
 return ret
