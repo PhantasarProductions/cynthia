@@ -218,6 +218,18 @@ local ret = {}
 			file='Yahlevania_Puz07',
 			title="Nightmare on Yahevania street"
 		}
+	ret.Yahlevania[8] = {
+			file='Yahlevania_Puz08',
+			title="Choices! Choices!"
+		}
+	ret.Yahlevania[9] = {
+			file='Yahlevania_Puz09',
+			title="Five Nights In Yahlevania"
+		}
+	ret.Yahlevania[10] = {
+			file='Yahlevania_Puz10',
+			title="I know what you did, last puzzle"
+		}
 
 
 return ret

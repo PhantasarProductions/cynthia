@@ -258,6 +258,9 @@
     - Script/puzzles/maps/Yahlevania_Puz05.lua
     - Script/puzzles/maps/Yahlevania_Puz06.lua
     - Script/puzzles/maps/Yahlevania_Puz07.lua
+    - Script/puzzles/maps/Yahlevania_Puz08.lua
+    - Script/puzzles/maps/Yahlevania_Puz09.lua
+    - Script/puzzles/maps/Yahlevania_Puz10.lua
     - Script/puzzles/titles.lua
     - Script/users.lua
     - disclaimer.md
