@@ -21,8 +21,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 Please note that some references to data like pictures or audio, do not automatically
 fall under this licenses. Mostly this is noted in the respective files.
 
-Version: 19.03.21
+Version: 19.06.11
 ]]
+
 
 
 local math=math
@@ -1065,3 +1066,4 @@ end
 
 
 return game
+
