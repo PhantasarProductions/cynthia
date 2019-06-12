@@ -242,6 +242,10 @@ local ret = {}
 			file='Yahlevania_Puz13',
 			title="Chilly down with the pun gang"
 		}
+	ret.Yahlevania[14] = {
+			file='Yahlevania_Puz14',
+			title="Claustrophobia"
+		}
 
 
 return ret
