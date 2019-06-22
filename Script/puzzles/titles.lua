@@ -248,7 +248,7 @@ local ret = {}
 		}
 	ret.Yahlevania[15] = {
 			file='Yahlevania_Puz15',
-			title="Kweenie!"
+			title="The Final Frontier"
 		}
 
 

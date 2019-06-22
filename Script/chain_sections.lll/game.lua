@@ -27,6 +27,8 @@ Version: 19.06.11
 
 
 local math=math
+local love=love
+
 
 local tutor = j_love_import('/SCRIPT/INGAMETUTORS.LUA')
 
@@ -644,6 +646,17 @@ game.objs = {
           if o.turn<360 then o.turn = o.turn+360 end
           Hot(assets.void,250,250)
           DrawImage(assets.void,ox+(x*32)-16,oy+(y*32),1,o.turn*(180/3.141),1,1) -- I know this is not the exact way to use pi, but in this code, it'll have to do
+     end
+  },
+  Boss = {
+     draw = function(o,x,y,ox,oy)
+          o.HP = o.HP or 10
+          DrawImage(assets.arachmelum,ox+(x*32)-300,oy+(y*32)-246)
+          love.graphics.setFont(assets.coolvetica30)
+          love.graphics.print("Arachmelum:",5,5)
+          for i = 1,o.HP do
+              DrawImage(assets.bosshp,100+(i*20),5)
+          end
      end
   }
 }

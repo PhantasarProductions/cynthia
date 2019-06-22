@@ -368,6 +368,9 @@
 - SoundJay.com
   - It is NOT allowed to extract SoundJay's files from this project. You can download them from the SoundJay.com site yourself. Please go to https://www.soundjay.com/tos.html for the full terms on how to use their sound effects.
     - Audio/TrollHit.mp3
+- Unknown
+  - Released in the Public Domain
+    - gfx/stuff/Arachmalun.png
 - Wicky77
   -  This music piece was written for use in my games, but is not licensed for free usage explicitly. Please contact the original artist for permission to usage in your own work.
     - Music/Puzzles/Germany/Teardrops.ogg

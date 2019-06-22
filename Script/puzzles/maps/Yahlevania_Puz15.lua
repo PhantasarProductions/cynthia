@@ -1,4 +1,4 @@
--- Generated on: Fri 21 June 2019; 17:46:11
+-- Generated on: Sat 22 June 2019; 09:20:02
 -- Author:       Jeroen P. Broks
 -- License:      GPL 3
 
@@ -19,6 +19,9 @@ local ret = {}
 
 
 	ret.datamap = {}
+		ret.datamap['Music'] = ""
+		ret.datamap['Title'] = "The Final Frontier"
+		ret.datamap['Tutorial'] = "boss"
 
 
 	ret.layers={}		ret.layers.Floor = {
