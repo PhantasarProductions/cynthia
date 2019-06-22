@@ -49,7 +49,6 @@
     - Build/Game Jolt/Tumbnail_Itch_jpg.jpg
     - Build/Game Jolt/readme.md
     - Build/HatIcon.png
-    - Credits.md
     - Cynthia.GHD
     - GFX/Cynthia/Dead.png
     - GFX/Cynthia/East.jcr
@@ -113,6 +112,7 @@
     - GFX/Net/Anna.piko
     - GFX/Net/Anna.png
     - GFX/Stuff/Atlanthean.png
+    - GFX/Stuff/BossHP.png
     - GFX/Stuff/Clover.piko
     - GFX/Stuff/Clover.png
     - GFX/Stuff/ColorBarrier.piko
@@ -277,6 +277,7 @@
     - GFX/Tiles/Egypt/Sphinx_6d.piko
 - Kevin McLeod
   - The music by Kevin McLeod was downloaded from http://incompetech.org and has been released under a creative commons license. Check out Kevin's details for all the details.
+    - Music/Boss/Boss.ogg
     - Music/General/Call to Adventure.mp3
     - Music/puzzles/China/Asian Drums.mp3
     - Music/puzzles/China/Eastern Thought.mp3

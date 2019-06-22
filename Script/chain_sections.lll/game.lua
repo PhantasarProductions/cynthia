@@ -651,7 +651,7 @@ game.objs = {
   Boss = {
      draw = function(o,x,y,ox,oy)
           o.HP = o.HP or 10
-          DrawImage(assets.arachmelum,ox+(x*32)-300,oy+(y*32)-246)
+          DrawImage(assets.arachmalun,ox+(x*32)-300,oy+(y*32)-246)
           love.graphics.setFont(assets.coolvetica30)
           love.graphics.print("Arachmelum:",5,5)
           for i = 1,o.HP do
