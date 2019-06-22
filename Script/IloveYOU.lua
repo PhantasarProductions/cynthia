@@ -21,8 +21,9 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 Please note that some references to data like pictures or audio, do not automatically
 fall under this licenses. Mostly this is noted in the respective files.
 
-Version: 19.03.21
+Version: 19.06.22
 ]]
+
 
 
 
@@ -44,7 +45,7 @@ flow = chain_sections
 
 
 
-mkl.version("Cynthia Johnson - IloveYOU.lua","19.03.21")
+mkl.version("Cynthia Johnson - IloveYOU.lua","19.06.22")
 mkl.lic    ("Cynthia Johnson - IloveYOU.lua","GNU General Public License 3")
 
 
@@ -106,3 +107,4 @@ function love.quit()
   -- *fi
   return love.window.showMessageBox( "Cynthia Johnson", "What? You really want to get out of this game?", {yes,no, escapebutton=2} )==2
 end  
+
