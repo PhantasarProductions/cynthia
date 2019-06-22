@@ -36,6 +36,9 @@ Version: 19.03.21
 -- *import loadpuzzle
 -- *import sec2time
 
+local phantasar = phantasar
+local mkl = mkl
+local love = love
 
 flow = chain_sections
 
@@ -55,7 +58,7 @@ if love.filesystem.isFile("config/autologin.lua") then
 end 
 
 
-function load_all_my_crap()  
+local function load_all_my_crap()  
   local ichain
   if not user then ichain="NEWUSER" else ichain="MAINMENU" end
   local junk =            {
