@@ -39,6 +39,7 @@ local debugcoordsgadget = { visible = debugcoords, kind='label', caption="", x=6
 
 local game = {}
 local pz
+local bossobject
 
 local cols = { red = {255,0,0},      green={0,255,0}, blue={0,0,255},
                yellow = {255,255,0}, cyan={0,255,255}, magenta={255,0,255}
@@ -651,12 +652,8 @@ game.objs = {
   Boss = {
      draw = function(o,x,y,ox,oy)
           o.HP = o.HP or 10
-          DrawImage(assets.arachmalun,ox+(x*32)-300,oy+(y*32)-246)
-          love.graphics.setFont(assets.coolvetica30)
-          love.graphics.print("Arachmelum:",5,5)
-          for i = 1,o.HP do
-              DrawImage(assets.bosshp,100+(i*20),5)
-          end
+          o.a = { x=x,y=y,ox=ox,oy=oy}
+          bossobject = o
      end
   }
 }
@@ -734,10 +731,21 @@ local canvasgadget = {
               if player.w=="DEAD" or player.w=='STONE' then game.pend=true user.endstatus='failed' music.play('MUSIC/ENDPUZZLE/MUSIC FOR FUNERAL HOME - PART 1.MP3') end
               color(0,0,0,254)
               DrawRect(g.x,g.y,g.w,g.h)
-              if user.realm=="Yahlevania" then game.Yahlevania(g.y,g.y+g.h) end 
+              if user.realm=="Yahlevania" then game.Yahlevania(g.y,g.y+g.h) end
+              -- Layers 
               game.drawlayer('Floor',g.x,g.y); game.drawobjects(g.x,g.y)
               game.drawlayer('Walls',g.x,g.y)
               game.drawlayer('Front',g.x,g.y)
+              -- Boss
+              if bossobject then
+                 local o=bossobject
+                 DrawImage(assets.arachmalun,o.a.ox+(o.a.x*32)-300,o.a.oy+(o.a.y*32)-492)
+                 love.graphics.setFont(assets.coolvetica30)
+                 love.graphics.print("Arachmelum:",5,200)
+                 for i = 1,o.HP do
+                     DrawImage(assets.bosshp,100+(i*20),200)
+                 end
+              end
               if game.pend then
                        screenshotdata = love.graphics.newScreenshot( )
                        screenshot = love.graphics.newImage(screenshotdata)
@@ -971,11 +979,16 @@ function game.update()
            if p.gx==0 and p.gy==0 then
               for tid,o in pairs(pz.fetchteddyobject) do
                   --print('Checking: '..tid.." "..o.objtype)
-                  if o.coords.x==p.x and o.coords.y==p.y and game.objs[o.objtype].killable then
-                     print("Killing: "..o.objtype)
-                     o.objtype='kill'
-                     pz.layers.Walls[p.y][p.x]=0
-                     if lower(p.p)=='dagger' then o.objtype='Dagger' end 
+                  if o.coords.x==p.x and o.coords.y==p.y then
+                     if game.objs[o.objtype].killable then
+                        print("Killing: "..o.objtype)
+                        o.objtype='kill'
+                        pz.layers.Walls[p.y][p.x]=0
+                        if lower(p.p)=='dagger' then o.objtype='Dagger' end
+                      elseif game.objs[o.objtype].HP then
+                         game.objs[o.objtype].HP = game.objs[o.objtype].HP - 1
+                         if game.objs[o.objtype].HP<=1 then game.objs[o.objtype].killable=true end
+                      end
                      projectile=nil
                   end
               end     
@@ -1000,6 +1013,7 @@ function game.arrive()
      game.pend=false
      print("\27[44mLoading puzzle\27[0m")
      pz = loadpuzzle(user.puzzle)
+     bossobject=nil
      game.puzzleheader.caption = user.realm.." puzzle #"..user.pzp..": "..pz.datamap.Title
      if pz.datamap.Music~="" then
         music.play(pz.datamap.Music)

@@ -1,4 +1,4 @@
--- Generated on: Sat 22 June 2019; 09:20:02
+-- Generated on: Sat 22 June 2019; 21:44:40
 -- Author:       Jeroen P. Broks
 -- License:      GPL 3
 
@@ -242,7 +242,7 @@ local ret = {}
 			data = {
 				['Goto'] = "R",
 				['TeddyID'] = "9-6-1",
-				['Wind'] = "E"}}
+				['Wind'] = "W"}}
 		ret.fetchteddyobject['9-6-1'] = ret.objects[7][10][#ret.objects[7][10]]
 
 		ret.objects[8][20][#ret.objects[8][20]+1] = {

@@ -49,6 +49,7 @@
     - Build/Game Jolt/Tumbnail_Itch_jpg.jpg
     - Build/Game Jolt/readme.md
     - Build/HatIcon.png
+    - Credits.md
     - Cynthia.GHD
     - GFX/Cynthia/Dead.png
     - GFX/Cynthia/East.jcr
