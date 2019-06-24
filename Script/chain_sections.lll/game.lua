@@ -985,9 +985,9 @@ function game.update()
                         o.objtype='kill'
                         pz.layers.Walls[p.y][p.x]=0
                         if lower(p.p)=='dagger' then o.objtype='Dagger' end
-                      elseif game.objs[o.objtype].HP then
-                         game.objs[o.objtype].HP = game.objs[o.objtype].HP - 1
-                         if game.objs[o.objtype].HP<=1 then game.objs[o.objtype].killable=true end
+                      elseif o.HP then
+                         o.HP = o.HP - 1
+                         if o.HP<=1 then game.objs[o.objtype].killable=true end
                       end
                      projectile=nil
                   end
