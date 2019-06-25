@@ -114,6 +114,7 @@
     - GFX/Net/Anna.png
     - GFX/Stuff/Atlanthean.png
     - GFX/Stuff/BossHP.png
+    - GFX/Stuff/BossPoison.png
     - GFX/Stuff/Clover.piko
     - GFX/Stuff/Clover.png
     - GFX/Stuff/ColorBarrier.piko

@@ -652,8 +652,39 @@ game.objs = {
   },
   Boss = {
      draw = function(o,x,y,ox,oy)
+          o.x = o.x or x
+          o.y = o.y or y
           o.HP = o.HP or 10
           o.a = { x=x,y=y,ox=ox,oy=oy}
+          o.shootpl = (o.shootpl or 0)
+          if o.x == player.x and o.y == player.y then player.w = "DEAD" end
+          if o.shootpl~=player.moved and o.poison == nil then
+             o.shootpl=player.moved
+             o.shootcd = (o.shootcd or 4) - 1
+             if o.shootcd <= 0 then
+                o.shootcd = 3
+                o.poison = {
+                  x = o.x,
+                  y = o.y,
+                  c = 32
+                }
+             end 
+          end
+          if o.poison then
+             local p=o.poison
+             p.c = p.c - 2
+             if p.c<=0 then
+                p.c = p.c + 32
+                p.y = p.y + 1
+             end
+             if p.x == player.x and p.y == player.y then player.w = "DEAD" end
+             assert(pz.layers.Walls and pz.layers.Walls[p.y] and pz.layers.Walls[p.y][p.x],"Whatever!\n"..serialize("Poepestront",p))
+             if pz.layers.Walls
+                [o.poison.y]
+                [o.poison.x]
+                >0 then o.poison=nil end
+             DrawImage(assets.bosspoison,ox+(p.x*32)-20,(oy-p.c)+(p.y*32)-32)
+          end
           bossobject = o
      end
   }
