@@ -35,6 +35,7 @@ mm.actions = {
     website = function() if not love.system.openURL( 'https://tricky.gamejolt.io/cynthia' ) then love.window.showMessageBox( "Cynthia Johnson", "Sorry, I was unable to go to Game Jolt, where the site is located", "error", true ) end end,
     quit = love.event.quit,
     play = function() CHOOSEREALM_backchainer = "MAINMENU" chain.go('CHOOSEREALM') end,
+    jukebox = function() chain.go("JUKEBOX") end,
     change = function() chain.go("CHOOSEUSER") end
 }
 
@@ -87,7 +88,7 @@ mm.gui = {
              }
           }        
 mm.buttons = {  }
-for i,d in ipairs({ {'Play the game','play'}, {'Change Player','change'}, {"Website","website"}, {"Come to the Discord Channel",'discord'},{"Repository / Bug Tracker",'github'} ,{"Quit","quit"} }) do
+for i,d in ipairs({ {'Play the game','play'}, {'Change Player','change'}, {"Website","website"}, {"Come to the Discord Channel",'discord'},{"Repository / Bug Tracker",'github'} ,{"Jukebox","jukebox"}, {"Quit","quit"} }) do
     mm.buttons[i] = { kind='button', FR=255, FG=180,FB=0,BR=127,BG=90,BB=0,x=800+i*24,y=150+(i*30),caption=d[1],action=mm.actions[d[2]],w=600, font='FONTS/BODONIXT.TTF'}
     mm.gui.kids['button'..i]=mm.buttons[i]
 end           

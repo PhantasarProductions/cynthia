@@ -202,6 +202,7 @@
     - Script/chain_sections.lll/ChooseUser.lua
     - Script/chain_sections.lll/EndPuzzle.lua
     - Script/chain_sections.lll/EndRealm.lua
+    - Script/chain_sections.lll/JukeBox.lua
     - Script/chain_sections.lll/chain_sections.lua
     - Script/chain_sections.lll/game.lua
     - Script/chain_sections.lll/mainmenu.lua
