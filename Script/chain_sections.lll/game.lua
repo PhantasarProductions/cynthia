@@ -40,6 +40,7 @@ local debugcoordsgadget = { visible = debugcoords, kind='label', caption="", x=6
 local game = {}
 local pz
 local bossobject
+local BOSSTUNE = "MUSIC/BOSS/BOSS.OGG"
 
 local cols = { red = {255,0,0},      green={0,255,0}, blue={0,0,255},
                yellow = {255,255,0}, cyan={0,255,255}, magenta={255,0,255}
@@ -739,11 +740,12 @@ local canvasgadget = {
               -- Boss
               if bossobject then
                  local o=bossobject
+                 if o.objtype:upper()=="KILL" then bossobject=nil end
                  DrawImage(assets.arachmalun,o.a.ox+(o.a.x*32)-300,o.a.oy+(o.a.y*32)-492)
                  love.graphics.setFont(assets.coolvetica30)
-                 love.graphics.print("Arachmelum:",5,200)
+                 love.graphics.print("Arachmelum:",5,g.y)
                  for i = 1,o.HP do
-                     DrawImage(assets.bosshp,100+(i*20),200)
+                     DrawImage(assets.bosshp,200+(i*20),g.y)
                  end
               end
               if game.pend then

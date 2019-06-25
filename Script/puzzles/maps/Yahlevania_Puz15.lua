@@ -1,4 +1,4 @@
--- Generated on: Sat 22 June 2019; 21:44:40
+-- Generated on: Tue 25 June 2019; 08:28:18
 -- Author:       Jeroen P. Broks
 -- License:      GPL 3
 
@@ -19,7 +19,7 @@ local ret = {}
 
 
 	ret.datamap = {}
-		ret.datamap['Music'] = ""
+		ret.datamap['Music'] = "MUSIC/BOSS/BOSS.OGG"
 		ret.datamap['Title'] = "The Final Frontier"
 		ret.datamap['Tutorial'] = "boss"
 
