@@ -93,6 +93,11 @@
     - GFX/CynthiaSpeaks/EndItaly/003.png
     - GFX/CynthiaSpeaks/EndItaly/004.png
     - GFX/CynthiaSpeaks/EndNorway/000.png
+    - GFX/CynthiaSpeaks/EndYahlevania/0001.png
+    - GFX/CynthiaSpeaks/EndYahlevania/0002.png
+    - GFX/CynthiaSpeaks/EndYahlevania/0003.png
+    - GFX/CynthiaSpeaks/EndYahlevania/0004.png
+    - GFX/CynthiaSpeaks/EndYahlevania/0005.png
     - GFX/CynthiaSpeaks/NewUser/Hello.png
     - GFX/CynthiaSpeaks/NewUser/Intro.png
     - GFX/EndPuzzle/Failed.png
