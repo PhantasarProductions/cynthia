@@ -1,3 +1,30 @@
+--[[
+Cynthia Johnson
+Jukebox Data
+
+
+
+(c) Jeroen P. Broks, 
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+You should have received a copy of the GNU General Public License
+along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+Please note that some references to data like pictures or audio, do not automatically
+fall under this licenses. Mostly this is noted in the respective files.
+
+Version: 19.06.26
+]]
+
+
 -- Generated file containing the data the Jukebox needs!
 
 local rdata = {}
@@ -174,3 +201,8 @@ rdata["MUSIC/PUZZLES/GREECE/PLUSPLUS_-_01_-_GREEK_TRAGEDY.MP3"].Title = 'Greek T
 rdata["MUSIC/PUZZLES/GERMANY/TEARDROPS.OGG"] = {}
 rdata["MUSIC/PUZZLES/GERMANY/TEARDROPS.OGG"].Author = 'Wicky77'
 rdata["MUSIC/PUZZLES/GERMANY/TEARDROPS.OGG"].Title = 'Teardrops'
+
+local i for k,v in pairs(rdata) do i=(i or 0)+1 print(i,k) end -- Just a quick counter for debugging purposes!
+return rdata
+
+

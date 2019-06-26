@@ -196,6 +196,7 @@
     - License
     - Readme.md
     - Script/IloveYOU.lua
+    - Script/JukeBoxData.lua
     - Script/background.lua
     - Script/chain_sections.lll/ChoosePuzzle.lua
     - Script/chain_sections.lll/ChooseRealm.lua
