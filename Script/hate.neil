@@ -1,0 +1,7 @@
+group hate_filesystem
+end
+
+module
+	readonly var filesystem = hate_filesystem
+	delegate quit
+end
