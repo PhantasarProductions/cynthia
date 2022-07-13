@@ -1,0 +1,9 @@
+#use "Libs/Hate"
+
+
+const global delegate APOLLO_Flow = Hate.Flow
+global Var Cynthia
+
+Init
+	Lua.error("Nothing yet set up!")
+End
