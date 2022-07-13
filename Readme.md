@@ -1,3 +1,7 @@
+MAINTENENCE NOTE!
+This project will cease to be a LOVE2D project and be converted into an Apollo project.
+The source code will remain as much the same as possible, but as Apollo is not the same as LOVE2D some important changes will be made over time.
+
 ![Cynthia Johnson](https://github.com/PhantasarProductions/cynthia/blob/master/GFX/General/Logo.png?raw=true)
 
 
