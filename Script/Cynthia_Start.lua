@@ -55,6 +55,9 @@
       
 ]]      
 
+-- Taken out of use, but used for reference!
+-- Check Cynthia_Start_Apollo.lua for the current code in stead!
+
 
 builddate    = "Wed 26 June 2019; 15:38:31"
 gametitle    = "Cynthia Johnson"
