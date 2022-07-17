@@ -23,14 +23,14 @@
 Version: 17.11.12
 ]]
 
-puzzles = j_love_import("SCRIPT/PUZZLES/TITLES.LUA")
+puzzles = j_hate_import("SCRIPT/PUZZLES/TITLES.LUA")
 
 local function loadpuzzle(f)
-      local ret = j_love_import("SCRIPT/PUZZLES/MAPS/"..upper(f)..".lua")
+      local ret = j_hate_import("SCRIPT/PUZZLES/MAPS/"..upper(f)..".lua")
       assert(ret,"Loading map code for: "..f.." failed!")
       ret.script = {}
       local sf = "SCRIPT/PUZZLES/Script/"..upper(f)..".lua"
-      if love.filesystem.isFile(sf) then ret.script = j_love_import(sf) end      
+      if hate.filesystem.isFile(sf) then ret.script = j_love_import(sf) end      
       return ret
 end
 
