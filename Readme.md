@@ -81,6 +81,7 @@ not in your direction.
 
 # Leaderboards
 
+(This section is outdated. The old Anna system has been taken out of use, but what I'm gonna do next is not yet certain).
 Cynthia Johnson features leaderboards. Do you need less actions than others to solve a puzzle. Are you faster than other players? The game will show you the top 5, and the full lists can be viewed on http://utbbs.tbbs.nl/Game.php
 I must note that Anna lives on that server. Anna is a bot who kicks out cheaters. Anna will also delete inactive players, the amount of time she takes for that depends on how much you did already. If you value your privacy it can 
 be wise not to enter you real name in the game, although I can delete it on request, I cannot guarantee some archive bot already picked it up (and be wise NEVER use your e-mail address as name). That's simply how the internet 
@@ -101,12 +102,14 @@ Sites:
 
 - Official Site: https://tricky.gamejolt.io/cynthia
 - GitHub: https://github.com/PhantasarProductions/cynthia
-- Game Jolt: https://gamejolt.com/games/cynthia/294717
+- Game Jolt: https://gamejolt.com/games/cynthia/294717 (deprecated)
 - Leaderboards: http://tinyurl.com/CynthiaLeader
 
 
 
 ### Technobabble:
+(This technobabble is outdated, as I am taking this project out of the LOVE2D engine (I hate the community and the engine itself has also gone through a few changes that ware unacceptable to me). I will update this soon. See issue 
+[#75](https://github.com/PhantasarProductions/cynthia/issues/75)).
 Cynthia Johnson requires the "[LOVE2D](http://love2d.org)" engine to run.
 BUT! Don't just mindlessly put all the files in this repository together in a .love file, as I tell ya, the game won't work at all that way.
 - First of all, all third party assets have NOT been included, to avoid copyright issues.
@@ -117,7 +120,7 @@ Well if you got good replacements for the missing assets (you can check the cred
 
 
 ## Notice!
-
+(Outdated: See technobabble)
 If you install Love seperately, Cynthia Johnson requires LOVE 0.10.2 and not any older nor any newer version and especially not LOVE 11.x or later. I am NOT planning to adept the game to work in LÖVE 11.x or later, because the 
 differences between the two versions are simply too big, and will require too much code to be latered, unstabalizing the game in the process. LOVE can be a wonderful engine, but they are to eager to change/deprecate/remove 
 important key features, and that is really frustrating. Besides it would also require me to update my deprecated Love builder which has been replaced by Ryanna... I only use that builder as Cynthia Johnson is not compatible with Ryanna (and I won't upgrade it to Ryanna for the same reasons).
