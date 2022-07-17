@@ -27,7 +27,7 @@ local flow = chain.map
 function nada() end Nada=nada NADA=nada
 
 luna = luna or lunamorica -- LAAAAAZY!
-local list = love.filesystem.getDirectoryItems( "$$mydir$$" )
+local list = hate.filesystem.getDirectoryItems( "$$mydir$$" )
 for imp in each(list) do
     local gn = lower(imp)
     if imp~="CHAIN_SECTIONS.LUA" and suffixed(imp,".LUA") then

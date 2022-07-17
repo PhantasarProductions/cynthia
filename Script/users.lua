@@ -28,7 +28,8 @@ Version: 18.01.24
 mkl.version("Cynthia Johnson - users.lua","18.01.24")
 mkl.lic    ("Cynthia Johnson - users.lua","GNU General Public License 3")
 
-mynet = GAHD_get("CYNTHIA.GHD")
+--mynet = GAHD_get("CYNTHIA.GHD")
+mynet = {}
 
 function login(uname)
     local f = { [false]='failed',[true]='success'}
