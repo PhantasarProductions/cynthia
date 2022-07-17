@@ -23,37 +23,12 @@
 -- 
 -- Version: 22.07.17
 -- </License Block>
---[[
-Cynthia Johnson
-Realm picker
-
-
-
-(c) Jeroen P. Broks, 
-
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-Please note that some references to data like pictures or audio, do not automatically
-fall under this licenses. Mostly this is noted in the respective files.
-
-Version: 19.03.21
-]]
 
 local cr= {}
 
 local realms = {"Egypt","Ireland","Greece","Germany","Italy","Norway","China","Atlantis","Yahlevania"}
 
-if love.filesystem.isFile("SCRIPT/DEMOREALMS.LUA") then realms=j_love_import("SCRIPT/DEMOREALMS.LUA") end
+if hate.filesystem.isFile("SCRIPT/DEMOREALMS.LUA") then realms=j_love_import("SCRIPT/DEMOREALMS.LUA") end
 
 function cr.draw()
 end
@@ -66,7 +41,7 @@ function gadget.draw()
   color(0,0,0,75)
   Rect(25,100,750,400)
   cr.p = cr.p or 1
-  love.graphics.setFont(assets.coolvetica)
+  hate.graphics.setFont(assets.coolvetica)
   user.unlocked = user.unlocked or {}
   user.unlocked.realms = user.unlocked.realms or {}
   user.unlocked.puzzles = user.unlocked.puzzles or {}
@@ -80,7 +55,7 @@ function gadget.draw()
       if i==cr.p then x=15 end
       if user.unlocked.realms[realm] then s=realm r,g,b=255,255,255 if i==cr.p then r,g,b=255,180,0 end end
       color(r,g,b,250)
-      love.graphics.print( s, x+25, y+100)
+      hate.graphics.print( s, x+25, y+100)
   end
 end
 
