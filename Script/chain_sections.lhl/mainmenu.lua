@@ -23,31 +23,6 @@
 -- 
 -- Version: 22.07.17
 -- </License Block>
---[[
-Cynthia Johnson
-Main menu
-
-
-
-(c) Jeroen P. Broks, 
-
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-Please note that some references to data like pictures or audio, do not automatically
-fall under this licenses. Mostly this is noted in the respective files.
-
-Version: 19.06.26
-]]
 
 local mm = {}
 
@@ -116,7 +91,8 @@ mm.gui = {
           }        
 mm.buttons = {  }
 for i,d in ipairs({ {'Play the game','play'}, {'Change Player','change'}, {"Website","website"}, {"Come to the Discord Channel",'discord'},{"Repository / Bug Tracker",'github'} ,{"Jukebox","jukebox"}, {"Quit","quit"} }) do
-    mm.buttons[i] = { kind='button', FR=255, FG=180,FB=0,BR=127,BG=90,BB=0,x=800+i*24,y=150+(i*30),caption=d[1],action=mm.actions[d[2]],w=600, font='FONTS/BODONIXT.TTF'}
+    --mm.buttons[i] = { kind='button', FR=255, FG=180,FB=0,BR=127,BG=90,BB=0,x=800+i*24,y=150+(i*30),caption=d[1],action=mm.actions[d[2]],w=600, font='FONTS/BODONIXT.TTF'}
+    mm.buttons[i] = { kind='button', FR=255, FG=180,FB=0,BR=127,BG=90,BB=0,x=800+i*24,y=150+(i*30),caption=d[1],action=mm.actions[d[2]],w=600, font='FONTS/BODONIXT.12.JFBF'}
     mm.gui.kids['button'..i]=mm.buttons[i]
 end           
 
