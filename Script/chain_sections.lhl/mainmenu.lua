@@ -21,7 +21,7 @@
 -- Please note that some references to data like pictures or audio, do not automatically
 -- fall under this licenses. Mostly this is noted in the respective files.
 -- 
--- Version: 22.07.17
+-- Version: 22.07.18
 -- </License Block>
 
 local mm = {}
@@ -32,10 +32,10 @@ end
 
 mm.actions = {
 
-    discord = function() if not love.system.openURL( 'https://discord.gg/RU3V6YU' ) then love.window.showMessageBox( "Cynthia Johnson", "I could connect with Discord", "error", true ) end end,
-    github = function() if not love.system.openURL( 'https://github.com/PhantasarProductions/cynthia' ) then love.window.showMessageBox( "Cynthia Johnson", "Sorry, I was unable to go to github", "error", true ) end end,
-    website = function() if not love.system.openURL( 'https://tricky.gamejolt.io/cynthia' ) then love.window.showMessageBox( "Cynthia Johnson", "Sorry, I was unable to go to Game Jolt, where the site is located", "error", true ) end end,
-    quit = love.event.quit,
+    discord = function() if not hate.system.openURL( 'https://discord.gg/RU3V6YU' ) then hate.window.showMessageBox( "Cynthia Johnson", "I could connect with Discord", "error", true ) end end,
+    github = function() if not hate.system.openURL( 'https://github.com/PhantasarProductions/cynthia' ) then hate.window.showMessageBox( "Cynthia Johnson", "Sorry, I was unable to go to github", "error", true ) end end,
+    website = function() if not hate.system.openURL( 'https://tricky.gamejolt.io/cynthia' ) then hate.window.showMessageBox( "Cynthia Johnson", "Sorry, I was unable to go to Game Jolt, where the site is located", "error", true ) end end,
+    quit = hate.event.quit,
     play = function() CHOOSEREALM_backchainer = "MAINMENU" chain.go('CHOOSEREALM') end,
     jukebox = function() chain.go("JUKEBOX") end,
     change = function() chain.go("CHOOSEUSER") end
@@ -102,7 +102,7 @@ luna.update(mm.gui)
 function mm.draw() end
 
 function mm.update()
-    local time = love.timer.getTime( )
+    local time = hate.timer.getTime( )
     local y = math.floor(100 + (math.sin(time)*25))
     local g = mm.gui.kids.logo
     if g.fixatednow then g.y=y
