@@ -53,10 +53,10 @@ Version: 19.06.26
 
 
 local math=math
-local love=love
+local hate=hate
 
 
-local tutor = j_love_import('/SCRIPT/INGAMETUTORS.LUA')
+local tutor = j_hate_import('SCRIPT/INGAMETUTORS.LUA')
 
 local allowinstantwin = false -- Must be false in full release
 local debugcoords = false 
@@ -107,7 +107,7 @@ function game.Yahlevania(y1,y2)
     if Yahl[1].x2<-10 then table.remove(Yahl,1) end
     for Y in each(Yahl) do
         Color(Y.r,Y.g,Y.b)
-        love.graphics.line(Y.x1,y1 or 0,Y.x2,y2 or 600)
+        hate.graphics.line(Y.x1,y1 or 0,Y.x2,y2 or 600)
         Y.x1 = Y.x1 - 1
         if Y.x1%2==0 then Y.x2 = Y.x2-1 end
     end
@@ -213,7 +213,7 @@ local function FindTrollSpot(troll,fx,fy,tx,ty,w)
                       dbglul = dbglul .. "\n\nWIND = "..w.."\n"
                       dbglul = dbglul .. "CONCHECK1 = "..bbb[o.data.Spot==(troll.data.Goto or 'niks')].."\n"
                       dbglul = dbglul .. "CONCHECK2 = "..bbb[o.data.Spot==(w or 'niks').."."..(troll.data.Goto or 'niksniksniks')].."\n"
-                      love.window.showMessageBox( "Cynthia Johnson", dbglul, "info", true )
+                      hate.window.showMessageBox( "Cynthia Johnson", dbglul, "info", true )
                    -- ]]
                    --[[
                    if x==fx and tx== 0 and y< fy and ty==-1 then return xret end -- North exit spot
@@ -343,7 +343,7 @@ game.objs = {
   Pegasus = {
               draw = function(o,x,y,ox,oy)
                      white()
-                     --love.graphics.print("Pegasus is located at: ("..ox..","..oy..")",0,50)
+                     --hate.graphics.print("Pegasus is located at: ("..ox..","..oy..")",0,50)
                      if pz.layers.Walls[y][x]~=0 then return end
                      local p = assets.pegasus
                      white()
@@ -557,7 +557,7 @@ game.objs = {
   },
   Faerie = {
              draw = function(o,x,y,ox,oy)
-                local time = love.timer.getTime( )
+                local time = hate.timer.getTime( )
                 local my = math.sin(time)*6
                 local p=assets.faerie
                 Hot(p,16,32)
@@ -629,7 +629,7 @@ game.objs = {
        killable = false,
        draw = function(o,x,y,ox,oy)
           local annoy = function() end local s = annoy
-          --local annoy = function(a) love.window.showMessageBox("Cynthia's debug annoyance",a,"info",true) end local s = serialize
+          --local annoy = function(a) hate.window.showMessageBox("Cynthia's debug annoyance",a,"info",true) end local s = serialize
           Color(255,255,255)
           Hot(assets.atlanthean,16,64)
           DrawImage(assets.atlanthean,ox+(x*32)-16,oy+(y*32),1,0,1,1)
@@ -656,14 +656,14 @@ game.objs = {
              o.recharge = o.recharge - 1    
              o.opx=player.x
              o.opy=player.y
-             love.graphics.setFont(assets.coolvetica30)
+             hate.graphics.setFont(assets.coolvetica30)
              Color(63,127,255)
-             love.graphics.print(o.recharge,ox+((x-1)*32),(oy+(y*32))-32)
+             hate.graphics.print(o.recharge,ox+((x-1)*32),(oy+(y*32))-32)
              annoy(s('AtlantheanObject',o))
           elseif o.recharge>0 then
-             love.graphics.setFont(assets.coolvetica30)
+             hate.graphics.setFont(assets.coolvetica30)
              Color(255,127,63)
-             love.graphics.print(o.recharge,ox+((x-1)*32),(oy+(y*32))-32)
+             hate.graphics.print(o.recharge,ox+((x-1)*32),(oy+(y*32))-32)
              annoy(s('AtlantheanObject',o))
           end
        end,   
@@ -799,15 +799,15 @@ local canvasgadget = {
                  local o=bossobject
                  if o.objtype:upper()=="KILL" then bossobject=nil end
                  DrawImage(assets.arachmalun,o.a.ox+(o.a.x*32)-300,o.a.oy+(o.a.y*32)-492)
-                 love.graphics.setFont(assets.coolvetica30)
-                 love.graphics.print("Arachmelum:",5,g.y)
+                 hate.graphics.setFont(assets.coolvetica30)
+                 hate.graphics.print("Arachmelum:",5,g.y)
                  for i = 1,o.HP do
                      DrawImage(assets.bosshp,200+(i*20),g.y)
                  end
               end
               if game.pend then
-                       screenshotdata = love.graphics.newScreenshot( )
-                       screenshot = love.graphics.newImage(screenshotdata)
+                       screenshotdata = hate.graphics.newScreenshot( )
+                       screenshot = hate.graphics.newImage(screenshotdata)
                        screenshotalpha=255
                        chain.go('ENDPUZZLE')
               end         
@@ -817,7 +817,7 @@ local canvasgadget = {
                     for tut in each(mysplit(pz.datamap.Tutorial,",")) do tutor(tut) end
                  end
               end      
-              local alpha = (math.abs(math.sin(love.timer.getTime()))*150)+100
+              local alpha = (math.abs(math.sin(hate.timer.getTime()))*150)+100
               if pz.clover then
                 color(255,255,255,alpha)
                 DrawImage(assets.clover,770,100)
@@ -825,23 +825,23 @@ local canvasgadget = {
               if pz.faerie then
                 color(255,255,255,alpha)
                 DrawImage(assets.faerie,770,150)
-                love.graphics.print(pz.faerie,780,130)
+                hate.graphics.print(pz.faerie,780,130)
               end 
               if (player.meat or 0)>=1 then 
                  color(255,255,255,alpha)
                  DrawImage(assets.meat,770,200)
-                 love.graphics.print(player.meat,780,200)
+                 hate.graphics.print(player.meat,780,200)
                end  
               if player.keys then
                  local keyi = 0
-                 love.graphics.setFont(assets.coolvetica30)
+                 hate.graphics.setFont(assets.coolvetica30)
                  for tcolor,number in pairs(player.keys) do
                      color(cols[tcolor][1],cols[tcolor][2],cols[tcolor][3],alpha)
                      keyi = keyi + 1
                      local keyx = keyi * 64
                      DrawImage(assets.key,keyx,80)
                      color(255,255,255,alpha)
-                     love.graphics.print(number,keyx+20,75)
+                     hate.graphics.print(number,keyx+20,75)
                  end
               end
       end
@@ -935,7 +935,7 @@ game.gui = {
              x=0,
              y=0,
              kids = { game.canvas, game.puzzleheader, game.puzzletime, game.puzzlemove,game.throwrock, game.throwdagger, game.push, game.pull,
-                  { kind = 'button', FR=255,FG=255,FB=0,BR=255,BG=0,BB=0,caption="X",x=0,y=500,action=function() if love.window.showMessageBox( "Cynthia Johnson", "Wanna go back to the main menu?\n(Progress in this puzzle will be lost!)", {"Yes!","No", escapebutton=2} )==1 then chain.go('MAINMENU') end end },
+                  { kind = 'button', FR=255,FG=255,FB=0,BR=255,BG=0,BB=0,caption="X",x=0,y=500,action=function() if hate.window.showMessageBox( "Cynthia Johnson", "Wanna go back to the main menu?\n(Progress in this puzzle will be lost!)", {"Yes!","No", escapebutton=2} )==1 then chain.go('MAINMENU') end end },
                   { kind = 'button', image='GFX/GAMEUI/CLOCKWISE.PNG', caption="", BR=0,BG=0,BB=20, action=gturn, x=760,y=505, gtid='cw', w=30,imgx=7},
                   { kind = 'button', image='GFX/GAMEUI/COUNTERCLOCKWISE.PNG', caption="", BR=0,BG=0,BB=20, action=gturn, x=700,y=505, gtid='ccw', w=30,imgx=7},
                   { kind = 'button', image='GFX/GAMEUI/UP.PNG', caption="", BR=0,BG=0,BB=20, action=gmove, x=730,y=505, gtid='u', w=30,imgx=7},
@@ -951,7 +951,7 @@ luna.update(game.gui)
 
 
 function game.update()
-     local nt = love.timer.getTime()
+     local nt = hate.timer.getTime()
      -- Updating time label
      if math.abs(nt-game.timer)>1 then
         player.time = player.time + 1
@@ -962,7 +962,7 @@ function game.update()
      -- Walking player
      if player.keepwalking then game.walk(player.keepwalking,true) end
      if player.w=='DEAD' or player.w=='STONE' then player.gx=0 player.gy=0 player.keepwalking=false player.f=0 player.frametime=nil end
-     if player.gx~=0 or player.gy~=0 or love.keyboard.isDown('up') or love.keyboard.isDown('down') or love.keyboard.isDown('left') or love.keyboard.isDown('right') or love.keyboard.isDown('w') or love.keyboard.isDown('a') or love.keyboard.isDown('s') or love.keyboard.isDown('d') then
+     if player.gx~=0 or player.gy~=0 or hate.keyboard.isDown('up') or hate.keyboard.isDown('down') or hate.keyboard.isDown('left') or hate.keyboard.isDown('right') or hate.keyboard.isDown('w') or hate.keyboard.isDown('a') or hate.keyboard.isDown('s') or hate.keyboard.isDown('d') then
         player.frametime = player.frametime or nt
         if math.abs(nt-player.frametime)>.05 then 
            player.f = player.f + 1
@@ -1078,7 +1078,7 @@ function game.arrive()
         music.play(pz.datamap.Music)
      else
         local dir = 'MUSIC/PUZZLES/'..upper(user.realm)
-        local list = love.filesystem.getDirectoryItems( dir )
+        local list = hate.filesystem.getDirectoryItems( dir )
         print("Music pieces in "..dir.." >> "..#list)
         local piece = dir .. "/".. list[math.random(1,#list)]
         music.play(piece)
@@ -1097,7 +1097,7 @@ function game.arrive()
      assert(player,"There is no start position in puzzle: "..user.puzzle)
      game.puzzletime.caption=""
      game.puzzlemove.caption=""
-     game.timer = love.timer.getTime()
+     game.timer = hate.timer.getTime()
      for pro in each({'dagger','rock'}) do
       game['throw'..pro].visible=false
      end
@@ -1123,7 +1123,7 @@ function game.keypressed(key)
         else                      player.w="S" end
         return
      end
-     if love.keyboard.isDown('lctrl') or love.keyboard.isDown('rctrl') or love.keyboard.isDown('lgui') or love.keyboard.isDown('rgui') then
+     if hate.keyboard.isDown('lctrl') or hate.keyboard.isDown('rctrl') or hate.keyboard.isDown('lgui') or hate.keyboard.isDown('rgui') then
         if key=='up'     or key=='w' then player.w="N" end
         if key=='down'   or key=='s' then player.w="S" end
         if key=='left'   or key=='a' then player.w='W' end
