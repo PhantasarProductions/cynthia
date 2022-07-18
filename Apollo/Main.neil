@@ -21,7 +21,7 @@
 // Please note that some references to data like pictures or audio, do not automatically
 // fall under this licenses. Mostly this is noted in the respective files.
 // 
-// Version: 22.07.17
+// Version: 22.07.18
 // End License Information
 #use "Libs/Hate"
 
@@ -30,6 +30,8 @@ const global delegate APOLLO_Flow = Hate.Flow
 global Var Cynthia
 
 Init
+	Graphics.Cls()
+	Graphics.Flip()
 	Hate.Import("Script","Cynthia_Start_Apollo.lua")
 	Hate.Load()
 	//Lua.error("Nothing yet set up!")
