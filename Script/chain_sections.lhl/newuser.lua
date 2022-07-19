@@ -21,7 +21,7 @@
 -- Please note that some references to data like pictures or audio, do not automatically
 -- fall under this licenses. Mostly this is noted in the respective files.
 -- 
--- Version: 22.07.18
+-- Version: 22.07.19
 -- </License Block>
 
 
@@ -96,7 +96,7 @@ function nu.createuser(g)
        if not allowed then return hate.window.showMessageBox( "Cynthia Johnson", "Your username may only contain letters, numbers or underscores!", "error", true ) end  
    end
    filename = "users/"..username..".lua"    
-   if hate.filesystem.isFile(filename) then hate.window.showMessageBox( "Cynthia Johnson", "That username is already in use on your system.\n\nPlease pick another", "error", true ) end
+   if hate.filesystem.isFile(filename) then hate.window.showMessageBox( "Cynthia Johnson", "That username is already in use on your system.\n\nPlease pick another", "error", true ) return end
    --if nu.nu.nan then return nu.setstage('anna') end
    --if nu.nu.ngj then return nu.setstage('gamejolt') end   
    nu.setstage('intro')
@@ -108,8 +108,10 @@ function nu.create_and_move_on()
    local ufile = "users/"..uname..".lua"
    local success, message = hate.filesystem.write( ufile, serialize("ret",nu.nu).."\n\nreturn ret\n\n"  )
    if not success then
-       hate.window.showMessageBox( "Cynthia Johnson", "FATAL ERROR!\n\nI couldn't save the user file!\n\nData has therefore not been saved!", "error", true )
+   	   print("\x1b[41mERROR>\x1b[0m "..message)
+       hate.window.showMessageBox( "Cynthia Johnson", "FATAL ERROR!\n\nI couldn't save the user file!\n\nData has therefore not been saved!\n\n\nReturned error: "..message, "error", true )
        hate.events.quit()
+       return
    end
    print("Saved in: "..ufile)
    login(uname) -- Don't forget, this routine also sets Game Jolt and Anna in order, so this is the easiest way!
@@ -140,10 +142,12 @@ nu.gui = {
                   askname = {kind='pivot',x=0,y=0, kids ={
                        { kind='label',caption="User Name:", x=100,y=100},
                        username = { x=100,y=150, kind='textfield',w=600},
+                       --[[
                        { kind='label',caption="Log in on Anna:",x=100,y=250},
                        anna = { x=400,y=250, action=function(g) nu.nu.nan=g.checked end, kind='checkbox'}, 
                        { kind='label',caption="Log in on Game Jolt:",x=100,y=275},
                        gamejolt = { x=400,y=275, action=function(g) nu.nu.ngj=g.checked end, kind='checkbox'} ,
+                       --]]
                        { kind="button",caption=">>",y=550,x=500, action=nu.createuser, BG=180, BB=0}
                   }},
                   --[[
