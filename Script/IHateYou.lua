@@ -21,7 +21,7 @@
 -- Please note that some references to data like pictures or audio, do not automatically
 -- fall under this licenses. Mostly this is noted in the respective files.
 -- 
--- Version: 22.07.17
+-- Version: 22.07.19
 -- </License Block>
 
 
@@ -41,7 +41,7 @@ hate.filesystem.createDirectory("users")
 hate.filesystem.createDirectory("config")
 
 if hate.filesystem.isFile("config/autologin.lua") then 
-   local getuser = j_love_import("config/autologin.lua")
+   local getuser = j_hate_import("config/autologin.lua")
    if hate.filesystem.isFile("users/"..getuser..".lua") then login(getuser) end
 end 
 
