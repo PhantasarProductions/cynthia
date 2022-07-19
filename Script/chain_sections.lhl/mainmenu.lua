@@ -32,9 +32,12 @@ end
 
 mm.actions = {
 
-    discord = function() if not hate.system.openURL( 'https://discord.gg/RU3V6YU' ) then hate.window.showMessageBox( "Cynthia Johnson", "I could connect with Discord", "error", true ) end end,
-    github = function() if not hate.system.openURL( 'https://github.com/PhantasarProductions/cynthia' ) then hate.window.showMessageBox( "Cynthia Johnson", "Sorry, I was unable to go to github", "error", true ) end end,
-    website = function() if not hate.system.openURL( 'https://tricky.gamejolt.io/cynthia' ) then hate.window.showMessageBox( "Cynthia Johnson", "Sorry, I was unable to go to Game Jolt, where the site is located", "error", true ) end end,
+--    discord = function() if (not hate.system.openURL( 'https://discord.gg/RU3V6YU' ) or true) then hate.window.showMessageBox( "Cynthia Johnson", "I could connect with Discord", "error", true ) end end,
+--    github = function() if (not hate.system.openURL( 'https://github.com/PhantasarProductions/cynthia' ) or true) then hate.window.showMessageBox( "Cynthia Johnson", "Sorry, I was unable to go to github", "error", true ) end end,
+--    website = function() if (not hate.system.openURL( 'https://tricky.gamejolt.io/cynthia' ) or true) then hate.window.showMessageBox( "Cynthia Johnson", "Sorry, I was unable to go to Game Jolt, where the site is located", "error", true ) end end,
+    discord = function() OpenURL('https://discord.gg/RU3V6YU') end,
+    github = function() OpenURL('https://github.com/PhantasarProductions/cynthia') end,
+    website = function() OpenURL('https://phantasar-productions.itch.io/cynthia-johnson') end,
     quit = function() hate.event.quit() end,
     play = function() CHOOSEREALM_backchainer = "MAINMENU" chain.go('CHOOSEREALM') end,
     jukebox = function() chain.go("JUKEBOX") end,
