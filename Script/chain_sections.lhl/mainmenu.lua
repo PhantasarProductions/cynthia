@@ -21,7 +21,7 @@
 -- Please note that some references to data like pictures or audio, do not automatically
 -- fall under this licenses. Mostly this is noted in the respective files.
 -- 
--- Version: 22.07.18
+-- Version: 22.07.19
 -- </License Block>
 
 local mm = {}
@@ -35,7 +35,7 @@ mm.actions = {
     discord = function() if not hate.system.openURL( 'https://discord.gg/RU3V6YU' ) then hate.window.showMessageBox( "Cynthia Johnson", "I could connect with Discord", "error", true ) end end,
     github = function() if not hate.system.openURL( 'https://github.com/PhantasarProductions/cynthia' ) then hate.window.showMessageBox( "Cynthia Johnson", "Sorry, I was unable to go to github", "error", true ) end end,
     website = function() if not hate.system.openURL( 'https://tricky.gamejolt.io/cynthia' ) then hate.window.showMessageBox( "Cynthia Johnson", "Sorry, I was unable to go to Game Jolt, where the site is located", "error", true ) end end,
-    quit = hate.event.quit,
+    quit = function() hate.event.quit() end,
     play = function() CHOOSEREALM_backchainer = "MAINMENU" chain.go('CHOOSEREALM') end,
     jukebox = function() chain.go("JUKEBOX") end,
     change = function() chain.go("CHOOSEUSER") end
