@@ -951,7 +951,8 @@ luna.update(game.gui)
 
 
 function game.update()
-     local nt = hate.timer.getTime()
+     --local nt = hate.timer.getTime()
+     local nt = Ticks()/900
      -- Updating time label
      if math.abs(nt-game.timer)>1 then
         player.time = player.time + 1
