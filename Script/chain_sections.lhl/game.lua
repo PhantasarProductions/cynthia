@@ -1110,6 +1110,8 @@ function game.arrive()
 end
 
 function game.keypressed(key)
+	key=key:lower()
+	print("Game.Keypressed("..key..")")
      -- Turn around, bright eyes!
      if key=="e" then
         if     player.w=="N" then player.w="E"
