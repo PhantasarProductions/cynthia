@@ -806,9 +806,9 @@ local canvasgadget = {
                  end
               end
               if game.pend then
-                       screenshotdata = hate.graphics.newScreenshot( )
-                       screenshot = hate.graphics.newImage(screenshotdata)
-                       screenshotalpha=255
+                       --screenshotdata = hate.graphics.newScreenshot( )
+                       --screenshot = hate.graphics.newImage(screenshotdata)
+                       --screenshotalpha=255
                        chain.go('ENDPUZZLE')
               end         
               if (not pz.tutored) then                 
