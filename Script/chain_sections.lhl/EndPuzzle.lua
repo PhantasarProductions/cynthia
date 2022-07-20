@@ -115,6 +115,7 @@ function ep.arrive()
     if user.endstatus=='success' then
       local annadata = {}
       annadata.A = "Cynthia_SendAnna"
+      user.noanna = true -- In Apollo this must always bee true! 
       if user.anna then annadata.id = user.anna.id   annadata.secu = user.anna.secu end
       annadata.guest = user.showname
       annadata.puz   = user.puzzle
