@@ -21,7 +21,7 @@
 -- Please note that some references to data like pictures or audio, do not automatically
 -- fall under this licenses. Mostly this is noted in the respective files.
 -- 
--- Version: 22.07.19
+-- Version: 22.07.20
 -- </License Block>
 
 
@@ -35,6 +35,7 @@
 -- *import loadpuzzle
 -- *import sec2time
 
+Neil.Globals.FPS.MinTicks=10
 
 hate.filesystem.createDirectory("users")
 --hate.filesystem.createDirectory("homemadepuzzles")
