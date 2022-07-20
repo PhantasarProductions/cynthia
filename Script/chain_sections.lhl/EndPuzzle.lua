@@ -52,7 +52,7 @@ local function whatnext()
        if not user.donebefore[user.puzzle] then
          local fnext="SCRIPT/PUZZLE/SCRIPT/NEXT/"..user.puzzle..".LUA"
          local donext = unlocknext
-         if love.filesystem.isFile(fnext) then donext=j_love_import(fnext) end
+         if hate.filesystem.isFile(fnext) then donext=j_love_import(fnext) end
          donext()
          user.donebefore[user.puzzle] = true
          return  
@@ -71,7 +71,7 @@ ep.leadshow = {TIME=sec2time,ACTIONS=function(i) return i end}
 function ep.draw()
     Color(255,255,255,255)
     DrawImage(assets[user.endstatus or 'failed'],400,50)
-    love.graphics.setFont(assets.coolvetica)
+    hate.graphics.setFont(assets.coolvetica)
     Color(255,180,0,255)
     if user.endstatus=='success' then
        QText('Your time: '..sec2time(user.time),100,120)
@@ -103,10 +103,10 @@ function ep.draw()
     -- This always comes last
     if screenshot then
        screenshotalpha = screenshotalpha or 255
-       local t = love.timer.getTime()
+       local t = hate.timer.getTime()
        if screenshotalpha>0 and math.abs(t-ep.ot)>.25 then screenshotalpha = screenshotalpha - 1 end
        color(255,255,255,screenshotalpha)
-       love.graphics.draw(screenshot,0,0)
+       hate.graphics.draw(screenshot,0,0)
     end    
 end
 
