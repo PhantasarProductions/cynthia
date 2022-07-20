@@ -21,7 +21,7 @@
 -- Please note that some references to data like pictures or audio, do not automatically
 -- fall under this licenses. Mostly this is noted in the respective files.
 -- 
--- Version: 22.07.17
+-- Version: 22.07.20
 -- </License Block>
 
 local cr= {}
@@ -95,7 +95,12 @@ local gui = {
                       BR = 0,
                       BG = 180,
                       BB = 255,
-                      action = function(g) user.realm=realms[cr.p] chain.go("CHOOSEPUZZLE") end                     
+                      action = function(g)
+                      	if user.unlocked.realms[realms[cr.p]] then
+                      		user.realm=realms[cr.p] 
+                      		chain.go("CHOOSEPUZZLE")
+                      	end
+                      end                     
                   },
                   cancel = {
                       kind = "button",
