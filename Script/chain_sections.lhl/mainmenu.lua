@@ -21,7 +21,7 @@
 -- Please note that some references to data like pictures or audio, do not automatically
 -- fall under this licenses. Mostly this is noted in the respective files.
 -- 
--- Version: 22.07.19
+-- Version: 22.07.20
 -- </License Block>
 
 local mm = {}
@@ -105,7 +105,8 @@ luna.update(mm.gui)
 function mm.draw() end
 
 function mm.update()
-    local time = hate.timer.getTime( )
+    --local time = hate.timer.getTime( )
+    local time = Ticks() / 62.82
     local y = math.floor(100 + (math.sin(time)*25))
     local g = mm.gui.kids.logo
     if g.fixatednow then g.y=y
