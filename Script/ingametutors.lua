@@ -21,33 +21,8 @@
 -- Please note that some references to data like pictures or audio, do not automatically
 -- fall under this licenses. Mostly this is noted in the respective files.
 -- 
--- Version: 22.07.17
+-- Version: 22.07.21
 -- </License Block>
---[[
-Cynthia Johnson
-Tutorials
-
-
-
-(c) Jeroen P. Broks, 
-
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-Please note that some references to data like pictures or audio, do not automatically
-fall under this licenses. Mostly this is noted in the respective files.
-
-Version: 19.06.22
-]]
 
 local tutors = {
                      snakes     = "Whenever you get in line with a snake he'll spit poison at you killing you instantly. They cannot turn around, so maybe you can sneak past them",
@@ -71,8 +46,8 @@ local function tutor(tag)
     if user.tutor[tag] then return end
     user.tutor[tag] = true
     assert(tutors[tag],"Unknown tutorial: "..tag)
-    love.graphics.present() -- Make sure the puzzle shows!
-    love.window.showMessageBox( "Tutorial", tutors[tag] , "error", true )
+    hate.graphics.present() -- Make sure the puzzle shows!
+    hate.window.showMessageBox( "Tutorial", tutors[tag] , "error", true )
     saveuser()
 end    
 
