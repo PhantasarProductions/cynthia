@@ -21,7 +21,7 @@
 -- Please note that some references to data like pictures or audio, do not automatically
 -- fall under this licenses. Mostly this is noted in the respective files.
 -- 
--- Version: 22.07.17
+-- Version: 22.07.21
 -- </License Block>
 
 -- *import sec2time
@@ -77,6 +77,8 @@ function ep.draw()
        QText('Your time: '..sec2time(user.time),100,120)
        QText("Your actions: "..user.moved,500,120)
     end
+    
+    --[[
     if type(leaderdata) == 'table' then
        local y=150
        local inc=20
@@ -108,6 +110,7 @@ function ep.draw()
        color(255,255,255,screenshotalpha)
        hate.graphics.draw(screenshot,0,0)
     end    
+    --]]
 end
 
 function ep.arrive()
@@ -133,8 +136,8 @@ function ep.arrive()
       saveuser()
     end  
     QHot(assets[user.endstatus or 'failed'],'cc')
-    local annaget = { A='Cynthia_GetLeader',puzzle=user.puzzle}
-    good,leaderdata = Anna_Request(annaget)
+    --local annaget = { A='Cynthia_GetLeader',puzzle=user.puzzle}
+    --good,leaderdata = Anna_Request(annaget)
     
 end
 
