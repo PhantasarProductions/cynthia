@@ -572,7 +572,7 @@ game.objs = {
                 white()
                 DrawImage(p,ox+(x*32)-16,oy+(y*32)+8+my,1,0,1,1)
                 if x==player.x and y==player.y then 
-                   if (not pz.faerie) or pz.faerie<o.data.Duration then pz.faerie=o.data.Duration end
+                   if (not pz.faerie) or pz.faerie<(tonumber(o.data.Duration) or 0) then pz.faerie=tonumber(o.data.Duration) end
                 end
              end,
              killable=false
