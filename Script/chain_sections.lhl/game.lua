@@ -23,6 +23,7 @@
 -- 
 -- Version: 22.07.21
 -- </License Block>
+
 --[[
 Cynthia Johnson
 Main Engine
@@ -267,8 +268,15 @@ game.objs = {
   Snake = { draw = function(o,x,y,ox,oy)
                        QHot(assets.snake,"bc")
                        white()
-                       local s,sp=1,1; if o.data.Wind=='W' or o.data.Wind=="w" then s=-1 sp=0 end
-                       DrawImage(assets.snake,ox+((x-sp)*32),oy+((y-1)*32),1,0,s,1)
+                       local s,sp=1,1; --if o.data.Wind=='W' or o.data.Wind=="w" then s=-1 sp=0 end
+                       if o.data.Wind:upper()=="E" then
+                       	  s = 1
+                       	  DrawImage(assets.snake,ox+((x-sp)*32),oy+((y-1)*32)) --,1,0,s,1)
+                       else
+                       	  s = -1
+                          DrawImage(assets.snakew,ox+((x-sp)*32),oy+((y-1)*32)) --,1,0,s,1)
+                       end
+                       --DrawImage(assets.snake,ox+((x-sp)*32)-16,oy+((y-1)*32),1,0,s,1)
                        if pz.layers.Walls[y][x]==0 then 
                           pz.layers.Walls[y][x] = 256
                           print('Blockade $ff on ('..x..","..y..')') 
@@ -286,7 +294,7 @@ game.objs = {
                           DrawImage(assets.spit,ox+((o.spit.x-1)*32),(oy+((o.spit.y-1)*32))+8,1,0,1,1)
                           o.spit.x = o.spit.x + s
                           if o.spit.x == player.x and o.spit.y==player.y then player.w="DEAD" end
-                          if pz.layers.Walls[o.spit.y][o.spit.x]>0 then o.spit=nil end
+                          if (pz.layers.Walls[o.spit.y][o.spit.x] or 1)>0 then o.spit=nil end
                        end                          
                    end,
                    killable=true
@@ -935,7 +943,9 @@ game.gui = {
              x=0,
              y=0,
              kids = { game.canvas, game.puzzleheader, game.puzzletime, game.puzzlemove,game.throwrock, game.throwdagger, game.push, game.pull,
-                  { kind = 'button', FR=255,FG=255,FB=0,BR=255,BG=0,BB=0,caption="X",x=0,y=500,action=function() if hate.window.showMessageBox( "Cynthia Johnson", "Wanna go back to the main menu?\n(Progress in this puzzle will be lost!)", {"Yes!","No", escapebutton=2} )==1 then chain.go('MAINMENU') end end },
+                  --{ kind = 'button', FR=255,FG=255,FB=0,BR=255,BG=0,BB=0,caption="X",x=0,y=500,action=function() if hate.window.showMessageBox( "Cynthia Johnson", "Wanna go back to the main menu?\n(Progress in this puzzle will be lost!)", {"Yes!","No", escapebutton=2} )==1 then chain.go('MAINMENU') end end },
+                  { kind = 'button', FR=255,FG=255,FB=0,BR=255,BG=0,BB=0,caption="X",x=0,y=500,action=function() if 
+                  	Yes( "Cynthia Johnson", "Wanna go back to the main menu?\n(Progress in this puzzle will be lost!)") then chain.go('MAINMENU') end end },
                   { kind = 'button', image='GFX/GAMEUI/CLOCKWISE.PNG', caption="", BR=0,BG=0,BB=20, action=gturn, x=760,y=505, gtid='cw', w=30,imgx=7},
                   { kind = 'button', image='GFX/GAMEUI/COUNTERCLOCKWISE.PNG', caption="", BR=0,BG=0,BB=20, action=gturn, x=700,y=505, gtid='ccw', w=30,imgx=7},
                   { kind = 'button', image='GFX/GAMEUI/UP.PNG', caption="", BR=0,BG=0,BB=20, action=gmove, x=730,y=505, gtid='u', w=30,imgx=7},
@@ -1111,7 +1121,7 @@ end
 
 function game.keypressed(key)
 	key=key:lower()
-	print("Game.Keypressed("..key..")")
+	-- print("Game.Keypressed("..key..")")
      -- Turn around, bright eyes!
      if key=="e" then
         if     player.w=="N" then player.w="E"
