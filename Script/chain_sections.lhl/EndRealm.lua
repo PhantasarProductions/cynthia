@@ -21,33 +21,10 @@
 -- Please note that some references to data like pictures or audio, do not automatically
 -- fall under this licenses. Mostly this is noted in the respective files.
 -- 
--- Version: 22.07.17
+-- Version: 22.07.21
 -- </License Block>
---[[
-Cynthia Johnson
-End of the realm
 
 
-
-(c) Jeroen P. Broks, 
-
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
-Please note that some references to data like pictures or audio, do not automatically
-fall under this licenses. Mostly this is noted in the respective files.
-
-Version: 19.03.21
-]]
 
 EREALMPARAM = {}
 
@@ -111,7 +88,7 @@ function EndTheRealm(param)
         user.unlocked.realms[ur] = true
     end
     erealm.picdir = EREALMPARAM.PICDIR or "GFX/CYNTHIASPEAKS/END"..upper(erealm.Parameters.REALM) 
-    erealm.pics = love.filesystem.getDirectoryItems( erealm.picdir )
+    erealm.pics = hate.filesystem.getDirectoryItems( erealm.picdir )
     table.sort(erealm.pics) -- make sure all pics are only taken in order
     erealm.picnum = 1
     erealm.updatepics() 
