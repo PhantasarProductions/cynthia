@@ -21,7 +21,7 @@
 -- Please note that some references to data like pictures or audio, do not automatically
 -- fall under this licenses. Mostly this is noted in the respective files.
 -- 
--- Version: 22.07.21
+-- Version: 22.07.22
 -- </License Block>
 
 
@@ -95,6 +95,7 @@ function EndTheRealm(param)
     local getaward = 'ALL'..upper(erealm.Parameters.REALM)
     print("Gonna award: "..getaward)
     mynet:award(getaward)
+    Medal.Award("CYNTHIA_"..upper(erealm.Parameters.REALM))
     chain.go("ENDREALM")
 end
 
