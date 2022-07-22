@@ -21,7 +21,7 @@
 -- Please note that some references to data like pictures or audio, do not automatically
 -- fall under this licenses. Mostly this is noted in the respective files.
 -- 
--- Version: 22.07.20
+-- Version: 22.07.22
 -- </License Block>
 
 
@@ -36,6 +36,11 @@
 -- *import sec2time
 
 Neil.Globals.FPS.MinTicks=10
+
+Medal  = Neil.Globals.Medals
+Medals = Medal
+Medal.SetGame("Cynthia")
+Medal.Award("CYNTHIA_START")
 
 hate.filesystem.createDirectory("users")
 --hate.filesystem.createDirectory("homemadepuzzles")
@@ -90,6 +95,7 @@ function hate.quit()
      return true
   end
   if user then saveuser() end
+  --[[
      local yes = "Of course! This game stinks!"
      local no  = "Oops! My mistake, sorry!"
   -- *if $WINDOWS
@@ -97,5 +103,9 @@ function hate.quit()
        no  = "No"
   -- *fi
   return hate.window.showMessageBox( "Cynthia Johnson", "What? You really want to get out of this game?", {yes,no, escapebutton=2} )==2
+  ]]
+  local a = Yes("What? You really want to get out of this game?")
+  if a then hate.event.quit() end
+  return not a
 end  
 hate.overwrite=false
