@@ -1090,9 +1090,11 @@ function game.arrive()
      else
         local dir = 'MUSIC/PUZZLES/'..upper(user.realm)
         local list = hate.filesystem.getDirectoryItems( dir )
-        print("Music pieces in "..dir.." >> "..#list)
-        local piece = dir .. "/".. list[math.random(1,#list)]
-        music.play(piece)
+        if #list>=1 then
+        	print("Music pieces in "..dir.." >> "..#list)
+        	local piece = dir .. "/".. list[math.random(1,#list)]
+        	music.play(piece)
+        end
      end   
      player = nil
      for k,o in spairs(pz.fetchteddyobject) do
