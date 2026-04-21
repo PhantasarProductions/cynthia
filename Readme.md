@@ -1,6 +1,6 @@
 MAINTENENCE NOTE!
-This project will cease to be a LOVE2D project and be converted into an Apollo project.
-The source code will remain as much the same as possible, but as Apollo is not the same as LOVE2D some important changes will be made over time.
+This project was originally created for LOVE2D, later converted to Apollo and is now scheduled to be converted to SCI
+Now this conversion will not nearly take as much time as with the RPG games (as the Lua files should all remain the same), but some changes are needed
 
 ![Cynthia Johnson](https://github.com/PhantasarProductions/cynthia/blob/master/GFX/General/Logo.png?raw=true)
 
@@ -79,20 +79,6 @@ not in your direction.
   - They need time to recharge their gun as soon as they shot, and will ignore you until its fully recharged. A number beside them will tell you how many actions may pass until they can shoot again.
   - NOT killable! Don't even try!
 
-# Leaderboards
-
-(This section is outdated. The old Anna system has been taken out of use, but what I'm gonna do next is not yet certain).
-Cynthia Johnson features leaderboards. Do you need less actions than others to solve a puzzle. Are you faster than other players? The game will show you the top 5, and the full lists can be viewed on http://utbbs.tbbs.nl/Game.php
-I must note that Anna lives on that server. Anna is a bot who kicks out cheaters. Anna will also delete inactive players, the amount of time she takes for that depends on how much you did already. If you value your privacy it can 
-be wise not to enter you real name in the game, although I can delete it on request, I cannot guarantee some archive bot already picked it up (and be wise NEVER use your e-mail address as name). That's simply how the internet 
-works, nothing anybody can do about that. If you create an actual Anna account, the e-mail address asked will only be used to verify you (also a kind of anti-spam pre-caution), and never be resold to 3rd parties (I despice that 
-practice). 
-
-Anna's decissions on banning accounts, are technically final. I will not easily unban accounts Anna banned unless I can really be convinced they were banned for the wrong reasons. Scores deleted by Anna cannot be recovered though, 
-as they are really deleted, and not temporarily hidden. Banned accounts will eventually be deleted by Anna.
-
-Anna was named after "Boten Anna" by Basshunter. ;)
-
 
 
 ![](https://github.com/PhantasarProductions/cynthia/blob/master/GFX/General/Cynthia.png?raw=true)
@@ -102,25 +88,18 @@ Sites:
 
 - Official Site: https://tricky.gamejolt.io/cynthia
 - GitHub: https://github.com/PhantasarProductions/cynthia
-- Game Jolt: https://gamejolt.com/games/cynthia/294717 (deprecated)
-- Leaderboards: http://tinyurl.com/CynthiaLeader
+- AppImageHub: URL will be revealed once published
 
 
 
 ### Technobabble:
-(This technobabble is outdated, as I am taking this project out of the LOVE2D engine (I hate the community and the engine itself has also gone through a few changes that ware unacceptable to me). I will update this soon. See issue 
-[#75](https://github.com/PhantasarProductions/cynthia/issues/75)).
-Cynthia Johnson requires the "[LOVE2D](http://love2d.org)" engine to run.
-BUT! Don't just mindlessly put all the files in this repository together in a .love file, as I tell ya, the game won't work at all that way.
+
+Cynthia Johnson requires Scyndi's Creative Interpreter to run. 
+
 - First of all, all third party assets have NOT been included, to avoid copyright issues.
-- Second, this code requires a pre-processor called [BuildLove](https://github.com/Tricky1975/BuildLove). I know it can be quite a chore configuring that tool, but once it works, it works :)
-- Third, you need my [libraries](https://github.com/LuaLibs/Love-Lua-Libraries). Once the BuildLove tool is properly configured it will automatically import the libraries it needs for this project and ignore those which are not needed.
+- If you wanna try to build it, well, [here's](https://codeberg.org/SlyvinaApps/SCI) the source code of the interpreter and the builder.
+- Third, you need my [libraries](https://codeberg.org/TrickyLibraries/ScyndiLibs). Once the SCI_Build tool is properly configured it will automatically import the libraries it needs for this project and ignore those which are not needed.
 
 Well if you got good replacements for the missing assets (you can check the credits.md file. Everything not credited under my name (Jeroen P. Broks) is not in this repository either, you can start building using the love builder. It currently only fully builds for Mac and Windows, although it creates a love file for linux users to use. Android support is currently not complete, and iOS support will very likely never happen aside from creating a "dedicated" iOS love file, but due to Apple's strict AppStore policy on iOS I'm not interested in releasing for iOS. Sorry!
 
 
-## Notice!
-(Outdated: See technobabble)
-If you install Love seperately, Cynthia Johnson requires LOVE 0.10.2 and not any older nor any newer version and especially not LOVE 11.x or later. I am NOT planning to adept the game to work in LÖVE 11.x or later, because the 
-differences between the two versions are simply too big, and will require too much code to be latered, unstabalizing the game in the process. LOVE can be a wonderful engine, but they are to eager to change/deprecate/remove 
-important key features, and that is really frustrating. Besides it would also require me to update my deprecated Love builder which has been replaced by Ryanna... I only use that builder as Cynthia Johnson is not compatible with Ryanna (and I won't upgrade it to Ryanna for the same reasons).
